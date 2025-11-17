@@ -1,46 +1,41 @@
-<!DOCTYPE html><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
-    <title>道门秘传小六壬九神版 - 手机版 (Bilingual)</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"
-      rel="stylesheet"
-    />
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: "#165DFF",
-              secondary: "#722ED1",
-              accent: "#FF6B35",
-              success: "#00B42A",
-              warning: "#FF7D00",
-              danger: "#F53F3F",
-              dark: "#1D2129",
-              light: "#F2F3F5",
-            },
-            fontFamily: {
-              chinese: ["PingFang SC", "Microsoft YaHei", "sans-serif"],
-            },
-            animation: {
-              "fade-in": "fadeIn 0.6s ease-in-out",
-              "slide-up": "slideUp 0.8s ease-out",
-              "pulse-slow": "pulse 3s ease-in-out infinite",
-              glow: "glow 2s ease-in-out infinite alternate",
-            },
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>道门秘传小六壬九神版 - 手机版 (Bilingual)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#165DFF",
+            secondary: "#722ED1",
+            accent: "#FF6B35",
+            success: "#00B42A",
+            warning: "#FF7D00",
+            danger: "#F53F3F",
+            dark: "#1D2129",
+            light: "#F2F3F5",
+          },
+          fontFamily: {
+            chinese: ["PingFang SC", "Microsoft YaHei", "sans-serif"],
+          },
+          animation: {
+            "fade-in": "fadeIn 0.6s ease-in-out",
+            "slide-up": "slideUp 0.8s ease-out",
+            "pulse-slow": "pulse 3s ease-in-out infinite",
+            glow: "glow 2s ease-in-out infinite alternate",
           },
         },
-      };
-    </script>
-    <style type="text/tailwindcss">
-      @layer utilities {
+      },
+    };
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
         .content-auto {
           content-visibility: auto;
         }
@@ -236,62 +231,57 @@
         }
       }
     </style>
-  </head>
-  <body
-    class="font-chinese bg-gradient-to-br from-slate-50 to-purple-50 min-h-screen"
-  >
-    <!-- 主容器 -->
-    <div class="mobile-container">
-      <!-- 页面标题 -->
-      <div class="text-center mt-6 mb-6 animate-slide-up">
-        <h1 class="text-3xl font-bold bilingual-title mb-2">
-          道门秘传小六壬九神版
-        </h1>
-        <p class="text-lg english-text">
-          Daoist Secret Liu Ren Nine Gods Edition
-        </p>
-        <div
-          class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-3 rounded-full"
-        ></div>
-      </div>
+</head>
 
-      <!-- 时间显示栏 -->
-      <div class="mt-4 mb-6">
-        <div class="bg-white rounded-2xl p-4 card-shadow animate-slide-up">
-          <div class="flex justify-between items-center mb-2">
-            <div class="text-center">
-              <div class="text-sm text-gray-500 mb-1 english-text">Solar</div>
-              <div class="text-sm text-gray-500 mb-1 chinese-text">阳历</div>
-              <div class="font-bold text-lg text-gray-800" id="solarDate">
-                2025年11月8日
-              </div>
-              <div class="text-sm text-gray-600" id="solarTime">14:30:00</div>
+<body class="font-chinese bg-gradient-to-br from-slate-50 to-purple-50 min-h-screen">
+  <!-- 主容器 -->
+  <div class="mobile-container">
+    <!-- 页面标题 -->
+    <div class="text-center mt-6 mb-6 animate-slide-up">
+      <h1 class="text-3xl font-bold bilingual-title mb-2">
+        道门秘传小六壬九神版
+      </h1>
+      <p class="text-lg english-text">
+        Daoist Secret Liu Ren Nine Gods Edition
+      </p>
+      <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-3 rounded-full"></div>
+    </div>
+
+    <!-- 时间显示栏 -->
+    <div class="mt-4 mb-6">
+      <div class="bg-white rounded-2xl p-4 card-shadow animate-slide-up">
+        <div class="flex justify-between items-center mb-2">
+          <div class="text-center">
+            <div class="text-sm text-gray-500 mb-1 english-text">Solar</div>
+            <div class="text-sm text-gray-500 mb-1 chinese-text">阳历</div>
+            <div class="font-bold text-lg text-gray-800" id="solarDate">
+              2025年11月8日
             </div>
-            <div class="w-px h-12 bg-gray-200"></div>
-            <div class="text-center">
-              <div class="text-sm text-gray-500 mb-1 english-text">Lunar</div>
-              <div class="text-sm text-gray-500 mb-1 chinese-text">阴历</div>
-              <div class="font-bold text-lg text-purple-600" id="lunarDate">
-                乙巳年九月十九
-              </div>
-              <div class="text-sm text-gray-600" id="lunarTime">未时</div>
+            <div class="text-sm text-gray-600" id="solarTime">14:30:00</div>
+          </div>
+          <div class="w-px h-12 bg-gray-200"></div>
+          <div class="text-center">
+            <div class="text-sm text-gray-500 mb-1 english-text">Lunar</div>
+            <div class="text-sm text-gray-500 mb-1 chinese-text">阴历</div>
+            <div class="font-bold text-lg text-purple-600" id="lunarDate">
+              乙巳年九月十九
             </div>
+            <div class="text-sm text-gray-600" id="lunarTime">未时</div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- AI卜卦询问框 -->
-      <div class="mb-6">
-        <div class="bg-white rounded-2xl p-4 card-shadow animate-slide-up">
-          <h3 class="text-lg font-bold text-gray-800 mb-3 flex items-center">
-            <i class="fa fa-commenting-o mr-2 text-primary"></i>
-            <span class="chinese-text">AI智能卜卦</span>
-            <span class="english-text ml-2 text-sm">AI Fortune Telling</span>
-          </h3>
-          <div class="space-y-3">
-            <textarea
-              id="questionInput"
-              placeholder="请输入您想预测的事情，例如：
+    <!-- AI卜卦询问框 -->
+    <div class="mb-6">
+      <div class="bg-white rounded-2xl p-4 card-shadow animate-slide-up">
+        <h3 class="text-lg font-bold text-gray-800 mb-3 flex items-center">
+          <i class="fa fa-commenting-o mr-2 text-primary"></i>
+          <span class="chinese-text">AI智能卜卦</span>
+          <span class="english-text ml-2 text-sm">AI Fortune Telling</span>
+        </h3>
+        <div class="space-y-3">
+          <textarea id="questionInput" placeholder="请输入您想预测的事情，例如：
 1. 我最近的工作运势如何？
 2. 这份感情能有好结果吗？
 3. 投资这个项目会赚钱吗？
@@ -306,1265 +296,1176 @@ Please enter what you want to predict, e.g.:
 
 The system will perform fortune telling based on the current time (solar + lunar + shichen) to predict future trends.
 Please describe the specific matter you want to ask about in clear and concise language."
-              class="mobile-input w-full h-40 resize-none focus:ring-2 focus:ring-primary focus:border-transparent"
-            ></textarea>
-            <button
-              onclick="startFortuneTelling()"
-              class="mobile-button w-full bg-gradient-to-r from-primary to-secondary text-white touch-friendly"
-            >
-              <i class="fa fa-magic mr-2"></i>
-              <span class="chinese-text">开始卜卦分析</span>
-              <span class="english-text ml-2">Start Fortune Telling</span>
-              <span class="chinese-text ml-2">(1元/次)</span>
-              <span class="english-text ml-1">(¥1/time)</span>
-            </button>
-            <p class="text-xs text-gray-500 text-center">
-              <i class="fa fa-info-circle mr-1"></i>
-              <span class="chinese-text"
-                >点击后将扣除1元，获得AI专业分析结果</span
-              >
-              <span class="english-text ml-1"
-                >Click to deduct ¥1 and get AI professional analysis
-                results</span
-              >
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 加载中状态 -->
-      <div id="loadingState" class="hidden mb-6">
-        <div class="bg-white rounded-2xl p-6 card-shadow text-center">
-          <div class="loading-spinner"></div>
-          <p class="text-gray-600 mt-3">
-            <span class="chinese-text">正在为您卜卦分析，请稍候...</span>
-            <span class="english-text ml-1"
-              >Analyzing your fortune, please wait...</span
-            >
-          </p>
-          <p class="text-xs text-gray-500 mt-2">
-            <span class="chinese-text">AI正在调用道门九神算法进行深度分析</span>
-            <span class="english-text ml-1"
-              >AI is using Daoist Nine Gods algorithm for in-depth
-              analysis</span
-            >
-          </p>
-        </div>
-      </div>
-
-      <!-- AI分析结果 -->
-      <div id="aiResult" class="hidden mb-6">
-        <div class="ai-analysis animate-slide-up">
-          <h3 class="text-xl font-bold mb-4 flex items-center">
-            <i class="fa fa-lightbulb-o mr-2"></i>
-            <span class="chinese-text">AI智能分析结果</span>
-            <span class="english-text ml-2"
-              >AI Intelligent Analysis Result</span
-            >
-          </h3>
-          <div id="analysisContent"></div>
-          <button
-            onclick="clearAnalysis()"
-            class="mt-4 bg-white text-primary px-4 py-2 rounded-lg text-sm font-semibold"
-          >
-            <i class="fa fa-times mr-1"></i>
-            <span class="chinese-text">重新卜卦</span>
-            <span class="english-text ml-1">New Fortune Telling</span>
+            class="mobile-input w-full h-40 resize-none focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+          <button onclick="startFortuneTelling()"
+            class="mobile-button w-full bg-gradient-to-r from-primary to-secondary text-white touch-friendly">
+            <i class="fa fa-magic mr-2"></i>
+            <span class="chinese-text">开始卜卦分析</span>
+            <span class="english-text ml-2">Start Fortune Telling</span>
+            <span class="chinese-text ml-2">(1元/次)</span>
+            <span class="english-text ml-1">(¥1/time)</span>
           </button>
-        </div>
-      </div>
-
-      <!-- 道门九神三阶段预测 - 默认隐藏 -->
-      <div id="nineGodsPrediction" class="hidden mb-6">
-        <div class="bg-white rounded-2xl p-6 card-shadow animate-slide-up">
-          <h3 class="text-xl font-bold text-center divine-text mb-6">
-            <i class="fa fa-diamond mr-2"></i>
-            <span class="chinese-text">道门九神三阶段预测</span>
-            <span class="english-text ml-2"
-              >Daoist Nine Gods Three-Stage Prediction</span
-            >
-          </h3>
-
-          <!-- 计算参数 -->
-          <div class="bg-gray-50 rounded-lg p-3 mb-6 text-center">
-            <div class="text-sm text-gray-600">
-              <span class="chinese-text">当前计算参数</span>
-              <span class="english-text ml-1"
-                >Current Calculation Parameters</span
-              >
-            </div>
-            <div
-              class="text-sm font-semibold text-purple-600 mt-1"
-              id="calcParams"
-            >
-              农历九月十九未时 (月:9, 日:19, 时:8)
-              <br />
-              Lunar September 19th, Weishi (Month:9, Day:19, Hour:8)
-            </div>
-          </div>
-
-          <!-- 三阶段结果 -->
-          <div class="space-y-4">
-            <!-- 第一阶段 -->
-            <div
-              class="stage-card bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-4 border border-green-200"
-            >
-              <div class="flex items-center mb-3">
-                <div
-                  class="w-16 h-16 bg-gradient-to-br from-green-500 to-blue-600 rounded-full flex items-center justify-center mr-4 fortune-wheel"
-                >
-                  <div class="text-white text-2xl font-bold" id="firstGodChar">
-                    天
-                  </div>
-                </div>
-                <div>
-                  <div class="text-xs text-green-600 font-semibold">
-                    <span class="chinese-text">第一阶段 · 月上起数</span>
-                    <span class="english-text ml-1"
-                      >Stage 1 · Moon Calculation</span
-                    >
-                  </div>
-                  <div
-                    class="text-xl font-bold text-gray-800"
-                    id="firstGodName"
-                  >
-                    天德
-                  </div>
-                  <div
-                    class="text-sm text-green-600 font-semibold"
-                    id="firstGodLuck"
-                  >
-                    大吉
-                  </div>
-                </div>
-              </div>
-              <div class="bg-white rounded-lg p-3">
-                <div class="text-xs text-gray-600 mb-1">
-                  <span class="chinese-text">断曰：</span>
-                  <span class="english-text ml-1">Prediction:</span>
-                </div>
-                <div
-                  class="text-sm text-gray-700 leading-relaxed"
-                  id="firstGodDesc"
-                >
-                  天德贵人助，逢凶化吉祥，事事有人帮，遇难贵人现，求职顺利成，交易得成功，祈福求平安，福禄自天来。
-                  <br /><br />
-                  Heavenly virtue贵人 helps, turns misfortune into good luck,
-                  everything has help, noble people appear in difficulties, job
-                  search goes smoothly, transactions succeed, pray for peace,
-                  fortune and blessings come from heaven.
-                </div>
-              </div>
-            </div>
-
-            <!-- 第二阶段 -->
-            <div
-              class="stage-card bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-4 border border-purple-200"
-            >
-              <div class="flex items-center mb-3">
-                <div
-                  class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center mr-4 fortune-wheel"
-                >
-                  <div class="text-white text-2xl font-bold" id="secondGodChar">
-                    天
-                  </div>
-                </div>
-                <div>
-                  <div class="text-xs text-purple-600 font-semibold">
-                    <span class="chinese-text">第二阶段 · 日上起数</span>
-                    <span class="english-text ml-1"
-                      >Stage 2 · Sun Calculation</span
-                    >
-                  </div>
-                  <div
-                    class="text-xl font-bold text-gray-800"
-                    id="secondGodName"
-                  >
-                    天德
-                  </div>
-                  <div
-                    class="text-sm text-purple-600 font-semibold"
-                    id="secondGodLuck"
-                  >
-                    大吉
-                  </div>
-                </div>
-              </div>
-              <div class="bg-white rounded-lg p-3">
-                <div class="text-xs text-gray-600 mb-1">
-                  <span class="chinese-text">断曰：</span>
-                  <span class="english-text ml-1">Prediction:</span>
-                </div>
-                <div
-                  class="text-sm text-gray-700 leading-relaxed"
-                  id="secondGodDesc"
-                >
-                  天德贵人助，逢凶化吉祥，事事有人帮，遇难贵人现，求职顺利成，交易得成功，祈福求平安，福禄自天来。
-                  <br /><br />
-                  Heavenly virtue noble helps, turns misfortune into good luck,
-                  everything has help, noble people appear in difficulties, job
-                  search goes smoothly, transactions succeed, pray for peace,
-                  fortune and blessings come from heaven.
-                </div>
-              </div>
-            </div>
-
-            <!-- 第三阶段 -->
-            <div
-              class="stage-card bg-gradient-to-r from-red-50 to-orange-50 rounded-xl p-4 border border-red-200"
-            >
-              <div class="flex items-center mb-3">
-                <div
-                  class="w-16 h-16 bg-gradient-to-br from-red-500 to-orange-600 rounded-full flex items-center justify-center mr-4 fortune-wheel"
-                >
-                  <div class="text-white text-2xl font-bold" id="thirdGodChar">
-                    病
-                  </div>
-                </div>
-                <div>
-                  <div class="text-xs text-red-600 font-semibold">
-                    <span class="chinese-text">第三阶段 · 时上起数</span>
-                    <span class="english-text ml-1"
-                      >Stage 3 · Hour Calculation</span
-                    >
-                  </div>
-                  <div
-                    class="text-xl font-bold text-gray-800"
-                    id="thirdGodName"
-                  >
-                    病符
-                  </div>
-                  <div
-                    class="text-sm text-red-600 font-semibold"
-                    id="thirdGodLuck"
-                  >
-                    凶
-                  </div>
-                </div>
-              </div>
-              <div class="bg-white rounded-lg p-3">
-                <div class="text-xs text-gray-600 mb-1">
-                  <span class="chinese-text">断曰：</span>
-                  <span class="english-text ml-1">Prediction:</span>
-                </div>
-                <div
-                  class="text-sm text-gray-700 leading-relaxed"
-                  id="thirdGodDesc"
-                >
-                  病符主疾病，身体欠安康，凡事多阻碍，办事不顺畅，出行宜谨慎，交易防损伤，祈福保平安，消灾保安康。
-                  <br /><br />
-                  Illness symbol indicates disease, poor health, many obstacles
-                  in everything, things don't go smoothly, travel with caution,
-                  prevent damage in transactions, pray for peace, eliminate
-                  disasters and ensure health.
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 综合分析 -->
-          <div
-            class="mt-6 bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg p-4"
-          >
-            <h4 class="font-bold text-gray-800 mb-3 text-center">
-              <i class="fa fa-lightbulb-o mr-2 text-yellow-500"></i>
-              <span class="chinese-text">综合分析</span>
-              <span class="english-text ml-1">Comprehensive Analysis</span>
-            </h4>
-            <div class="space-y-3 text-sm">
-              <div class="text-center">
-                <div
-                  class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-semibold mb-1"
-                >
-                  <span class="chinese-text">初期</span>
-                  <span class="english-text ml-1">Initial Stage</span>
-                </div>
-                <div class="text-gray-600" id="firstAnalysis">
-                  有贵人相助，事情开始顺利
-                </div>
-                <div class="text-gray-600 text-xs" id="firstAnalysisEn">
-                  Noble people help, things start smoothly
-                </div>
-              </div>
-              <div class="text-center">
-                <div
-                  class="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs font-semibold mb-1"
-                >
-                  <span class="chinese-text">中期</span>
-                  <span class="english-text ml-1">Middle Stage</span>
-                </div>
-                <div class="text-gray-600" id="secondAnalysis">
-                  贵人持续帮助，进展顺利
-                </div>
-                <div class="text-gray-600 text-xs" id="secondAnalysisEn">
-                  Noble people continue to help, progress goes smoothly
-                </div>
-              </div>
-              <div class="text-center">
-                <div
-                  class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs font-semibold mb-1"
-                >
-                  <span class="chinese-text">后期</span>
-                  <span class="english-text ml-1">Final Stage</span>
-                </div>
-                <div class="text-gray-600" id="thirdAnalysis">
-                  需要注意健康问题，防范疾病
-                </div>
-                <div class="text-gray-600 text-xs" id="thirdAnalysisEn">
-                  Need to pay attention to health issues and prevent diseases
-                </div>
-              </div>
-            </div>
-            <div class="mt-4 p-3 bg-white rounded-lg">
-              <div class="text-xs font-semibold text-gray-800 mb-1">
-                <span class="chinese-text">整体结论：</span>
-                <span class="english-text ml-1">Overall Conclusion:</span>
-              </div>
-              <div
-                class="text-sm text-gray-700 leading-relaxed"
-                id="overallConclusion"
-              >
-                整体来看，事情发展前期和中期都有贵人相助，进展顺利。但在后期需要特别注意健康状况，建议提前做好预防措施，保持良好的生活习惯。
-                <br /><br />
-                Overall, the development of things has noble people helping in
-                the early and middle stages, and progress goes smoothly.
-                However, in the later stage, special attention needs to be paid
-                to health conditions. It is recommended to take preventive
-                measures in advance and maintain good living habits.
-              </div>
-            </div>
-          </div>
+          <p class="text-xs text-gray-500 text-center">
+            <i class="fa fa-info-circle mr-1"></i>
+            <span class="chinese-text">点击后将扣除1元，获得AI专业分析结果</span>
+            <span class="english-text ml-1">Click to deduct ¥1 and get AI professional analysis
+              results</span>
+          </p>
         </div>
       </div>
     </div>
 
-    <!-- 支付弹窗 -->
-    <div id="paymentModal" class="payment-modal">
-      <div class="payment-content">
-        <div class="text-4xl mb-4">💰</div>
-        <h3 class="text-xl font-bold text-gray-800 mb-2">
-          <span class="chinese-text">确认支付</span>
-          <span class="english-text ml-1">Confirm Payment</span>
+    <!-- 加载中状态 -->
+    <div id="loadingState" class="hidden mb-6">
+      <div class="bg-white rounded-2xl p-6 card-shadow text-center">
+        <div class="loading-spinner"></div>
+        <p class="text-gray-600 mt-3">
+          <span class="chinese-text">正在为您卜卦分析，请稍候...</span>
+          <span class="english-text ml-1">Analyzing your fortune, please wait...</span>
+        </p>
+        <p class="text-xs text-gray-500 mt-2">
+          <span class="chinese-text">AI正在调用道门九神算法进行深度分析</span>
+          <span class="english-text ml-1">AI is using Daoist Nine Gods algorithm for in-depth
+            analysis</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- AI分析结果 -->
+    <div id="aiResult" class="hidden mb-6">
+      <div class="ai-analysis animate-slide-up">
+        <h3 class="text-xl font-bold mb-4 flex items-center">
+          <i class="fa fa-lightbulb-o mr-2"></i>
+          <span class="chinese-text">AI智能分析结果</span>
+          <span class="english-text ml-2">AI Intelligent Analysis Result</span>
         </h3>
-        <p class="text-gray-600 mb-6">
-          <span class="chinese-text">您即将支付</span>
-          <span class="english-text ml-1">You are about to pay</span>
-          <span class="font-bold text-primary">1元</span>
-          <span class="chinese-text ml-1">进行卜卦分析</span>
-          <span class="english-text ml-1">for fortune telling analysis</span>
-        </p>
-        <div class="space-y-3">
-          <button
-            class="mobile-button w-full bg-success text-white touch-friendly"
-          >
-            <i class="fa fa-check mr-2"></i>
-            <span class="chinese-text confirm-btn">确认支付</span>
-            <span class="english-text ml-1">Confirm Payment</span>
-          </button>
-          <button
-            onclick="cancelPayment()"
-            class="mobile-button w-full bg-gray-200 text-gray-700 touch-friendly"
-          >
-            <i class="fa fa-times mr-2"></i>
-            <span class="chinese-text">取消支付</span>
-            <span class="english-text ml-1">Cancel Payment</span>
-          </button>
-        </div>
-        <p class="text-xs text-gray-500 mt-4">
-          <i class="fa fa-lock mr-1"></i>
-          <span class="chinese-text">支付安全，支持微信、支付宝</span>
-          <span class="english-text ml-1"
-            >Secure payment, supports WeChat and Alipay</span
-          >
-        </p>
+        <div id="analysisContent"></div>
+        <button onclick="clearAnalysis()" class="mt-4 bg-white text-primary px-4 py-2 rounded-lg text-sm font-semibold">
+          <i class="fa fa-times mr-1"></i>
+          <span class="chinese-text">重新卜卦</span>
+          <span class="english-text ml-1">New Fortune Telling</span>
+        </button>
       </div>
     </div>
 
-    <!-- 页脚 -->
-    <footer class="bg-gray-800 text-white py-6 mt-8">
-      <div class="mobile-container text-center">
-        <p class="text-gray-400 text-sm mb-2">
-          <i class="fa fa-yin-yang mr-2"></i>
-          <span class="chinese-text">传承道家文化，弘扬传统文化精髓</span>
-          <span class="english-text ml-1"
-            >Inheriting Daoist culture, promoting traditional cultural
-            essence</span
-          >
-        </p>
-        <p class="text-gray-500 text-xs">
-          <span class="chinese-text"
-            >本应用仅供传统文化学习研究，结果仅供参考</span
-          >
-          <span class="english-text ml-1"
-            >This application is for traditional culture study and research
-            only, results are for reference only</span
-          >
-        </p>
+    <!-- 道门九神三阶段预测 - 默认隐藏 -->
+    <div id="nineGodsPrediction" class="hidden mb-6">
+      <div class="bg-white rounded-2xl p-6 card-shadow animate-slide-up">
+        <h3 class="text-xl font-bold text-center divine-text mb-6">
+          <i class="fa fa-diamond mr-2"></i>
+          <span class="chinese-text">道门九神三阶段预测</span>
+          <span class="english-text ml-2">Daoist Nine Gods Three-Stage Prediction</span>
+        </h3>
+
+        <!-- 计算参数 -->
+        <div class="bg-gray-50 rounded-lg p-3 mb-6 text-center">
+          <div class="text-sm text-gray-600">
+            <span class="chinese-text">当前计算参数</span>
+            <span class="english-text ml-1">Current Calculation Parameters</span>
+          </div>
+          <div class="text-sm font-semibold text-purple-600 mt-1" id="calcParams">
+            农历九月十九未时 (月:9, 日:19, 时:8)
+            <br />
+            Lunar September 19th, Weishi (Month:9, Day:19, Hour:8)
+          </div>
+        </div>
+
+        <!-- 三阶段结果 -->
+        <div class="space-y-4">
+          <!-- 第一阶段 -->
+          <div class="stage-card bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-4 border border-green-200">
+            <div class="flex items-center mb-3">
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-green-500 to-blue-600 rounded-full flex items-center justify-center mr-4 fortune-wheel">
+                <div class="text-white text-2xl font-bold" id="firstGodChar">
+                  天
+                </div>
+              </div>
+              <div>
+                <div class="text-xs text-green-600 font-semibold">
+                  <span class="chinese-text">第一阶段 · 月上起数</span>
+                  <span class="english-text ml-1">Stage 1 · Moon Calculation</span>
+                </div>
+                <div class="text-xl font-bold text-gray-800" id="firstGodName">
+                  天德
+                </div>
+                <div class="text-sm text-green-600 font-semibold" id="firstGodLuck">
+                  大吉
+                </div>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg p-3">
+              <div class="text-xs text-gray-600 mb-1">
+                <span class="chinese-text">断曰：</span>
+                <span class="english-text ml-1">Prediction:</span>
+              </div>
+              <div class="text-sm text-gray-700 leading-relaxed" id="firstGodDesc">
+                天德贵人助，逢凶化吉祥，事事有人帮，遇难贵人现，求职顺利成，交易得成功，祈福求平安，福禄自天来。
+                <br /><br />
+                Heavenly virtue贵人 helps, turns misfortune into good luck,
+                everything has help, noble people appear in difficulties, job
+                search goes smoothly, transactions succeed, pray for peace,
+                fortune and blessings come from heaven.
+              </div>
+            </div>
+          </div>
+
+          <!-- 第二阶段 -->
+          <div class="stage-card bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-4 border border-purple-200">
+            <div class="flex items-center mb-3">
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center mr-4 fortune-wheel">
+                <div class="text-white text-2xl font-bold" id="secondGodChar">
+                  天
+                </div>
+              </div>
+              <div>
+                <div class="text-xs text-purple-600 font-semibold">
+                  <span class="chinese-text">第二阶段 · 日上起数</span>
+                  <span class="english-text ml-1">Stage 2 · Sun Calculation</span>
+                </div>
+                <div class="text-xl font-bold text-gray-800" id="secondGodName">
+                  天德
+                </div>
+                <div class="text-sm text-purple-600 font-semibold" id="secondGodLuck">
+                  大吉
+                </div>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg p-3">
+              <div class="text-xs text-gray-600 mb-1">
+                <span class="chinese-text">断曰：</span>
+                <span class="english-text ml-1">Prediction:</span>
+              </div>
+              <div class="text-sm text-gray-700 leading-relaxed" id="secondGodDesc">
+                天德贵人助，逢凶化吉祥，事事有人帮，遇难贵人现，求职顺利成，交易得成功，祈福求平安，福禄自天来。
+                <br /><br />
+                Heavenly virtue noble helps, turns misfortune into good luck,
+                everything has help, noble people appear in difficulties, job
+                search goes smoothly, transactions succeed, pray for peace,
+                fortune and blessings come from heaven.
+              </div>
+            </div>
+          </div>
+
+          <!-- 第三阶段 -->
+          <div class="stage-card bg-gradient-to-r from-red-50 to-orange-50 rounded-xl p-4 border border-red-200">
+            <div class="flex items-center mb-3">
+              <div
+                class="w-16 h-16 bg-gradient-to-br from-red-500 to-orange-600 rounded-full flex items-center justify-center mr-4 fortune-wheel">
+                <div class="text-white text-2xl font-bold" id="thirdGodChar">
+                  病
+                </div>
+              </div>
+              <div>
+                <div class="text-xs text-red-600 font-semibold">
+                  <span class="chinese-text">第三阶段 · 时上起数</span>
+                  <span class="english-text ml-1">Stage 3 · Hour Calculation</span>
+                </div>
+                <div class="text-xl font-bold text-gray-800" id="thirdGodName">
+                  病符
+                </div>
+                <div class="text-sm text-red-600 font-semibold" id="thirdGodLuck">
+                  凶
+                </div>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg p-3">
+              <div class="text-xs text-gray-600 mb-1">
+                <span class="chinese-text">断曰：</span>
+                <span class="english-text ml-1">Prediction:</span>
+              </div>
+              <div class="text-sm text-gray-700 leading-relaxed" id="thirdGodDesc">
+                病符主疾病，身体欠安康，凡事多阻碍，办事不顺畅，出行宜谨慎，交易防损伤，祈福保平安，消灾保安康。
+                <br /><br />
+                Illness symbol indicates disease, poor health, many obstacles
+                in everything, things don't go smoothly, travel with caution,
+                prevent damage in transactions, pray for peace, eliminate
+                disasters and ensure health.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 综合分析 -->
+        <div class="mt-6 bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg p-4">
+          <h4 class="font-bold text-gray-800 mb-3 text-center">
+            <i class="fa fa-lightbulb-o mr-2 text-yellow-500"></i>
+            <span class="chinese-text">综合分析</span>
+            <span class="english-text ml-1">Comprehensive Analysis</span>
+          </h4>
+          <div class="space-y-3 text-sm">
+            <div class="text-center">
+              <div class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-semibold mb-1">
+                <span class="chinese-text">初期</span>
+                <span class="english-text ml-1">Initial Stage</span>
+              </div>
+              <div class="text-gray-600" id="firstAnalysis">
+                有贵人相助，事情开始顺利
+              </div>
+              <div class="text-gray-600 text-xs" id="firstAnalysisEn">
+                Noble people help, things start smoothly
+              </div>
+            </div>
+            <div class="text-center">
+              <div class="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs font-semibold mb-1">
+                <span class="chinese-text">中期</span>
+                <span class="english-text ml-1">Middle Stage</span>
+              </div>
+              <div class="text-gray-600" id="secondAnalysis">
+                贵人持续帮助，进展顺利
+              </div>
+              <div class="text-gray-600 text-xs" id="secondAnalysisEn">
+                Noble people continue to help, progress goes smoothly
+              </div>
+            </div>
+            <div class="text-center">
+              <div class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-xs font-semibold mb-1">
+                <span class="chinese-text">后期</span>
+                <span class="english-text ml-1">Final Stage</span>
+              </div>
+              <div class="text-gray-600" id="thirdAnalysis">
+                需要注意健康问题，防范疾病
+              </div>
+              <div class="text-gray-600 text-xs" id="thirdAnalysisEn">
+                Need to pay attention to health issues and prevent diseases
+              </div>
+            </div>
+          </div>
+          <div class="mt-4 p-3 bg-white rounded-lg">
+            <div class="text-xs font-semibold text-gray-800 mb-1">
+              <span class="chinese-text">整体结论：</span>
+              <span class="english-text ml-1">Overall Conclusion:</span>
+            </div>
+            <div class="text-sm text-gray-700 leading-relaxed" id="overallConclusion">
+              整体来看，事情发展前期和中期都有贵人相助，进展顺利。但在后期需要特别注意健康状况，建议提前做好预防措施，保持良好的生活习惯。
+              <br /><br />
+              Overall, the development of things has noble people helping in
+              the early and middle stages, and progress goes smoothly.
+              However, in the later stage, special attention needs to be paid
+              to health conditions. It is recommended to take preventive
+              measures in advance and maintain good living habits.
+            </div>
+          </div>
+        </div>
       </div>
-    </footer>
+    </div>
+  </div>
 
-    <script>
-      // 道门九神定义 - 双语版
-      const NINE_GODS = [
-        {
-          name: "大安",
-          nameEn: "Da An",
-          luck: "大吉",
-          luckEn: "Great Auspicious",
-          color: "text-green-600",
-          bgColor: "bg-green-100",
-          bgGradient: "from-green-500 to-blue-600",
-          description:
-            "大安事事昌，求财在坤方，失物去不远，宅舍保安康，行人身未动，病者主无妨，将军回田野，仔细与推详。",
-          descriptionEn:
-            "Da An means everything prospers, seeking wealth in the southwest, lost items are not far, home is safe and healthy, travelers have not moved, patients are fine, general returns to the fields, carefully analyze.",
-          meaning: "静止、心安、吉祥，主安稳无忧",
-          meaningEn:
-            "Static, peaceful, auspicious, mainly stable and worry-free",
-        },
-        {
-          name: "留连",
-          nameEn: "Liu Lian",
-          luck: "中平",
-          luckEn: "Medium Peace",
-          color: "text-yellow-600",
-          bgColor: "bg-yellow-100",
-          bgGradient: "from-yellow-500 to-orange-600",
-          description:
-            "留连事难成，求谋日未明，官事只宜缓，去者未回程，失物南方见，急讨方称心，更须防口舌，人口且平平。",
-          descriptionEn:
-            "Liu Lian means things are difficult to accomplish, plans are unclear, official matters should be delayed, those who left have not returned, lost items seen in south, urgent request to be satisfied, need to prevent disputes, people are average.",
-          meaning: "暗昧不明、延迟、纠缠、拖延",
-          meaningEn: "Ambiguous, delayed, entangled, procrastinated",
-        },
-        {
-          name: "速喜",
-          nameEn: "Su Xi",
-          luck: "吉",
-          luckEn: "Auspicious",
-          color: "text-red-600",
-          bgColor: "bg-red-100",
-          bgGradient: "from-red-500 to-pink-600",
-          description:
-            "速喜喜来临，求财向南行，失物申未午，逢人路上寻，官事有福德，病者无祸侵，田定六畜吉，行人有信音。",
-          descriptionEn:
-            "Su Xi means joy comes quickly, seek wealth by going south, lost items in afternoon, meet people on the road, official matters have blessing, patients have no misfortune, fields and livestock are auspicious, travelers have news.",
-          meaning: "快速、喜庆、吉利，时机已到",
-          meaningEn: "Fast, festive, auspicious, the time has come",
-        },
-        {
-          name: "赤口",
-          nameEn: "Chi Kou",
-          luck: "凶",
-          luckEn: "Inauspicious",
-          color: "text-red-800",
-          bgColor: "bg-red-100",
-          bgGradient: "from-red-600 to-red-800",
-          description:
-            "赤口主口舌，官非切要防，失物急去寻，行人有惊慌，鸡犬多作怪，病者出西方，更须防咒诅，恐怕染瘟癀。",
-          descriptionEn:
-            "Chi Kou means disputes and arguments, need to prevent lawsuits, lost items need urgent search, travelers are alarmed, chickens and dogs act strangely, patients go west, need to prevent curses, afraid of getting瘟疫.",
-          meaning: "不吉、惊恐、凶险、争执",
-          meaningEn: "Inauspicious, alarming, dangerous, dispute",
-        },
-        {
-          name: "小吉",
-          nameEn: "Xiao Ji",
-          luck: "吉",
-          luckEn: "Auspicious",
-          color: "text-blue-600",
-          bgColor: "bg-blue-100",
-          bgGradient: "from-blue-500 to-cyan-600",
-          description:
-            "小吉最吉昌，路上好商量，阴人来报喜，失物在坤方，行人立便至，交关甚是强，凡事皆和合，病者祷上苍。",
-          descriptionEn:
-            "Xiao Ji means most auspicious, good to discuss on the road, women come to report good news, lost items in southwest, travelers arrive immediately, transactions are very strong, everything is harmonious, patients pray to heaven.",
-          meaning: "和合、吉利、小有收获",
-          meaningEn: "Harmonious, auspicious, small harvest",
-        },
-        {
-          name: "空亡",
-          nameEn: "Kong Wang",
-          luck: "大凶",
-          luckEn: "Great Inauspicious",
-          color: "text-gray-600",
-          bgColor: "bg-gray-100",
-          bgGradient: "from-gray-500 to-gray-700",
-          description:
-            "空亡事不长，阴人小乖张，求财无利益，行人有灾殃，失物寻不见，官事有刑场，病人逢暗鬼，禳解保安康。",
-          descriptionEn:
-            "Kong Wang means things don't last long, women are a bit unruly, seeking wealth has no benefit, travelers have disasters, lost items cannot be found, official matters have execution ground, patients meet dark ghosts, need to pray for peace and health.",
-          meaning: "不吉、无结果、忧虑、虚空",
-          meaningEn: "Inauspicious, no result, worry, empty",
-        },
-        {
-          name: "病符",
-          nameEn: "Bing Fu",
-          luck: "凶",
-          luckEn: "Inauspicious",
-          color: "text-purple-600",
-          bgColor: "bg-purple-100",
-          bgGradient: "from-purple-500 to-indigo-600",
-          description:
-            "病符主疾病，身体欠安康，凡事多阻碍，办事不顺畅，出行宜谨慎，交易防损伤，祈福保平安，消灾保安康。",
-          descriptionEn:
-            "Bing Fu means illness, poor health, many obstacles in everything, things don't go smoothly, travel with caution, prevent damage in transactions, pray for peace, eliminate disasters and ensure health.",
-          meaning: "病态、异常、治疗，过程难受，事情不顺利",
-          meaningEn:
-            "Pathological, abnormal, treatment, uncomfortable process, things not going well",
-        },
-        {
-          name: "桃花",
-          nameEn: "Tao Hua",
-          luck: "中平",
-          luckEn: "Medium Peace",
-          color: "text-pink-600",
-          bgColor: "bg-pink-100",
-          bgGradient: "from-pink-500 to-rose-600",
-          description:
-            "桃花主情缘，异性缘旺盛，婚恋有机会，交友须谨慎，防烂桃花，破财招是非，正缘宜珍惜，邪缘要远离。",
-          descriptionEn:
-            "Tao Hua means love and romance, strong opposite-sex attraction, marriage opportunities, need to be cautious in making friends, prevent bad relationships, lose money and cause trouble, cherish true love, stay away from evil relationships.",
-          meaning: "欲望、牵绊、异性相关，除恋爱婚姻外，占得不太好",
-          meaningEn:
-            "Desire, entanglement, related to opposite sex, not very good except for love and marriage",
-        },
-        {
-          name: "天德",
-          nameEn: "Tian De",
-          luck: "大吉",
-          luckEn: "Great Auspicious",
-          color: "text-indigo-600",
-          bgColor: "bg-indigo-100",
-          bgGradient: "from-indigo-500 to-purple-600",
-          description:
-            "天德贵人助，逢凶化吉祥，事事有人帮，遇难贵人现，求职顺利成，交易得成功，祈福求平安，福禄自天来。",
-          descriptionEn:
-            "Tian De means noble people help, turn misfortune into good luck, everything has help, noble people appear in difficulties, job search goes smoothly, transactions succeed, pray for peace, fortune and blessings come from heaven.",
-          meaning: "贵人、上司、高远，求人办事有贵人相助",
-          meaningEn:
-            "Noble person, superior, lofty, someone to help when asking for things",
-        },
-      ];
+  <!-- 支付弹窗 -->
+  <div id="paymentModal" class="payment-modal">
+    <div class="payment-content">
+      <div class="text-4xl mb-4">💰</div>
+      <h3 class="text-xl font-bold text-gray-800 mb-2">
+        <span class="chinese-text">确认支付</span>
+        <span class="english-text ml-1">Confirm Payment</span>
+      </h3>
+      <p class="text-gray-600 mb-6">
+        <span class="chinese-text">您即将支付</span>
+        <span class="english-text ml-1">You are about to pay</span>
+        <span class="font-bold text-primary">1元</span>
+        <span class="chinese-text ml-1">进行卜卦分析</span>
+        <span class="english-text ml-1">for fortune telling analysis</span>
+      </p>
+      <div class="space-y-3">
+        <button class="mobile-button w-full bg-success text-white touch-friendly">
+          <i class="fa fa-check mr-2"></i>
+          <span class="chinese-text confirm-btn">确认支付</span>
+          <span class="english-text ml-1">Confirm Payment</span>
+        </button>
+        <button onclick="cancelPayment()" class="mobile-button w-full bg-gray-200 text-gray-700 touch-friendly">
+          <i class="fa fa-times mr-2"></i>
+          <span class="chinese-text">取消支付</span>
+          <span class="english-text ml-1">Cancel Payment</span>
+        </button>
+      </div>
+      <p class="text-xs text-gray-500 mt-4">
+        <i class="fa fa-lock mr-1"></i>
+        <span class="chinese-text">支付安全，支持微信、支付宝</span>
+        <span class="english-text ml-1">Secure payment, supports WeChat and Alipay</span>
+      </p>
+    </div>
+  </div>
 
-      // 时辰对应表 - 双语版
-      const SHICHEN = [
-        { name: "子时", nameEn: "Zi Shi", period: "23:00-01:00" },
-        { name: "丑时", nameEn: "Chou Shi", period: "01:00-03:00" },
-        { name: "寅时", nameEn: "Yin Shi", period: "03:00-05:00" },
-        { name: "卯时", nameEn: "Mao Shi", period: "05:00-07:00" },
-        { name: "辰时", nameEn: "Chen Shi", period: "07:00-09:00" },
-        { name: "巳时", nameEn: "Si Shi", period: "09:00-11:00" },
-        { name: "午时", nameEn: "Wu Shi", period: "11:00-13:00" },
-        { name: "未时", nameEn: "Wei Shi", period: "13:00-15:00" },
-        { name: "申时", nameEn: "Shen Shi", period: "15:00-17:00" },
-        { name: "酉时", nameEn: "You Shi", period: "17:00-19:00" },
-        { name: "戌时", nameEn: "Xu Shi", period: "19:00-21:00" },
-        { name: "亥时", nameEn: "Hai Shi", period: "21:00-23:00" },
-      ];
+  <!-- 页脚 -->
+  <footer class="bg-gray-800 text-white py-6 mt-8">
+    <div class="mobile-container text-center">
+      <p class="text-gray-400 text-sm mb-2">
+        <i class="fa fa-yin-yang mr-2"></i>
+        <span class="chinese-text">传承道家文化，弘扬传统文化精髓</span>
+        <span class="english-text ml-1">Inheriting Daoist culture, promoting traditional cultural
+          essence</span>
+      </p>
+      <p class="text-gray-500 text-xs">
+        <span class="chinese-text">本应用仅供传统文化学习研究，结果仅供参考</span>
+        <span class="english-text ml-1">This application is for traditional culture study and research
+          only, results are for reference only</span>
+      </p>
+    </div>
+  </footer>
 
-      // 2025年农历九月详细对照表
-      const LUNAR_2025_SEPTEMBER = {
-        "2025-10-21": {
-          month: 9,
-          day: 1,
-          monthName: "九月",
-          dayName: "初一",
-          monthNameEn: "September",
-          dayNameEn: "1st",
-        },
-        "2025-10-22": {
-          month: 9,
-          day: 2,
-          monthName: "九月",
-          dayName: "初二",
-          monthNameEn: "September",
-          dayNameEn: "2nd",
-        },
-        "2025-10-23": {
-          month: 9,
-          day: 3,
-          monthName: "九月",
-          dayName: "初三",
-          monthNameEn: "September",
-          dayNameEn: "3rd",
-        },
-        "2025-10-24": {
-          month: 9,
-          day: 4,
-          monthName: "九月",
-          dayName: "初四",
-          monthNameEn: "September",
-          dayNameEn: "4th",
-        },
-        "2025-10-25": {
-          month: 9,
-          day: 5,
-          monthName: "九月",
-          dayName: "初五",
-          monthNameEn: "September",
-          dayNameEn: "5th",
-        },
-        "2025-10-26": {
-          month: 9,
-          day: 6,
-          monthName: "九月",
-          dayName: "初六",
-          monthNameEn: "September",
-          dayNameEn: "6th",
-        },
-        "2025-10-27": {
-          month: 9,
-          day: 7,
-          monthName: "九月",
-          dayName: "初七",
-          monthNameEn: "September",
-          dayNameEn: "7th",
-        },
-        "2025-10-28": {
-          month: 9,
-          day: 8,
-          monthName: "九月",
-          dayName: "初八",
-          monthNameEn: "September",
-          dayNameEn: "8th",
-        },
-        "2025-10-29": {
-          month: 9,
-          day: 9,
-          monthName: "九月",
-          dayName: "初九",
-          monthNameEn: "September",
-          dayNameEn: "9th",
-        },
-        "2025-10-30": {
-          month: 9,
-          day: 10,
-          monthName: "九月",
-          dayName: "初十",
-          monthNameEn: "September",
-          dayNameEn: "10th",
-        },
-        "2025-10-31": {
-          month: 9,
-          day: 11,
-          monthName: "九月",
-          dayName: "十一",
-          monthNameEn: "September",
-          dayNameEn: "11th",
-        },
-        "2025-11-01": {
-          month: 9,
-          day: 12,
-          monthName: "九月",
-          dayName: "十二",
-          monthNameEn: "September",
-          dayNameEn: "12th",
-        },
-        "2025-11-02": {
-          month: 9,
-          day: 13,
-          monthName: "九月",
-          dayName: "十三",
-          monthNameEn: "September",
-          dayNameEn: "13th",
-        },
-        "2025-11-03": {
-          month: 9,
-          day: 14,
-          monthName: "九月",
-          dayName: "十四",
-          monthNameEn: "September",
-          dayNameEn: "14th",
-        },
-        "2025-11-04": {
-          month: 9,
-          day: 15,
-          monthName: "九月",
-          dayName: "十五",
-          monthNameEn: "September",
-          dayNameEn: "15th",
-        },
-        "2025-11-05": {
-          month: 9,
-          day: 16,
-          monthName: "九月",
-          dayName: "十六",
-          monthNameEn: "September",
-          dayNameEn: "16th",
-        },
-        "2025-11-06": {
-          month: 9,
-          day: 17,
-          monthName: "九月",
-          dayName: "十七",
-          monthNameEn: "September",
-          dayNameEn: "17th",
-        },
-        "2025-11-07": {
-          month: 9,
-          day: 18,
-          monthName: "九月",
-          dayName: "十八",
-          monthNameEn: "September",
-          dayNameEn: "18th",
-        },
-        "2025-11-08": {
-          month: 9,
-          day: 19,
-          monthName: "九月",
-          dayName: "十九",
-          monthNameEn: "September",
-          dayNameEn: "19th",
-        },
-        "2025-11-09": {
-          month: 9,
-          day: 20,
-          monthName: "九月",
-          dayName: "二十",
-          monthNameEn: "September",
-          dayNameEn: "20th",
-        },
-        "2025-11-10": {
-          month: 9,
-          day: 21,
-          monthName: "九月",
-          dayName: "廿一",
-          monthNameEn: "September",
-          dayNameEn: "21st",
-        },
-        "2025-11-11": {
-          month: 9,
-          day: 22,
-          monthName: "九月",
-          dayName: "廿二",
-          monthNameEn: "September",
-          dayNameEn: "22nd",
-        },
-        "2025-11-12": {
-          month: 9,
-          day: 23,
-          monthName: "九月",
-          dayName: "廿三",
-          monthNameEn: "September",
-          dayNameEn: "23rd",
-        },
-        "2025-11-13": {
-          month: 9,
-          day: 24,
-          monthName: "九月",
-          dayName: "廿四",
-          monthNameEn: "September",
-          dayNameEn: "24th",
-        },
-        "2025-11-14": {
-          month: 9,
-          day: 25,
-          monthName: "九月",
-          dayName: "廿五",
-          monthNameEn: "September",
-          dayNameEn: "25th",
-        },
-        "2025-11-15": {
-          month: 9,
-          day: 26,
-          monthName: "九月",
-          dayName: "廿六",
-          monthNameEn: "September",
-          dayNameEn: "26th",
-        },
-        "2025-11-16": {
-          month: 9,
-          day: 27,
-          monthName: "九月",
-          dayName: "廿七",
-          monthNameEn: "September",
-          dayNameEn: "27th",
-        },
-        "2025-11-17": {
-          month: 9,
-          day: 28,
-          monthName: "九月",
-          dayName: "廿八",
-          monthNameEn: "September",
-          dayNameEn: "28th",
-        },
-        "2025-11-18": {
-          month: 9,
-          day: 29,
-          monthName: "九月",
-          dayName: "廿九",
-          monthNameEn: "September",
-          dayNameEn: "29th",
-        },
-        "2025-11-19": {
-          month: 9,
-          day: 30,
-          monthName: "九月",
-          dayName: "三十",
-          monthNameEn: "September",
-          dayNameEn: "30th",
-        },
-      };
+  <script>
+    // 道门九神定义 - 双语版
+    const NINE_GODS = [
+      {
+        name: "大安",
+        nameEn: "Da An",
+        luck: "大吉",
+        luckEn: "Great Auspicious",
+        color: "text-green-600",
+        bgColor: "bg-green-100",
+        bgGradient: "from-green-500 to-blue-600",
+        description:
+          "大安事事昌，求财在坤方，失物去不远，宅舍保安康，行人身未动，病者主无妨，将军回田野，仔细与推详。",
+        descriptionEn:
+          "Da An means everything prospers, seeking wealth in the southwest, lost items are not far, home is safe and healthy, travelers have not moved, patients are fine, general returns to the fields, carefully analyze.",
+        meaning: "静止、心安、吉祥，主安稳无忧",
+        meaningEn:
+          "Static, peaceful, auspicious, mainly stable and worry-free",
+      },
+      {
+        name: "留连",
+        nameEn: "Liu Lian",
+        luck: "中平",
+        luckEn: "Medium Peace",
+        color: "text-yellow-600",
+        bgColor: "bg-yellow-100",
+        bgGradient: "from-yellow-500 to-orange-600",
+        description:
+          "留连事难成，求谋日未明，官事只宜缓，去者未回程，失物南方见，急讨方称心，更须防口舌，人口且平平。",
+        descriptionEn:
+          "Liu Lian means things are difficult to accomplish, plans are unclear, official matters should be delayed, those who left have not returned, lost items seen in south, urgent request to be satisfied, need to prevent disputes, people are average.",
+        meaning: "暗昧不明、延迟、纠缠、拖延",
+        meaningEn: "Ambiguous, delayed, entangled, procrastinated",
+      },
+      {
+        name: "速喜",
+        nameEn: "Su Xi",
+        luck: "吉",
+        luckEn: "Auspicious",
+        color: "text-red-600",
+        bgColor: "bg-red-100",
+        bgGradient: "from-red-500 to-pink-600",
+        description:
+          "速喜喜来临，求财向南行，失物申未午，逢人路上寻，官事有福德，病者无祸侵，田定六畜吉，行人有信音。",
+        descriptionEn:
+          "Su Xi means joy comes quickly, seek wealth by going south, lost items in afternoon, meet people on the road, official matters have blessing, patients have no misfortune, fields and livestock are auspicious, travelers have news.",
+        meaning: "快速、喜庆、吉利，时机已到",
+        meaningEn: "Fast, festive, auspicious, the time has come",
+      },
+      {
+        name: "赤口",
+        nameEn: "Chi Kou",
+        luck: "凶",
+        luckEn: "Inauspicious",
+        color: "text-red-800",
+        bgColor: "bg-red-100",
+        bgGradient: "from-red-600 to-red-800",
+        description:
+          "赤口主口舌，官非切要防，失物急去寻，行人有惊慌，鸡犬多作怪，病者出西方，更须防咒诅，恐怕染瘟癀。",
+        descriptionEn:
+          "Chi Kou means disputes and arguments, need to prevent lawsuits, lost items need urgent search, travelers are alarmed, chickens and dogs act strangely, patients go west, need to prevent curses, afraid of getting瘟疫.",
+        meaning: "不吉、惊恐、凶险、争执",
+        meaningEn: "Inauspicious, alarming, dangerous, dispute",
+      },
+      {
+        name: "小吉",
+        nameEn: "Xiao Ji",
+        luck: "吉",
+        luckEn: "Auspicious",
+        color: "text-blue-600",
+        bgColor: "bg-blue-100",
+        bgGradient: "from-blue-500 to-cyan-600",
+        description:
+          "小吉最吉昌，路上好商量，阴人来报喜，失物在坤方，行人立便至，交关甚是强，凡事皆和合，病者祷上苍。",
+        descriptionEn:
+          "Xiao Ji means most auspicious, good to discuss on the road, women come to report good news, lost items in southwest, travelers arrive immediately, transactions are very strong, everything is harmonious, patients pray to heaven.",
+        meaning: "和合、吉利、小有收获",
+        meaningEn: "Harmonious, auspicious, small harvest",
+      },
+      {
+        name: "空亡",
+        nameEn: "Kong Wang",
+        luck: "大凶",
+        luckEn: "Great Inauspicious",
+        color: "text-gray-600",
+        bgColor: "bg-gray-100",
+        bgGradient: "from-gray-500 to-gray-700",
+        description:
+          "空亡事不长，阴人小乖张，求财无利益，行人有灾殃，失物寻不见，官事有刑场，病人逢暗鬼，禳解保安康。",
+        descriptionEn:
+          "Kong Wang means things don't last long, women are a bit unruly, seeking wealth has no benefit, travelers have disasters, lost items cannot be found, official matters have execution ground, patients meet dark ghosts, need to pray for peace and health.",
+        meaning: "不吉、无结果、忧虑、虚空",
+        meaningEn: "Inauspicious, no result, worry, empty",
+      },
+      {
+        name: "病符",
+        nameEn: "Bing Fu",
+        luck: "凶",
+        luckEn: "Inauspicious",
+        color: "text-purple-600",
+        bgColor: "bg-purple-100",
+        bgGradient: "from-purple-500 to-indigo-600",
+        description:
+          "病符主疾病，身体欠安康，凡事多阻碍，办事不顺畅，出行宜谨慎，交易防损伤，祈福保平安，消灾保安康。",
+        descriptionEn:
+          "Bing Fu means illness, poor health, many obstacles in everything, things don't go smoothly, travel with caution, prevent damage in transactions, pray for peace, eliminate disasters and ensure health.",
+        meaning: "病态、异常、治疗，过程难受，事情不顺利",
+        meaningEn:
+          "Pathological, abnormal, treatment, uncomfortable process, things not going well",
+      },
+      {
+        name: "桃花",
+        nameEn: "Tao Hua",
+        luck: "中平",
+        luckEn: "Medium Peace",
+        color: "text-pink-600",
+        bgColor: "bg-pink-100",
+        bgGradient: "from-pink-500 to-rose-600",
+        description:
+          "桃花主情缘，异性缘旺盛，婚恋有机会，交友须谨慎，防烂桃花，破财招是非，正缘宜珍惜，邪缘要远离。",
+        descriptionEn:
+          "Tao Hua means love and romance, strong opposite-sex attraction, marriage opportunities, need to be cautious in making friends, prevent bad relationships, lose money and cause trouble, cherish true love, stay away from evil relationships.",
+        meaning: "欲望、牵绊、异性相关，除恋爱婚姻外，占得不太好",
+        meaningEn:
+          "Desire, entanglement, related to opposite sex, not very good except for love and marriage",
+      },
+      {
+        name: "天德",
+        nameEn: "Tian De",
+        luck: "大吉",
+        luckEn: "Great Auspicious",
+        color: "text-indigo-600",
+        bgColor: "bg-indigo-100",
+        bgGradient: "from-indigo-500 to-purple-600",
+        description:
+          "天德贵人助，逢凶化吉祥，事事有人帮，遇难贵人现，求职顺利成，交易得成功，祈福求平安，福禄自天来。",
+        descriptionEn:
+          "Tian De means noble people help, turn misfortune into good luck, everything has help, noble people appear in difficulties, job search goes smoothly, transactions succeed, pray for peace, fortune and blessings come from heaven.",
+        meaning: "贵人、上司、高远，求人办事有贵人相助",
+        meaningEn:
+          "Noble person, superior, lofty, someone to help when asking for things",
+      },
+    ];
 
-      // 农历转换函数
-      function convertSolarToLunar(date) {
-        const dateStr = date.toISOString().split("T")[0];
+    // 时辰对应表 - 双语版
+    const SHICHEN = [
+      { name: "子时", nameEn: "Zi Shi", period: "23:00-01:00" },
+      { name: "丑时", nameEn: "Chou Shi", period: "01:00-03:00" },
+      { name: "寅时", nameEn: "Yin Shi", period: "03:00-05:00" },
+      { name: "卯时", nameEn: "Mao Shi", period: "05:00-07:00" },
+      { name: "辰时", nameEn: "Chen Shi", period: "07:00-09:00" },
+      { name: "巳时", nameEn: "Si Shi", period: "09:00-11:00" },
+      { name: "午时", nameEn: "Wu Shi", period: "11:00-13:00" },
+      { name: "未时", nameEn: "Wei Shi", period: "13:00-15:00" },
+      { name: "申时", nameEn: "Shen Shi", period: "15:00-17:00" },
+      { name: "酉时", nameEn: "You Shi", period: "17:00-19:00" },
+      { name: "戌时", nameEn: "Xu Shi", period: "19:00-21:00" },
+      { name: "亥时", nameEn: "Hai Shi", period: "21:00-23:00" },
+    ];
 
-        if (LUNAR_2025_SEPTEMBER[dateStr]) {
-          const lunar = LUNAR_2025_SEPTEMBER[dateStr];
-          return {
-            year: 2025,
-            month: lunar.monthName,
-            monthEn: lunar.monthNameEn,
-            day: lunar.dayName,
-            dayEn: lunar.dayNameEn,
-            monthNum: lunar.month,
-            dayNum: lunar.day,
-          };
-        }
+    // 2025年农历九月详细对照表
+    const LUNAR_2025_SEPTEMBER = {
+      "2025-10-21": {
+        month: 9,
+        day: 1,
+        monthName: "九月",
+        dayName: "初一",
+        monthNameEn: "September",
+        dayNameEn: "1st",
+      },
+      "2025-10-22": {
+        month: 9,
+        day: 2,
+        monthName: "九月",
+        dayName: "初二",
+        monthNameEn: "September",
+        dayNameEn: "2nd",
+      },
+      "2025-10-23": {
+        month: 9,
+        day: 3,
+        monthName: "九月",
+        dayName: "初三",
+        monthNameEn: "September",
+        dayNameEn: "3rd",
+      },
+      "2025-10-24": {
+        month: 9,
+        day: 4,
+        monthName: "九月",
+        dayName: "初四",
+        monthNameEn: "September",
+        dayNameEn: "4th",
+      },
+      "2025-10-25": {
+        month: 9,
+        day: 5,
+        monthName: "九月",
+        dayName: "初五",
+        monthNameEn: "September",
+        dayNameEn: "5th",
+      },
+      "2025-10-26": {
+        month: 9,
+        day: 6,
+        monthName: "九月",
+        dayName: "初六",
+        monthNameEn: "September",
+        dayNameEn: "6th",
+      },
+      "2025-10-27": {
+        month: 9,
+        day: 7,
+        monthName: "九月",
+        dayName: "初七",
+        monthNameEn: "September",
+        dayNameEn: "7th",
+      },
+      "2025-10-28": {
+        month: 9,
+        day: 8,
+        monthName: "九月",
+        dayName: "初八",
+        monthNameEn: "September",
+        dayNameEn: "8th",
+      },
+      "2025-10-29": {
+        month: 9,
+        day: 9,
+        monthName: "九月",
+        dayName: "初九",
+        monthNameEn: "September",
+        dayNameEn: "9th",
+      },
+      "2025-10-30": {
+        month: 9,
+        day: 10,
+        monthName: "九月",
+        dayName: "初十",
+        monthNameEn: "September",
+        dayNameEn: "10th",
+      },
+      "2025-10-31": {
+        month: 9,
+        day: 11,
+        monthName: "九月",
+        dayName: "十一",
+        monthNameEn: "September",
+        dayNameEn: "11th",
+      },
+      "2025-11-01": {
+        month: 9,
+        day: 12,
+        monthName: "九月",
+        dayName: "十二",
+        monthNameEn: "September",
+        dayNameEn: "12th",
+      },
+      "2025-11-02": {
+        month: 9,
+        day: 13,
+        monthName: "九月",
+        dayName: "十三",
+        monthNameEn: "September",
+        dayNameEn: "13th",
+      },
+      "2025-11-03": {
+        month: 9,
+        day: 14,
+        monthName: "九月",
+        dayName: "十四",
+        monthNameEn: "September",
+        dayNameEn: "14th",
+      },
+      "2025-11-04": {
+        month: 9,
+        day: 15,
+        monthName: "九月",
+        dayName: "十五",
+        monthNameEn: "September",
+        dayNameEn: "15th",
+      },
+      "2025-11-05": {
+        month: 9,
+        day: 16,
+        monthName: "九月",
+        dayName: "十六",
+        monthNameEn: "September",
+        dayNameEn: "16th",
+      },
+      "2025-11-06": {
+        month: 9,
+        day: 17,
+        monthName: "九月",
+        dayName: "十七",
+        monthNameEn: "September",
+        dayNameEn: "17th",
+      },
+      "2025-11-07": {
+        month: 9,
+        day: 18,
+        monthName: "九月",
+        dayName: "十八",
+        monthNameEn: "September",
+        dayNameEn: "18th",
+      },
+      "2025-11-08": {
+        month: 9,
+        day: 19,
+        monthName: "九月",
+        dayName: "十九",
+        monthNameEn: "September",
+        dayNameEn: "19th",
+      },
+      "2025-11-09": {
+        month: 9,
+        day: 20,
+        monthName: "九月",
+        dayName: "二十",
+        monthNameEn: "September",
+        dayNameEn: "20th",
+      },
+      "2025-11-10": {
+        month: 9,
+        day: 21,
+        monthName: "九月",
+        dayName: "廿一",
+        monthNameEn: "September",
+        dayNameEn: "21st",
+      },
+      "2025-11-11": {
+        month: 9,
+        day: 22,
+        monthName: "九月",
+        dayName: "廿二",
+        monthNameEn: "September",
+        dayNameEn: "22nd",
+      },
+      "2025-11-12": {
+        month: 9,
+        day: 23,
+        monthName: "九月",
+        dayName: "廿三",
+        monthNameEn: "September",
+        dayNameEn: "23rd",
+      },
+      "2025-11-13": {
+        month: 9,
+        day: 24,
+        monthName: "九月",
+        dayName: "廿四",
+        monthNameEn: "September",
+        dayNameEn: "24th",
+      },
+      "2025-11-14": {
+        month: 9,
+        day: 25,
+        monthName: "九月",
+        dayName: "廿五",
+        monthNameEn: "September",
+        dayNameEn: "25th",
+      },
+      "2025-11-15": {
+        month: 9,
+        day: 26,
+        monthName: "九月",
+        dayName: "廿六",
+        monthNameEn: "September",
+        dayNameEn: "26th",
+      },
+      "2025-11-16": {
+        month: 9,
+        day: 27,
+        monthName: "九月",
+        dayName: "廿七",
+        monthNameEn: "September",
+        dayNameEn: "27th",
+      },
+      "2025-11-17": {
+        month: 9,
+        day: 28,
+        monthName: "九月",
+        dayName: "廿八",
+        monthNameEn: "September",
+        dayNameEn: "28th",
+      },
+      "2025-11-18": {
+        month: 9,
+        day: 29,
+        monthName: "九月",
+        dayName: "廿九",
+        monthNameEn: "September",
+        dayNameEn: "29th",
+      },
+      "2025-11-19": {
+        month: 9,
+        day: 30,
+        monthName: "九月",
+        dayName: "三十",
+        monthNameEn: "September",
+        dayNameEn: "30th",
+      },
+    };
 
-        // 简化的农历计算
-        const year = date.getFullYear();
-        const month = date.getMonth() + 1;
-        const day = date.getDate();
+    // 农历转换函数
+    function convertSolarToLunar(date) {
+      const dateStr = date.toISOString().split("T")[0];
 
-        const lunarMonths = [
-          "正月",
-          "二月",
-          "三月",
-          "四月",
-          "五月",
-          "六月",
-          "七月",
-          "八月",
-          "九月",
-          "十月",
-          "冬月",
-          "腊月",
-        ];
-        const lunarMonthsEn = [
-          "January",
-          "February",
-          "March",
-          "April",
-          "May",
-          "June",
-          "July",
-          "August",
-          "September",
-          "October",
-          "November",
-          "December",
-        ];
-        const lunarDays = [
-          "初一",
-          "初二",
-          "初三",
-          "初四",
-          "初五",
-          "初六",
-          "初七",
-          "初八",
-          "初九",
-          "初十",
-          "十一",
-          "十二",
-          "十三",
-          "十四",
-          "十五",
-          "十六",
-          "十七",
-          "十八",
-          "十九",
-          "二十",
-          "廿一",
-          "廿二",
-          "廿三",
-          "廿四",
-          "廿五",
-          "廿六",
-          "廿七",
-          "廿八",
-          "廿九",
-          "三十",
-        ];
-        const lunarDaysEn = [
-          "1st",
-          "2nd",
-          "3rd",
-          "4th",
-          "5th",
-          "6th",
-          "7th",
-          "8th",
-          "9th",
-          "10th",
-          "11th",
-          "12th",
-          "13th",
-          "14th",
-          "15th",
-          "16th",
-          "17th",
-          "18th",
-          "19th",
-          "20th",
-          "21st",
-          "22nd",
-          "23rd",
-          "24th",
-          "25th",
-          "26th",
-          "27th",
-          "28th",
-          "29th",
-          "30th",
-        ];
-
-        let lunarMonth = (month + 2) % 12;
-        if (lunarMonth === 0) lunarMonth = 12;
-
-        let lunarDay = (day + 10) % 30;
-        if (lunarDay === 0) lunarDay = 30;
-
+      if (LUNAR_2025_SEPTEMBER[dateStr]) {
+        const lunar = LUNAR_2025_SEPTEMBER[dateStr];
         return {
-          year: year,
-          month: lunarMonths[lunarMonth - 1],
-          monthEn: lunarMonthsEn[lunarMonth - 1],
-          day: lunarDays[lunarDay - 1],
-          dayEn: lunarDaysEn[lunarDay - 1],
-          monthNum: lunarMonth,
-          dayNum: lunarDay,
+          year: 2025,
+          month: lunar.monthName,
+          monthEn: lunar.monthNameEn,
+          day: lunar.dayName,
+          dayEn: lunar.dayNameEn,
+          monthNum: lunar.month,
+          dayNum: lunar.day,
         };
       }
+
+      // 简化的农历计算
+      const year = date.getFullYear();
+      const month = date.getMonth() + 1;
+      const day = date.getDate();
+
+      const lunarMonths = [
+        "正月",
+        "二月",
+        "三月",
+        "四月",
+        "五月",
+        "六月",
+        "七月",
+        "八月",
+        "九月",
+        "十月",
+        "冬月",
+        "腊月",
+      ];
+      const lunarMonthsEn = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
+      const lunarDays = [
+        "初一",
+        "初二",
+        "初三",
+        "初四",
+        "初五",
+        "初六",
+        "初七",
+        "初八",
+        "初九",
+        "初十",
+        "十一",
+        "十二",
+        "十三",
+        "十四",
+        "十五",
+        "十六",
+        "十七",
+        "十八",
+        "十九",
+        "二十",
+        "廿一",
+        "廿二",
+        "廿三",
+        "廿四",
+        "廿五",
+        "廿六",
+        "廿七",
+        "廿八",
+        "廿九",
+        "三十",
+      ];
+      const lunarDaysEn = [
+        "1st",
+        "2nd",
+        "3rd",
+        "4th",
+        "5th",
+        "6th",
+        "7th",
+        "8th",
+        "9th",
+        "10th",
+        "11th",
+        "12th",
+        "13th",
+        "14th",
+        "15th",
+        "16th",
+        "17th",
+        "18th",
+        "19th",
+        "20th",
+        "21st",
+        "22nd",
+        "23rd",
+        "24th",
+        "25th",
+        "26th",
+        "27th",
+        "28th",
+        "29th",
+        "30th",
+      ];
+
+      let lunarMonth = (month + 2) % 12;
+      if (lunarMonth === 0) lunarMonth = 12;
+
+      let lunarDay = (day + 10) % 30;
+      if (lunarDay === 0) lunarDay = 30;
+
+      return {
+        year: year,
+        month: lunarMonths[lunarMonth - 1],
+        monthEn: lunarMonthsEn[lunarMonth - 1],
+        day: lunarDays[lunarDay - 1],
+        dayEn: lunarDaysEn[lunarDay - 1],
+        monthNum: lunarMonth,
+        dayNum: lunarDay,
+      };
+    }
+
+    // 计算时辰
+    function getShichenInfo(date) {
+      const hour = date.getHours();
+      const shichenIndex = Math.floor((hour + 1) / 2);
+      const shichen = SHICHEN[shichenIndex];
+
+      return {
+        index: shichenIndex,
+        name: shichen?.name,
+        nameEn: shichen?.nameEn,
+        period: shichen?.period,
+        number: shichenIndex + 1,
+      };
+    }
+
+    // 道门九神三阶段算法
+    function calculateNineGodStages(lunarMonth, lunarDay, shichenNumber) {
+      // 第一阶段：月上起数
+      let firstIndex = (lunarMonth - 1) % 9;
+      const firstGod = NINE_GODS[firstIndex];
+
+      // 第二阶段：以上一阶段结果为起点，日上起数
+      let secondIndex = (firstIndex + lunarDay - 1) % 9;
+      const secondGod = NINE_GODS[secondIndex];
+
+      // 第三阶段：以上一阶段结果为起点，时上起数
+      let thirdIndex = (secondIndex + shichenNumber - 1) % 9;
+      const thirdGod = NINE_GODS[thirdIndex];
+
+      return [firstGod, secondGod, thirdGod];
+    }
+
+    // 更新显示
+    function updateDisplay() {
+      const now = new Date();
+
+      // 更新阳历显示
+      document.getElementById("solarDate").textContent =
+        now.toLocaleDateString("zh-CN");
+      document.getElementById("solarTime").textContent = now
+        .toLocaleTimeString("zh-CN")
+        .slice(0, 8);
+
+      // 转换农历
+      const lunar = convertSolarToLunar(now);
+      document.getElementById(
+        "lunarDate"
+      ).textContent = `${lunar.year}年${lunar.month}${lunar.day}`;
 
       // 计算时辰
-      function getShichenInfo(date) {
-        const hour = date.getHours();
-        const shichenIndex = Math.floor((hour + 1) / 2);
-        const shichen = SHICHEN[shichenIndex];
+      const shichen = getShichenInfo(now);
+      document.getElementById(
+        "lunarTime"
+      ).textContent = `${shichen.name} (${shichen.period})`;
 
-        return {
-          index: shichenIndex,
-          name: shichen?.name,
-          nameEn: shichen?.nameEn,
-          period: shichen?.period,
-          number: shichenIndex + 1,
-        };
-      }
-
-      // 道门九神三阶段算法
-      function calculateNineGodStages(lunarMonth, lunarDay, shichenNumber) {
-        // 第一阶段：月上起数
-        let firstIndex = (lunarMonth - 1) % 9;
-        const firstGod = NINE_GODS[firstIndex];
-
-        // 第二阶段：以上一阶段结果为起点，日上起数
-        let secondIndex = (firstIndex + lunarDay - 1) % 9;
-        const secondGod = NINE_GODS[secondIndex];
-
-        // 第三阶段：以上一阶段结果为起点，时上起数
-        let thirdIndex = (secondIndex + shichenNumber - 1) % 9;
-        const thirdGod = NINE_GODS[thirdIndex];
-
-        return [firstGod, secondGod, thirdGod];
-      }
-
-      // 更新显示
-      function updateDisplay() {
-        const now = new Date();
-
-        // 更新阳历显示
-        document.getElementById("solarDate").textContent =
-          now.toLocaleDateString("zh-CN");
-        document.getElementById("solarTime").textContent = now
-          .toLocaleTimeString("zh-CN")
-          .slice(0, 8);
-
-        // 转换农历
-        const lunar = convertSolarToLunar(now);
-        document.getElementById(
-          "lunarDate"
-        ).textContent = `${lunar.year}年${lunar.month}${lunar.day}`;
-
-        // 计算时辰
-        const shichen = getShichenInfo(now);
-        document.getElementById(
-          "lunarTime"
-        ).textContent = `${shichen.name} (${shichen.period})`;
-
-        // 显示计算参数
-        document.getElementById(
-          "calcParams"
-        ).innerHTML = `农历${lunar.month}${lunar.day}${shichen.name} (月:${lunar.monthNum}, 日:${lunar.dayNum}, 时:${shichen.number})
+      // 显示计算参数
+      document.getElementById(
+        "calcParams"
+      ).innerHTML = `农历${lunar.month}${lunar.day}${shichen.name} (月:${lunar.monthNum}, 日:${lunar.dayNum}, 时:${shichen.number})
                 <br>
                 Lunar ${lunar.monthEn} ${lunar.dayEn}, ${shichen.nameEn} (Month:${lunar.monthNum}, Day:${lunar.dayNum}, Hour:${shichen.number})`;
 
-        // 计算九神三阶段结果
+      // 计算九神三阶段结果
+      const stages = calculateNineGodStages(
+        lunar.monthNum,
+        lunar.dayNum,
+        shichen.number
+      );
+
+      // 更新三神显示
+      updateStageDisplay(1, stages[0]);
+      updateStageDisplay(2, stages[1]);
+      updateStageDisplay(3, stages[2]);
+
+      // 生成分析
+      const analyses = generateAnalysis(stages);
+      document.getElementById("firstAnalysis").textContent =
+        analyses[0].conclusion;
+      document.getElementById("firstAnalysisEn").textContent =
+        analyses[0].conclusionEn;
+      document.getElementById("secondAnalysis").textContent =
+        analyses[1].conclusion;
+      document.getElementById("secondAnalysisEn").textContent =
+        analyses[1].conclusionEn;
+      document.getElementById("thirdAnalysis").textContent =
+        analyses[2].conclusion;
+      document.getElementById("thirdAnalysisEn").textContent =
+        analyses[2].conclusionEn;
+
+      // 生成整体结论
+      const overallConclusion = generateOverallConclusion(stages);
+      document.getElementById("overallConclusion").innerHTML =
+        overallConclusion;
+
+      return stages;
+    }
+
+    // 更新阶段显示
+    function updateStageDisplay(stageNum, god) {
+      const prefix =
+        stageNum === 1 ? "first" : stageNum === 2 ? "second" : "third";
+
+      document.getElementById(`${prefix}GodChar`).textContent =
+        god.name.charAt(0);
+      document.getElementById(
+        `${prefix}GodName`
+      ).innerHTML = `${god.name} <span class="text-sm text-gray-500">${god.nameEn}</span>`;
+      document.getElementById(
+        `${prefix}GodLuck`
+      ).innerHTML = `${god.luck} <span class="text-sm text-gray-500">${god.luckEn}</span>`;
+      document.getElementById(
+        `${prefix}GodDesc`
+      ).innerHTML = `${god.description}<br><br>${god.descriptionEn}`;
+    }
+
+    // 生成综合分析
+    function generateAnalysis(stages) {
+      const analyses = [];
+
+      stages.forEach((stage, index) => {
+        let analysis = "";
+        let analysisEn = "";
+        let conclusion = "";
+        let conclusionEn = "";
+        const stageName =
+          index === 0 ? "初期" : index === 1 ? "中期" : "后期";
+        const stageNameEn =
+          index === 0
+            ? "Initial Stage"
+            : index === 1
+              ? "Middle Stage"
+              : "Final Stage";
+
+        switch (stage.name) {
+          case "大安":
+            analysis = "事情安稳顺利，没有变动，平安吉祥";
+            analysisEn =
+              "Things are stable and smooth, no changes, peaceful and auspicious";
+            conclusion = `${stageName}基础稳固，进展顺利`;
+            conclusionEn = `${stageNameEn} foundation is solid, progress is smooth`;
+            break;
+          case "留连":
+            analysis = "事情会有延迟，需要耐心等待，可能有纠缠";
+            analysisEn =
+              "Things will be delayed, need patience, may have entanglement";
+            conclusion = `${stageName}进展缓慢，需要耐心坚持`;
+            conclusionEn = `${stageNameEn} progress is slow, need patience and persistence`;
+            break;
+          case "速喜":
+            analysis = "喜事临门，进展迅速，时机正好";
+            analysisEn =
+              "Happy events arrive, progress is rapid, timing is right";
+            conclusion = "发展迅速，有好消息传来";
+            conclusionEn = "Developing rapidly, good news is coming";
+            break;
+          case "赤口":
+            analysis = "要注意口舌是非，可能有争执，需要谨慎";
+            analysisEn =
+              "Need to pay attention to disputes, may have arguments, need caution";
+            conclusion = "需要注意人际关系，避免冲突";
+            conclusionEn =
+              "Need to pay attention to interpersonal relationships, avoid conflicts";
+            break;
+          case "小吉":
+            analysis = "小有吉利，事情尚可，会有收获";
+            analysisEn =
+              "Small auspiciousness, things are okay, there will be gains";
+            conclusion = "整体向好，会有小的收获";
+            conclusionEn = "Overall positive, there will be small gains";
+            break;
+          case "空亡":
+            analysis = "事情可能无果而终，或者有虚空不实的情况";
+            analysisEn =
+              "Things may end without result, or have empty and unrealistic situations";
+            conclusion = "需要重新评估，可能需要调整策略";
+            conclusionEn = "Need to re-evaluate, may need to adjust strategy";
+            break;
+          case "病符":
+            analysis = "要注意健康问题，可能有疾病困扰，需要预防";
+            analysisEn =
+              "Need to pay attention to health issues, may have illness troubles, need prevention";
+            conclusion = "特别注意身体健康，做好预防措施";
+            conclusionEn =
+              "Special attention to health, take preventive measures";
+            break;
+          case "桃花":
+            analysis = "异性缘旺，可能有感情机会，但也要防烂桃花";
+            analysisEn =
+              "Strong opposite-sex attraction, may have relationship opportunities, but also need to prevent bad relationships";
+            conclusion = "注意感情生活，把握好分寸";
+            conclusionEn =
+              "Pay attention to emotional life, grasp the proper measure";
+            break;
+          case "天德":
+            analysis = "有贵人相助，逢凶化吉，事事顺利";
+            analysisEn =
+              "Have noble people to help, turn misfortune into good luck, everything goes smoothly";
+            conclusion = "有贵人帮助，事情会顺利解决";
+            conclusionEn =
+              "Have noble people to help, things will be solved smoothly";
+            break;
+        }
+
+        analyses.push({
+          stage: index + 1,
+          god: stage.name,
+          analysis: analysis,
+          analysisEn: analysisEn,
+          conclusion: conclusion,
+          conclusionEn: conclusionEn,
+        });
+      });
+
+      return analyses;
+    }
+
+    // 生成整体结论
+    function generateOverallConclusion(stages) {
+      const goodGods = stages.filter((god) =>
+        ["大安", "速喜", "小吉", "天德"].includes(god.name)
+      ).length;
+      const badGods = stages.filter((god) =>
+        ["赤口", "空亡", "病符"].includes(god.name)
+      ).length;
+
+      let conclusion = "";
+      let conclusionEn = "";
+
+      if (goodGods === 3) {
+        conclusion =
+          "恭喜！三个阶段都显示吉利，事情整体发展非常顺利，会有很好的结果。";
+        conclusionEn =
+          "Congratulations! All three stages show auspiciousness, the overall development of things is very smooth, and there will be good results.";
+      } else if (goodGods >= 2) {
+        conclusion =
+          "整体来看事情发展较好，虽然有一些小波折，但最终会有好的结果。";
+        conclusionEn =
+          "Overall, things are developing well. Although there are some small twists and turns, there will eventually be good results.";
+      } else if (badGods >= 2) {
+        conclusion =
+          "事情发展可能会遇到一些困难和挑战，需要谨慎应对，做好充分准备。";
+        conclusionEn =
+          "The development of things may encounter some difficulties and challenges, need to deal with caution and make full preparations.";
+      } else if (stages.some((god) => god.name === "天德")) {
+        conclusion = "虽然过程中有一些起伏，但有贵人相助，最终能够逢凶化吉。";
+        conclusionEn =
+          "Although there are some ups and downs in the process, with the help of noble people, we can eventually turn misfortune into good luck.";
+      } else if (stages.some((god) => god.name === "病符")) {
+        conclusion = "特别要注意健康问题，其他方面发展尚可，但健康是关键。";
+        conclusionEn =
+          "Special attention should be paid to health issues. Other aspects are developing well, but health is the key.";
+      } else {
+        conclusion =
+          "事情发展有起有伏，需要根据具体情况灵活应对，保持积极心态。";
+        conclusionEn =
+          "The development of things has ups and downs, need to deal with flexibility according to specific situations and maintain a positive attitude.";
+      }
+
+      return `${conclusion}<br><br>${conclusionEn}`;
+    }
+
+    // AI卜卦相关函数
+    let currentQuestion = "";
+
+    function startFortuneTelling() {
+      currentQuestion = document.getElementById("questionInput").value.trim();
+
+      if (!currentQuestion) {
+        alert(
+          "请输入您想询问的事项\nPlease enter what you want to ask about"
+        );
+        return;
+      }
+
+      // 显示支付确认弹窗
+      document.getElementById("paymentModal").classList.add("active");
+    }
+
+    function confirmPayment() {
+      // 隐藏支付弹窗
+      document.getElementById("paymentModal").classList.remove("active");
+
+      // 显示加载状态
+      document.getElementById("loadingState").classList.remove("hidden");
+      document.getElementById("aiResult").classList.add("hidden");
+
+      // 模拟支付和AI分析过程
+      setTimeout(() => {
+        // 模拟支付成功
+        simulatePaymentSuccess();
+
+        // 调用AI API进行分析
+        callAIApiForAnalysis();
+      }, 1000);
+    }
+
+    function cancelPayment() {
+      document.getElementById("paymentModal").classList.remove("active");
+    }
+
+    function simulatePaymentSuccess() {
+      console.log(
+        "支付成功，开始AI分析...\nPayment successful, starting AI analysis..."
+      );
+    }
+
+    // 调用AI API进行分析
+    async function callAIApiForAnalysis() {
+      try {
+        const now = new Date();
+        const lunar = convertSolarToLunar(now);
+        const shichen = getShichenInfo(now);
         const stages = calculateNineGodStages(
           lunar.monthNum,
           lunar.dayNum,
           shichen.number
         );
 
-        // 更新三神显示
-        updateStageDisplay(1, stages[0]);
-        updateStageDisplay(2, stages[1]);
-        updateStageDisplay(3, stages[2]);
+        // 准备API请求数据
+        const apiUrl = "https://api.siliconflow.cn/v1/chat/completions";
+        const token = "sk-zhkdhbaohshweaxxzxlvvucvklmlwsepbzmmghkxxkrfwpli"; // 使用用户提供的API密钥
 
-        // 生成分析
-        const analyses = generateAnalysis(stages);
-        document.getElementById("firstAnalysis").textContent =
-          analyses[0].conclusion;
-        document.getElementById("firstAnalysisEn").textContent =
-          analyses[0].conclusionEn;
-        document.getElementById("secondAnalysis").textContent =
-          analyses[1].conclusion;
-        document.getElementById("secondAnalysisEn").textContent =
-          analyses[1].conclusionEn;
-        document.getElementById("thirdAnalysis").textContent =
-          analyses[2].conclusion;
-        document.getElementById("thirdAnalysisEn").textContent =
-          analyses[2].conclusionEn;
-
-        // 生成整体结论
-        const overallConclusion = generateOverallConclusion(stages);
-        document.getElementById("overallConclusion").innerHTML =
-          overallConclusion;
-
-        return stages;
-      }
-
-      // 更新阶段显示
-      function updateStageDisplay(stageNum, god) {
-        const prefix =
-          stageNum === 1 ? "first" : stageNum === 2 ? "second" : "third";
-
-        document.getElementById(`${prefix}GodChar`).textContent =
-          god.name.charAt(0);
-        document.getElementById(
-          `${prefix}GodName`
-        ).innerHTML = `${god.name} <span class="text-sm text-gray-500">${god.nameEn}</span>`;
-        document.getElementById(
-          `${prefix}GodLuck`
-        ).innerHTML = `${god.luck} <span class="text-sm text-gray-500">${god.luckEn}</span>`;
-        document.getElementById(
-          `${prefix}GodDesc`
-        ).innerHTML = `${god.description}<br><br>${god.descriptionEn}`;
-      }
-
-      // 生成综合分析
-      function generateAnalysis(stages) {
-        const analyses = [];
-
-        stages.forEach((stage, index) => {
-          let analysis = "";
-          let analysisEn = "";
-          let conclusion = "";
-          let conclusionEn = "";
-          const stageName =
-            index === 0 ? "初期" : index === 1 ? "中期" : "后期";
-          const stageNameEn =
-            index === 0
-              ? "Initial Stage"
-              : index === 1
-              ? "Middle Stage"
-              : "Final Stage";
-
-          switch (stage.name) {
-            case "大安":
-              analysis = "事情安稳顺利，没有变动，平安吉祥";
-              analysisEn =
-                "Things are stable and smooth, no changes, peaceful and auspicious";
-              conclusion = `${stageName}基础稳固，进展顺利`;
-              conclusionEn = `${stageNameEn} foundation is solid, progress is smooth`;
-              break;
-            case "留连":
-              analysis = "事情会有延迟，需要耐心等待，可能有纠缠";
-              analysisEn =
-                "Things will be delayed, need patience, may have entanglement";
-              conclusion = `${stageName}进展缓慢，需要耐心坚持`;
-              conclusionEn = `${stageNameEn} progress is slow, need patience and persistence`;
-              break;
-            case "速喜":
-              analysis = "喜事临门，进展迅速，时机正好";
-              analysisEn =
-                "Happy events arrive, progress is rapid, timing is right";
-              conclusion = "发展迅速，有好消息传来";
-              conclusionEn = "Developing rapidly, good news is coming";
-              break;
-            case "赤口":
-              analysis = "要注意口舌是非，可能有争执，需要谨慎";
-              analysisEn =
-                "Need to pay attention to disputes, may have arguments, need caution";
-              conclusion = "需要注意人际关系，避免冲突";
-              conclusionEn =
-                "Need to pay attention to interpersonal relationships, avoid conflicts";
-              break;
-            case "小吉":
-              analysis = "小有吉利，事情尚可，会有收获";
-              analysisEn =
-                "Small auspiciousness, things are okay, there will be gains";
-              conclusion = "整体向好，会有小的收获";
-              conclusionEn = "Overall positive, there will be small gains";
-              break;
-            case "空亡":
-              analysis = "事情可能无果而终，或者有虚空不实的情况";
-              analysisEn =
-                "Things may end without result, or have empty and unrealistic situations";
-              conclusion = "需要重新评估，可能需要调整策略";
-              conclusionEn = "Need to re-evaluate, may need to adjust strategy";
-              break;
-            case "病符":
-              analysis = "要注意健康问题，可能有疾病困扰，需要预防";
-              analysisEn =
-                "Need to pay attention to health issues, may have illness troubles, need prevention";
-              conclusion = "特别注意身体健康，做好预防措施";
-              conclusionEn =
-                "Special attention to health, take preventive measures";
-              break;
-            case "桃花":
-              analysis = "异性缘旺，可能有感情机会，但也要防烂桃花";
-              analysisEn =
-                "Strong opposite-sex attraction, may have relationship opportunities, but also need to prevent bad relationships";
-              conclusion = "注意感情生活，把握好分寸";
-              conclusionEn =
-                "Pay attention to emotional life, grasp the proper measure";
-              break;
-            case "天德":
-              analysis = "有贵人相助，逢凶化吉，事事顺利";
-              analysisEn =
-                "Have noble people to help, turn misfortune into good luck, everything goes smoothly";
-              conclusion = "有贵人帮助，事情会顺利解决";
-              conclusionEn =
-                "Have noble people to help, things will be solved smoothly";
-              break;
-          }
-
-          analyses.push({
-            stage: index + 1,
-            god: stage.name,
-            analysis: analysis,
-            analysisEn: analysisEn,
-            conclusion: conclusion,
-            conclusionEn: conclusionEn,
-          });
-        });
-
-        return analyses;
-      }
-
-      // 生成整体结论
-      function generateOverallConclusion(stages) {
-        const goodGods = stages.filter((god) =>
-          ["大安", "速喜", "小吉", "天德"].includes(god.name)
-        ).length;
-        const badGods = stages.filter((god) =>
-          ["赤口", "空亡", "病符"].includes(god.name)
-        ).length;
-
-        let conclusion = "";
-        let conclusionEn = "";
-
-        if (goodGods === 3) {
-          conclusion =
-            "恭喜！三个阶段都显示吉利，事情整体发展非常顺利，会有很好的结果。";
-          conclusionEn =
-            "Congratulations! All three stages show auspiciousness, the overall development of things is very smooth, and there will be good results.";
-        } else if (goodGods >= 2) {
-          conclusion =
-            "整体来看事情发展较好，虽然有一些小波折，但最终会有好的结果。";
-          conclusionEn =
-            "Overall, things are developing well. Although there are some small twists and turns, there will eventually be good results.";
-        } else if (badGods >= 2) {
-          conclusion =
-            "事情发展可能会遇到一些困难和挑战，需要谨慎应对，做好充分准备。";
-          conclusionEn =
-            "The development of things may encounter some difficulties and challenges, need to deal with caution and make full preparations.";
-        } else if (stages.some((god) => god.name === "天德")) {
-          conclusion = "虽然过程中有一些起伏，但有贵人相助，最终能够逢凶化吉。";
-          conclusionEn =
-            "Although there are some ups and downs in the process, with the help of noble people, we can eventually turn misfortune into good luck.";
-        } else if (stages.some((god) => god.name === "病符")) {
-          conclusion = "特别要注意健康问题，其他方面发展尚可，但健康是关键。";
-          conclusionEn =
-            "Special attention should be paid to health issues. Other aspects are developing well, but health is the key.";
-        } else {
-          conclusion =
-            "事情发展有起有伏，需要根据具体情况灵活应对，保持积极心态。";
-          conclusionEn =
-            "The development of things has ups and downs, need to deal with flexibility according to specific situations and maintain a positive attitude.";
-        }
-
-        return `${conclusion}<br><br>${conclusionEn}`;
-      }
-
-      // AI卜卦相关函数
-      let currentQuestion = "";
-
-      function startFortuneTelling() {
-        currentQuestion = document.getElementById("questionInput").value.trim();
-
-        if (!currentQuestion) {
-          alert(
-            "请输入您想询问的事项\nPlease enter what you want to ask about"
-          );
-          return;
-        }
-
-        // 显示支付确认弹窗
-        document.getElementById("paymentModal").classList.add("active");
-      }
-
-      function confirmPayment() {
-        // 隐藏支付弹窗
-        document.getElementById("paymentModal").classList.remove("active");
-
-        // 显示加载状态
-        document.getElementById("loadingState").classList.remove("hidden");
-        document.getElementById("aiResult").classList.add("hidden");
-
-        // 模拟支付和AI分析过程
-        setTimeout(() => {
-          // 模拟支付成功
-          simulatePaymentSuccess();
-
-          // 调用AI API进行分析
-          callAIApiForAnalysis();
-        }, 1000);
-      }
-
-      function cancelPayment() {
-        document.getElementById("paymentModal").classList.remove("active");
-      }
-
-      function simulatePaymentSuccess() {
-        console.log(
-          "支付成功，开始AI分析...\nPayment successful, starting AI analysis..."
-        );
-      }
-
-      // 调用AI API进行分析
-      async function callAIApiForAnalysis() {
-        try {
-          const now = new Date();
-          const lunar = convertSolarToLunar(now);
-          const shichen = getShichenInfo(now);
-          const stages = calculateNineGodStages(
-            lunar.monthNum,
-            lunar.dayNum,
-            shichen.number
-          );
-
-          // 准备API请求数据
-          const apiUrl = "https://api.siliconflow.cn/v1/chat/completions";
-          const token = "sk-zhkdhbaohshweaxxzxlvvucvklmlwsepbzmmghkxxkrfwpli"; // 使用用户提供的API密钥
-
-          const messages = [
-            {
-              role: "system",
-              content: `你是一位精通道门九神小六壬算法的AI占卜师。请根据以下信息为用户提供专业的卜卦分析：
+        const messages = [
+          {
+            role: "system",
+            content: `你是一位精通道门九神小六壬算法的AI占卜师。请根据以下信息为用户提供专业的卜卦分析：
                         
 当前时间：
 - 阳历：${now.toLocaleDateString("zh-CN")} ${now.toLocaleTimeString("zh-CN")}
@@ -1574,39 +1475,32 @@ Please describe the specific matter you want to ask about in clear and concise l
 Current Time:
 - Solar: ${now.toLocaleDateString("en-US")} ${now.toLocaleTimeString("en-US")}
 - Lunar: ${lunar.year} Year ${lunar.month} ${lunar.day}, ${shichen.name}
-- Calculation Parameters: Month ${lunar.monthNum}, Day ${lunar.dayNum}, Hour ${
-                shichen.number
+- Calculation Parameters: Month ${lunar.monthNum}, Day ${lunar.dayNum}, Hour ${shichen.number
               }
 
 道门九神三阶段结果：
-1. 第一阶段（月上起数）：${stages[0].name} (${stages[0].nameEn}) - ${
-                stages[0].meaning
+1. 第一阶段（月上起数）：${stages[0].name} (${stages[0].nameEn}) - ${stages[0].meaning
               }
    断曰：${stages[0].description}
    
-2. 第二阶段（日上起数）：${stages[1].name} (${stages[1].nameEn}) - ${
-                stages[1].meaning
+2. 第二阶段（日上起数）：${stages[1].name} (${stages[1].nameEn}) - ${stages[1].meaning
               }
    断曰：${stages[1].description}
    
-3. 第三阶段（时上起数）：${stages[2].name} (${stages[2].nameEn}) - ${
-                stages[2].meaning
+3. 第三阶段（时上起数）：${stages[2].name} (${stages[2].nameEn}) - ${stages[2].meaning
               }
    断曰：${stages[2].description}
 
 Nine Gods Three-Stage Results:
-1. Stage 1 (Moon Calculation): ${stages[0].name} (${stages[0].nameEn}) - ${
-                stages[0].meaningEn
+1. Stage 1 (Moon Calculation): ${stages[0].name} (${stages[0].nameEn}) - ${stages[0].meaningEn
               }
    Prediction: ${stages[0].descriptionEn}
    
-2. Stage 2 (Sun Calculation): ${stages[1].name} (${stages[1].nameEn}) - ${
-                stages[1].meaningEn
+2. Stage 2 (Sun Calculation): ${stages[1].name} (${stages[1].nameEn}) - ${stages[1].meaningEn
               }
    Prediction: ${stages[1].descriptionEn}
    
-3. Stage 3 (Hour Calculation): ${stages[2].name} (${stages[2].nameEn}) - ${
-                stages[2].meaningEn
+3. Stage 3 (Hour Calculation): ${stages[2].name} (${stages[2].nameEn}) - ${stages[2].meaningEn
               }
    Prediction: ${stages[2].descriptionEn}
 
@@ -1630,60 +1524,59 @@ Please provide comprehensive and accurate analysis results as a professional for
 
 重要：请使用双语回答，先中文后英文，用<br><br>分隔。
 Important: Please answer in bilingual, Chinese first then English, separated by <br><br>.`,
-            },
-            {
-              role: "user",
-              content: currentQuestion,
-            },
-          ];
+          },
+          {
+            role: "user",
+            content: currentQuestion,
+          },
+        ];
 
-          // 发送API请求
-          const response = await fetch(apiUrl, {
-            method: "POST",
-            headers: {
-              Authorization: `Bearer ${token}`,
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              model: "Qwen/QwQ-32B",
-              messages: messages,
-              temperature: 0.7,
-              max_tokens: 1500,
-            }),
-          });
+        // 发送API请求
+        const response = await fetch(apiUrl, {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            model: "Qwen/QwQ-32B",
+            messages: messages,
+            temperature: 0.7,
+            max_tokens: 1500,
+          }),
+        });
 
-          if (!response.ok) {
-            const errorData = await response.json();
-            throw new Error(
-              `API请求失败: ${response.status} ${
-                response.statusText
-              } - ${JSON.stringify(errorData)}`
-            );
-          }
+        if (!response.ok) {
+          const errorData = await response.json();
+          throw new Error(
+            `API请求失败: ${response.status} ${response.statusText
+            } - ${JSON.stringify(errorData)}`
+          );
+        }
 
-          const data = await response.json();
-          console.log("API响应:", data);
+        const data = await response.json();
+        console.log("API响应:", data);
 
-          if (
-            data.choices &&
-            data.choices[0] &&
-            data.choices[0].message &&
-            data.choices[0].message.content
-          ) {
-            const aiAnalysis = data.choices[0].message.content;
-            displayAIAnalysis(aiAnalysis, stages);
-          } else {
-            throw new Error("API返回格式不正确，缺少分析内容");
-          }
-        } catch (error) {
-         
-         
-         
-         
-            console.error("AI API调用失败:", error);
+        if (
+          data.choices &&
+          data.choices[0] &&
+          data.choices[0].message &&
+          data.choices[0].message.content
+        ) {
+          const aiAnalysis = data.choices[0].message.content;
+          displayAIAnalysis(aiAnalysis, stages);
+        } else {
+          throw new Error("API返回格式不正确，缺少分析内容");
+        }
+      } catch (error) {
 
-          // 显示错误信息并使用备用分析
-          const errorMessage = `
+
+
+
+        console.error("AI API调用失败:", error);
+
+        // 显示错误信息并使用备用分析
+        const errorMessage = `
                     <div class="bg-red-100 text-red-700 p-3 rounded-lg mb-3">
                         <i class="fa fa-exclamation-triangle mr-2"></i>AI分析服务暂时不可用
                         <br>
@@ -1694,42 +1587,42 @@ Important: Please answer in bilingual, Chinese first then English, separated by 
                     <p class="text-sm mt-1">Our AI analysis service is under maintenance, please try again later.</p>
                 `;
 
-          // 使用备用分析
-          const now = new Date();
-          const lunar = convertSolarToLunar(now);
-          const shichen = getShichenInfo(now);
-          const stages = calculateNineGodStages(
-            lunar.monthNum,
-            lunar.dayNum,
-            shichen.number
-          );
-          const backupAnalysis = generateBackupAnalysis(
-            stages,
-            currentQuestion
-          );
+        // 使用备用分析
+        const now = new Date();
+        const lunar = convertSolarToLunar(now);
+        const shichen = getShichenInfo(now);
+        const stages = calculateNineGodStages(
+          lunar.monthNum,
+          lunar.dayNum,
+          shichen.number
+        );
+        const backupAnalysis = generateBackupAnalysis(
+          stages,
+          currentQuestion
+        );
 
-          document.getElementById("analysisContent").innerHTML =
-            errorMessage + backupAnalysis;
-          document.getElementById("loadingState").classList.add("hidden");
-          document.getElementById("aiResult").classList.remove("hidden");
-          document
-            .getElementById("nineGodsPrediction")
-            .classList.remove("hidden");
-          updateDisplay();
-        }
+        document.getElementById("analysisContent").innerHTML =
+          errorMessage + backupAnalysis;
+        document.getElementById("loadingState").classList.add("hidden");
+        document.getElementById("aiResult").classList.remove("hidden");
+        document
+          .getElementById("nineGodsPrediction")
+          .classList.remove("hidden");
+        updateDisplay();
       }
+    }
 
-      // 显示AI分析结果
-      function displayAIAnalysis(aiAnalysis, stages) {
-        const analysisHtml = `
+    // 显示AI分析结果
+    function displayAIAnalysis(aiAnalysis, stages) {
+      const analysisHtml = `
                 <div class="space-y-4">
                     <div class="bg-white/20 rounded-lg p-3">
                         <div class="text-sm font-semibold mb-2">针对您的问题：<span class="text-yellow-200">"${currentQuestion}"</span></div>
                         <div class="text-sm font-semibold mb-2">For your question: <span class="text-yellow-200">"${currentQuestion}"</span></div>
                         <div class="text-xs text-white/80">AI分析时间：${new Date().toLocaleTimeString()}</div>
                         <div class="text-xs text-white/80">AI Analysis Time: ${new Date().toLocaleTimeString(
-                          "en-US"
-                        )}</div>
+        "en-US"
+      )}</div>
                     </div>
                     
                     <div class="bg-white/10 rounded-lg p-4">
@@ -1748,82 +1641,73 @@ Important: Please answer in bilingual, Chinese first then English, separated by 
                             <span class="english-text ml-2">Algorithm Basis</span>
                         </div>
                         <div class="text-xs leading-relaxed">
-                            <div class="mb-1">• 第一阶段（月上起数）：${
-                              stages[0].name
-                            } (${stages[0].nameEn}) - ${stages[0].meaning}</div>
-                            <div class="mb-1">• Stage 1 (Moon Calculation): ${
-                              stages[0].name
-                            } (${stages[0].nameEn}) - ${
-          stages[0].meaningEn
+                            <div class="mb-1">• 第一阶段（月上起数）：${stages[0].name
+        } (${stages[0].nameEn}) - ${stages[0].meaning}</div>
+                            <div class="mb-1">• Stage 1 (Moon Calculation): ${stages[0].name
+        } (${stages[0].nameEn}) - ${stages[0].meaningEn
         }</div>
-                            <div class="mb-1">• 第二阶段（日上起数）：${
-                              stages[1].name
-                            } (${stages[1].nameEn}) - ${stages[1].meaning}</div>
-                            <div class="mb-1">• Stage 2 (Sun Calculation): ${
-                              stages[1].name
-                            } (${stages[1].nameEn}) - ${
-          stages[1].meaningEn
+                            <div class="mb-1">• 第二阶段（日上起数）：${stages[1].name
+        } (${stages[1].nameEn}) - ${stages[1].meaning}</div>
+                            <div class="mb-1">• Stage 2 (Sun Calculation): ${stages[1].name
+        } (${stages[1].nameEn}) - ${stages[1].meaningEn
         }</div>
-                            <div>• 第三阶段（时上起数）：${stages[2].name} (${
-          stages[2].nameEn
+                            <div>• 第三阶段（时上起数）：${stages[2].name} (${stages[2].nameEn
         }) - ${stages[2].meaning}</div>
-                            <div>• Stage 3 (Hour Calculation): ${
-                              stages[2].name
-                            } (${stages[2].nameEn}) - ${
-          stages[2].meaningEn
+                            <div>• Stage 3 (Hour Calculation): ${stages[2].name
+        } (${stages[2].nameEn}) - ${stages[2].meaningEn
         }</div>
                         </div>
                     </div>
                 </div>
             `;
 
-        document.getElementById("analysisContent").innerHTML = analysisHtml;
-        document.getElementById("loadingState").classList.add("hidden");
-        document.getElementById("aiResult").classList.remove("hidden");
+      document.getElementById("analysisContent").innerHTML = analysisHtml;
+      document.getElementById("loadingState").classList.add("hidden");
+      document.getElementById("aiResult").classList.remove("hidden");
 
-        // 显示道门九神三阶段预测
+      // 显示道门九神三阶段预测
+      document
+        .getElementById("nineGodsPrediction")
+        .classList.remove("hidden");
+
+      // 更新九神预测内容
+      updateDisplay();
+
+      // 滚动到结果区域
+      setTimeout(() => {
         document
-          .getElementById("nineGodsPrediction")
-          .classList.remove("hidden");
+          .getElementById("aiResult")
+          .scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 100);
+    }
 
-        // 更新九神预测内容
-        updateDisplay();
+    // 备用分析生成函数（当API不可用时使用）
+    function generateBackupAnalysis(stages, question) {
+      const questionType = analyzeQuestionType(question);
+      let analysis = "";
+      let analysisEn = "";
 
-        // 滚动到结果区域
-        setTimeout(() => {
-          document
-            .getElementById("aiResult")
-            .scrollIntoView({ behavior: "smooth", block: "center" });
-        }, 100);
+      switch (questionType) {
+        case "love":
+          [analysis, analysisEn] = generateLoveAnalysis(stages);
+          break;
+        case "career":
+          [analysis, analysisEn] = generateCareerAnalysis(stages);
+          break;
+        case "finance":
+          [analysis, analysisEn] = generateFinanceAnalysis(stages);
+          break;
+        case "health":
+          [analysis, analysisEn] = generateHealthAnalysis(stages);
+          break;
+        case "fortune":
+          [analysis, analysisEn] = generateFortuneAnalysis(stages);
+          break;
+        default:
+          [analysis, analysisEn] = generateGeneralAnalysis(stages);
       }
 
-      // 备用分析生成函数（当API不可用时使用）
-      function generateBackupAnalysis(stages, question) {
-        const questionType = analyzeQuestionType(question);
-        let analysis = "";
-        let analysisEn = "";
-
-        switch (questionType) {
-          case "love":
-            [analysis, analysisEn] = generateLoveAnalysis(stages);
-            break;
-          case "career":
-            [analysis, analysisEn] = generateCareerAnalysis(stages);
-            break;
-          case "finance":
-            [analysis, analysisEn] = generateFinanceAnalysis(stages);
-            break;
-          case "health":
-            [analysis, analysisEn] = generateHealthAnalysis(stages);
-            break;
-          case "fortune":
-            [analysis, analysisEn] = generateFortuneAnalysis(stages);
-            break;
-          default:
-            [analysis, analysisEn] = generateGeneralAnalysis(stages);
-        }
-
-        return `
+      return `
                 <div class="bg-white/10 rounded-lg p-4 mt-3">
                     <div class="font-semibold mb-3 flex items-center">
                         <i class="fa fa-bullseye mr-2 text-yellow-300"></i>
@@ -1833,244 +1717,489 @@ Important: Please answer in bilingual, Chinese first then English, separated by 
                     <div class="text-sm leading-relaxed">${analysis}<br><br>${analysisEn}</div>
                 </div>
             `;
+    }
+
+    // 问题类型分析
+    function analyzeQuestionType(question) {
+      question = question.toLowerCase();
+
+      if (
+        question.includes("感情") ||
+        question.includes("爱情") ||
+        question.includes("婚姻") ||
+        question.includes("恋爱")
+      ) {
+        return "love";
+      } else if (
+        question.includes("工作") ||
+        question.includes("事业") ||
+        question.includes("求职") ||
+        question.includes("职场")
+      ) {
+        return "career";
+      } else if (
+        question.includes("财运") ||
+        question.includes("钱") ||
+        question.includes("投资") ||
+        question.includes("理财")
+      ) {
+        return "finance";
+      } else if (
+        question.includes("健康") ||
+        question.includes("身体") ||
+        question.includes("疾病") ||
+        question.includes("养生")
+      ) {
+        return "health";
+      } else if (
+        question.includes("运势") ||
+        question.includes("运气") ||
+        question.includes("今日") ||
+        question.includes("明天")
+      ) {
+        return "fortune";
+      } else {
+        return "general";
       }
+    }
 
-      // 问题类型分析
-      function analyzeQuestionType(question) {
-        question = question.toLowerCase();
+    // 各种类型的备用分析函数 - 双语版
+    function generateLoveAnalysis(stages) {
+      const [first, second, third] = stages;
+      const goodGods = stages.filter((god) =>
+        ["大安", "速喜", "小吉", "天德"].includes(god.name)
+      ).length;
 
-        if (
-          question.includes("感情") ||
-          question.includes("爱情") ||
-          question.includes("婚姻") ||
-          question.includes("恋爱")
-        ) {
-          return "love";
-        } else if (
-          question.includes("工作") ||
-          question.includes("事业") ||
-          question.includes("求职") ||
-          question.includes("职场")
-        ) {
-          return "career";
-        } else if (
-          question.includes("财运") ||
-          question.includes("钱") ||
-          question.includes("投资") ||
-          question.includes("理财")
-        ) {
-          return "finance";
-        } else if (
-          question.includes("健康") ||
-          question.includes("身体") ||
-          question.includes("疾病") ||
-          question.includes("养生")
-        ) {
-          return "health";
-        } else if (
-          question.includes("运势") ||
-          question.includes("运气") ||
-          question.includes("今日") ||
-          question.includes("明天")
-        ) {
-          return "fortune";
-        } else {
-          return "general";
-        }
-      }
-
-      // 各种类型的备用分析函数 - 双语版
-      function generateLoveAnalysis(stages) {
-        const [first, second, third] = stages;
-        const goodGods = stages.filter((god) =>
-          ["大安", "速喜", "小吉", "天德"].includes(god.name)
-        ).length;
-
-        if (goodGods >= 2) {
-          const analysis = `根据道门九神算法分析，您的感情运势整体向好。初期${first.name}显示感情基础稳固，中期${second.name}表明关系发展顺利，虽然后期${third.name}需要注意一些小问题，但整体来看感情发展前景乐观。建议您珍惜当前的感情状态，多与对方沟通交流，保持真诚和信任。`;
-          const analysisEn = `According to the Daoist Nine Gods algorithm analysis, your love fortune is generally good. The initial ${first.nameEn} shows a solid emotional foundation, the middle ${second.nameEn} indicates smooth relationship development, although the final ${third.nameEn} needs attention to some small issues, overall the emotional development prospects are optimistic. It is recommended that you cherish your current emotional state, communicate more with each other, and maintain sincerity and trust.`;
-          return [analysis, analysisEn];
-        } else {
-          const analysis = `根据道门九神算法分析，您的感情运势需要用心经营。初期${first.name}显示感情可能遇到一些考验，中期${second.name}表明需要更多耐心和理解，后期${third.name}提醒您要注意感情中的细节问题。建议您保持理性和冷静，多为对方着想，避免冲动行事。`;
-          const analysisEn = `According to the Daoist Nine Gods algorithm analysis, your love fortune needs careful management. The initial ${first.nameEn} shows that the relationship may encounter some tests, the middle ${second.nameEn} indicates that more patience and understanding are needed, and the final ${third.nameEn} reminds you to pay attention to details in the relationship. It is recommended that you remain rational and calm, think more for each other, and avoid impulsive actions.`;
-          return [analysis, analysisEn];
-        }
-      }
-
-      function generateCareerAnalysis(stages) {
-        const [first, second, third] = stages;
-        const goodGods = stages.filter((god) =>
-          ["大安", "速喜", "小吉", "天德"].includes(god.name)
-        ).length;
-
-        if (goodGods >= 2) {
-          const analysis = `根据道门九神算法分析，您的事业运势良好。初期${first.name}显示工作基础扎实，中期${second.name}表明事业发展顺利，虽然后期${third.name}需要注意一些挑战，但整体来看职业发展前景光明。建议您抓住机遇，勇于承担责任，与同事保持良好关系。`;
-          const analysisEn = `According to the Daoist Nine Gods algorithm analysis, your career fortune is good. The initial ${first.nameEn} shows a solid work foundation, the middle ${second.nameEn} indicates smooth career development, although the final ${third.nameEn} needs attention to some challenges, overall the career development prospects are bright. It is recommended that you seize opportunities, courageously take responsibility, and maintain good relationships with colleagues.`;
-          return [analysis, analysisEn];
-        } else {
-          const analysis = `根据道门九神算法分析，您的事业运势需要努力。初期${first.name}显示工作可能遇到一些困难，中期${second.name}表明需要更多努力和坚持，后期${third.name}提醒您要提升自己的能力和技能。建议您保持学习态度，不断提升专业水平，抓住合适的机会。`;
-          const analysisEn = `According to the Daoist Nine Gods algorithm analysis, your career fortune requires effort. The initial ${first.nameEn} shows that work may encounter some difficulties, the middle ${second.nameEn} indicates that more effort and persistence are needed, and the final ${third.nameEn} reminds you to improve your abilities and skills. It is recommended that you maintain a learning attitude, continuously improve your professional level, and seize appropriate opportunities.`;
-          return [analysis, analysisEn];
-        }
-      }
-
-      function generateFinanceAnalysis(stages) {
-        const [first, second, third] = stages;
-        const goodGods = stages.filter((god) =>
-          ["大安", "速喜", "小吉", "天德"].includes(god.name)
-        ).length;
-
-        if (goodGods >= 2) {
-          const analysis = `根据道门九神算法分析，您的财运整体向好。初期${first.name}显示财务基础稳固，中期${second.name}表明投资有回报，后期${third.name}提醒您要理性理财。建议您制定合理的财务规划，分散投资风险，保持一定的应急资金储备。`;
-          const analysisEn = `According to the Daoist Nine Gods algorithm analysis, your financial fortune is generally good. The initial ${first.nameEn} shows a solid financial foundation, the middle ${second.nameEn} indicates investment returns, and the final ${third.nameEn} reminds you to manage finances rationally. It is recommended that you develop a reasonable financial plan, diversify investment risks, and maintain a certain emergency fund reserve.`;
-          return [analysis, analysisEn];
-        } else {
-          const analysis = `根据道门九神算法分析，您的财运需要谨慎。初期${first.name}显示财务可能遇到压力，中期${second.name}表明投资需谨慎，后期${third.name}提醒您要控制支出。建议您做好财务规划，避免高风险投资，保持稳健的理财策略。`;
-          const analysisEn = `According to the Daoist Nine Gods algorithm analysis, your financial fortune needs caution. The initial ${first.nameEn} shows that finances may encounter pressure, the middle ${second.nameEn} indicates that investments need caution, and the final ${third.nameEn} reminds you to control expenses. It is recommended that you make financial plans, avoid high-risk investments, and maintain a prudent financial management strategy.`;
-          return [analysis, analysisEn];
-        }
-      }
-
-      function generateHealthAnalysis(stages) {
-        const [first, second, third] = stages;
-        const hasBingfu = stages.some((god) => god.name === "病符");
-
-        if (hasBingfu) {
-          const analysis = `根据道门九神算法分析，您需要特别关注健康状况。${
-            stages.find((god) => god.name === "病符").name
-          }的出现提醒您要注意身体健康，及时体检，预防疾病。建议您保持规律作息，注意饮食健康，坚持适量运动，保持心情舒畅。`;
-          const analysisEn = `According to the Daoist Nine Gods algorithm analysis, you need to pay special attention to your health condition. The appearance of ${
-            stages.find((god) => god.name === "病符").nameEn
-          } reminds you to pay attention to your health, have timely medical check-ups, and prevent diseases. It is recommended that you maintain a regular schedule, pay attention to healthy eating,坚持 moderate exercise, and maintain a happy mood.`;
-          return [analysis, analysisEn];
-        } else {
-          const analysis = `根据道门九神算法分析，您的健康状况整体良好。初期${first.name}显示身体基础健康，中期${second.name}表明精力充沛，后期${third.name}提醒您要保持良好的生活习惯。建议您继续保持健康的生活方式，定期体检，预防为主。`;
-          const analysisEn = `According to the Daoist Nine Gods algorithm analysis, your health condition is generally good. The initial ${first.nameEn} shows a healthy physical foundation, the middle ${second.nameEn} indicates abundant energy, and the final ${third.nameEn} reminds you to maintain good living habits. It is recommended that you continue to maintain a healthy lifestyle, have regular medical check-ups, and focus on prevention.`;
-          return [analysis, analysisEn];
-        }
-      }
-
-      function generateFortuneAnalysis(stages) {
-        const [first, second, third] = stages;
-        const goodGods = stages.filter((god) =>
-          ["大安", "速喜", "小吉", "天德"].includes(god.name)
-        ).length;
-
-        if (goodGods >= 2) {
-          const analysis = `根据道门九神算法分析，您的整体运势不错。初期${first.name}显示起点良好，中期${second.name}表明发展顺利，后期${third.name}虽然有些小挑战，但整体来看运势向好。建议您保持积极乐观的心态，抓住机遇，勇于尝试新事物。`;
-          const analysisEn = `According to the Daoist Nine Gods algorithm analysis, your overall fortune is good. The initial ${first.nameEn} shows a good starting point, the middle ${second.nameEn} indicates smooth development, and although the final ${third.nameEn} has some small challenges, overall the fortune is positive. It is recommended that you maintain a positive and optimistic attitude, seize opportunities, and courageously try new things.`;
-          return [analysis, analysisEn];
-        } else {
-          const analysis = `根据道门九神算法分析，您的整体运势需要努力。初期${first.name}显示有些阻碍，中期${second.name}表明需要更多努力，后期${third.name}提醒您要积极面对挑战。建议您保持耐心和毅力，不要轻易放弃，相信困难会过去的。`;
-          const analysisEn = `According to the Daoist Nine Gods algorithm analysis, your overall fortune requires effort. The initial ${first.nameEn} shows some obstacles, the middle ${second.nameEn} indicates that more effort is needed, and the final ${third.nameEn} reminds you to actively face challenges. It is recommended that you maintain patience and perseverance, do not give up easily, and believe that difficulties will pass.`;
-          return [analysis, analysisEn];
-        }
-      }
-
-      function generateGeneralAnalysis(stages) {
-        const [first, second, third] = stages;
-        const analysis = `根据道门九神算法分析，您询问的事情发展过程如下：初期${first.name}（${first.meaning}），中期${second.name}（${second.meaning}），后期${third.name}（${third.meaning}）。整体来看，事情发展有其自身规律，建议您保持平常心，积极面对，做好充分准备，相信会有好的结果。`;
-        const analysisEn = `According to the Daoist Nine Gods algorithm analysis, the development process of the matter you asked about is as follows: Initial stage ${first.nameEn} (${first.meaningEn}), Middle stage ${second.nameEn} (${second.meaningEn}), Final stage ${third.nameEn} (${third.meaningEn}). Overall, things develop according to their own laws. It is recommended that you maintain a normal mind, face it actively, make full preparations, and believe that there will be good results.`;
+      if (goodGods >= 2) {
+        const analysis = `根据道门九神算法分析，您的感情运势整体向好。初期${first.name}显示感情基础稳固，中期${second.name}表明关系发展顺利，虽然后期${third.name}需要注意一些小问题，但整体来看感情发展前景乐观。建议您珍惜当前的感情状态，多与对方沟通交流，保持真诚和信任。`;
+        const analysisEn = `According to the Daoist Nine Gods algorithm analysis, your love fortune is generally good. The initial ${first.nameEn} shows a solid emotional foundation, the middle ${second.nameEn} indicates smooth relationship development, although the final ${third.nameEn} needs attention to some small issues, overall the emotional development prospects are optimistic. It is recommended that you cherish your current emotional state, communicate more with each other, and maintain sincerity and trust.`;
+        return [analysis, analysisEn];
+      } else {
+        const analysis = `根据道门九神算法分析，您的感情运势需要用心经营。初期${first.name}显示感情可能遇到一些考验，中期${second.name}表明需要更多耐心和理解，后期${third.name}提醒您要注意感情中的细节问题。建议您保持理性和冷静，多为对方着想，避免冲动行事。`;
+        const analysisEn = `According to the Daoist Nine Gods algorithm analysis, your love fortune needs careful management. The initial ${first.nameEn} shows that the relationship may encounter some tests, the middle ${second.nameEn} indicates that more patience and understanding are needed, and the final ${third.nameEn} reminds you to pay attention to details in the relationship. It is recommended that you remain rational and calm, think more for each other, and avoid impulsive actions.`;
         return [analysis, analysisEn];
       }
+    }
 
-      function clearAnalysis() {
-        document.getElementById("questionInput").value = "";
-        document.getElementById("aiResult").classList.add("hidden");
-        document.getElementById("nineGodsPrediction").classList.add("hidden");
-        currentQuestion = "";
+    function generateCareerAnalysis(stages) {
+      const [first, second, third] = stages;
+      const goodGods = stages.filter((god) =>
+        ["大安", "速喜", "小吉", "天德"].includes(god.name)
+      ).length;
+
+      if (goodGods >= 2) {
+        const analysis = `根据道门九神算法分析，您的事业运势良好。初期${first.name}显示工作基础扎实，中期${second.name}表明事业发展顺利，虽然后期${third.name}需要注意一些挑战，但整体来看职业发展前景光明。建议您抓住机遇，勇于承担责任，与同事保持良好关系。`;
+        const analysisEn = `According to the Daoist Nine Gods algorithm analysis, your career fortune is good. The initial ${first.nameEn} shows a solid work foundation, the middle ${second.nameEn} indicates smooth career development, although the final ${third.nameEn} needs attention to some challenges, overall the career development prospects are bright. It is recommended that you seize opportunities, courageously take responsibility, and maintain good relationships with colleagues.`;
+        return [analysis, analysisEn];
+      } else {
+        const analysis = `根据道门九神算法分析，您的事业运势需要努力。初期${first.name}显示工作可能遇到一些困难，中期${second.name}表明需要更多努力和坚持，后期${third.name}提醒您要提升自己的能力和技能。建议您保持学习态度，不断提升专业水平，抓住合适的机会。`;
+        const analysisEn = `According to the Daoist Nine Gods algorithm analysis, your career fortune requires effort. The initial ${first.nameEn} shows that work may encounter some difficulties, the middle ${second.nameEn} indicates that more effort and persistence are needed, and the final ${third.nameEn} reminds you to improve your abilities and skills. It is recommended that you maintain a learning attitude, continuously improve your professional level, and seize appropriate opportunities.`;
+        return [analysis, analysisEn];
       }
+    }
 
-      // 初始化
-      document.addEventListener("DOMContentLoaded", function () {
-        // 初始更新显示（虽然默认隐藏，但需要先计算好）
-        updateDisplay();
+    function generateFinanceAnalysis(stages) {
+      const [first, second, third] = stages;
+      const goodGods = stages.filter((god) =>
+        ["大安", "速喜", "小吉", "天德"].includes(god.name)
+      ).length;
 
-        // 每秒更新时间
-        setInterval(updateDisplay, 1000);
+      if (goodGods >= 2) {
+        const analysis = `根据道门九神算法分析，您的财运整体向好。初期${first.name}显示财务基础稳固，中期${second.name}表明投资有回报，后期${third.name}提醒您要理性理财。建议您制定合理的财务规划，分散投资风险，保持一定的应急资金储备。`;
+        const analysisEn = `According to the Daoist Nine Gods algorithm analysis, your financial fortune is generally good. The initial ${first.nameEn} shows a solid financial foundation, the middle ${second.nameEn} indicates investment returns, and the final ${third.nameEn} reminds you to manage finances rationally. It is recommended that you develop a reasonable financial plan, diversify investment risks, and maintain a certain emergency fund reserve.`;
+        return [analysis, analysisEn];
+      } else {
+        const analysis = `根据道门九神算法分析，您的财运需要谨慎。初期${first.name}显示财务可能遇到压力，中期${second.name}表明投资需谨慎，后期${third.name}提醒您要控制支出。建议您做好财务规划，避免高风险投资，保持稳健的理财策略。`;
+        const analysisEn = `According to the Daoist Nine Gods algorithm analysis, your financial fortune needs caution. The initial ${first.nameEn} shows that finances may encounter pressure, the middle ${second.nameEn} indicates that investments need caution, and the final ${third.nameEn} reminds you to control expenses. It is recommended that you make financial plans, avoid high-risk investments, and maintain a prudent financial management strategy.`;
+        return [analysis, analysisEn];
+      }
+    }
 
-        // 点击模态框外部关闭
-        document
-          .getElementById("paymentModal")
-          .addEventListener("click", function (e) {
-            if (e.target === this) {
-              cancelPayment();
-            }
-          });
+    function generateHealthAnalysis(stages) {
+      const [first, second, third] = stages;
+      const hasBingfu = stages.some((god) => god.name === "病符");
 
-        // 阻止页面缩放
-        document.addEventListener(
-          "touchstart",
-          function (e) {
-            if (e.touches.length > 1) {
-              e.preventDefault();
-            }
-          },
-          { passive: false }
-        );
+      if (hasBingfu) {
+        const analysis = `根据道门九神算法分析，您需要特别关注健康状况。${stages.find((god) => god.name === "病符").name
+          }的出现提醒您要注意身体健康，及时体检，预防疾病。建议您保持规律作息，注意饮食健康，坚持适量运动，保持心情舒畅。`;
+        const analysisEn = `According to the Daoist Nine Gods algorithm analysis, you need to pay special attention to your health condition. The appearance of ${stages.find((god) => god.name === "病符").nameEn
+          } reminds you to pay attention to your health, have timely medical check-ups, and prevent diseases. It is recommended that you maintain a regular schedule, pay attention to healthy eating,坚持 moderate exercise, and maintain a happy mood.`;
+        return [analysis, analysisEn];
+      } else {
+        const analysis = `根据道门九神算法分析，您的健康状况整体良好。初期${first.name}显示身体基础健康，中期${second.name}表明精力充沛，后期${third.name}提醒您要保持良好的生活习惯。建议您继续保持健康的生活方式，定期体检，预防为主。`;
+        const analysisEn = `According to the Daoist Nine Gods algorithm analysis, your health condition is generally good. The initial ${first.nameEn} shows a healthy physical foundation, the middle ${second.nameEn} indicates abundant energy, and the final ${third.nameEn} reminds you to maintain good living habits. It is recommended that you continue to maintain a healthy lifestyle, have regular medical check-ups, and focus on prevention.`;
+        return [analysis, analysisEn];
+      }
+    }
 
-        document.addEventListener("gesturestart", function (e) {
-          e.preventDefault();
+    function generateFortuneAnalysis(stages) {
+      const [first, second, third] = stages;
+      const goodGods = stages.filter((god) =>
+        ["大安", "速喜", "小吉", "天德"].includes(god.name)
+      ).length;
+
+      if (goodGods >= 2) {
+        const analysis = `根据道门九神算法分析，您的整体运势不错。初期${first.name}显示起点良好，中期${second.name}表明发展顺利，后期${third.name}虽然有些小挑战，但整体来看运势向好。建议您保持积极乐观的心态，抓住机遇，勇于尝试新事物。`;
+        const analysisEn = `According to the Daoist Nine Gods algorithm analysis, your overall fortune is good. The initial ${first.nameEn} shows a good starting point, the middle ${second.nameEn} indicates smooth development, and although the final ${third.nameEn} has some small challenges, overall the fortune is positive. It is recommended that you maintain a positive and optimistic attitude, seize opportunities, and courageously try new things.`;
+        return [analysis, analysisEn];
+      } else {
+        const analysis = `根据道门九神算法分析，您的整体运势需要努力。初期${first.name}显示有些阻碍，中期${second.name}表明需要更多努力，后期${third.name}提醒您要积极面对挑战。建议您保持耐心和毅力，不要轻易放弃，相信困难会过去的。`;
+        const analysisEn = `According to the Daoist Nine Gods algorithm analysis, your overall fortune requires effort. The initial ${first.nameEn} shows some obstacles, the middle ${second.nameEn} indicates that more effort is needed, and the final ${third.nameEn} reminds you to actively face challenges. It is recommended that you maintain patience and perseverance, do not give up easily, and believe that difficulties will pass.`;
+        return [analysis, analysisEn];
+      }
+    }
+
+    function generateGeneralAnalysis(stages) {
+      const [first, second, third] = stages;
+      const analysis = `根据道门九神算法分析，您询问的事情发展过程如下：初期${first.name}（${first.meaning}），中期${second.name}（${second.meaning}），后期${third.name}（${third.meaning}）。整体来看，事情发展有其自身规律，建议您保持平常心，积极面对，做好充分准备，相信会有好的结果。`;
+      const analysisEn = `According to the Daoist Nine Gods algorithm analysis, the development process of the matter you asked about is as follows: Initial stage ${first.nameEn} (${first.meaningEn}), Middle stage ${second.nameEn} (${second.meaningEn}), Final stage ${third.nameEn} (${third.meaningEn}). Overall, things develop according to their own laws. It is recommended that you maintain a normal mind, face it actively, make full preparations, and believe that there will be good results.`;
+      return [analysis, analysisEn];
+    }
+
+    function clearAnalysis() {
+      document.getElementById("questionInput").value = "";
+      document.getElementById("aiResult").classList.add("hidden");
+      document.getElementById("nineGodsPrediction").classList.add("hidden");
+      currentQuestion = "";
+    }
+
+    // 初始化
+    document.addEventListener("DOMContentLoaded", function () {
+      // 初始更新显示（虽然默认隐藏，但需要先计算好）
+      updateDisplay();
+
+      // 每秒更新时间
+      setInterval(updateDisplay, 1000);
+
+      // 点击模态框外部关闭
+      document
+        .getElementById("paymentModal")
+        .addEventListener("click", function (e) {
+          if (e.target === this) {
+            cancelPayment();
+          }
         });
+
+      // 阻止页面缩放
+      document.addEventListener(
+        "touchstart",
+        function (e) {
+          if (e.touches.length > 1) {
+            e.preventDefault();
+          }
+        },
+        { passive: false }
+      );
+
+      document.addEventListener("gesturestart", function (e) {
+        e.preventDefault();
       });
 
-      // 键盘优化
-      document
-        .getElementById("questionInput")
-        .addEventListener("input", function () {
-          // 自动调整文本框高度
-          this.style.height = "auto";
-          this.style.height =
-            (this.scrollHeight > 160 ? 160 : this.scrollHeight) + "px";
-        });
-    </script>
-    <script src="https://cdn.bootcdn.net/ajax/libs/blueimp-md5/2.16.0/js/md5.js"></script>
-    <script>
-      let data = {
-        pid: "2025111020404744",
-        money: "0.01",
-        name: "test",
-        notify_url: "http://www.xiaoliuren.xyz", //异步通知地址
-        out_trade_no: new Date().getTime() + Math.floor(Math.random() * 1000), //订单号,自己生成。我是当前时间YYYYMMDDHHmmss再加上随机三位数
-        return_url: "http://www.xiaoliuren.xyz", //跳转通知地址
-        sitename: "网站名称",
-        type: "alipay", //支付方式:alipay:支付宝,wxpay:微信支付,qqpay:QQ钱包,tenpay:财付通,
-      };
+      // 检查支付返回结果
+      checkPaymentResult();
+    });
 
-      //参数进行排序拼接字符串(非常重要)
-      function getVerifyParams(params) {
-        var sPara = [];
-        if (!params) return null;
-        for (var key in params) {
-          if (!params[key] || key == "sign" || key == "sign_type") {
-            continue;
-          }
-          sPara.push([key, params[key]]);
-        }
-        sPara = sPara.sort();
-        var prestr = "";
-        for (var i2 = 0; i2 < sPara.length; i2++) {
-          var obj = sPara[i2];
-          if (i2 == sPara.length - 1) {
-            prestr = prestr + obj[0] + "=" + obj[1] + "";
-          } else {
-            prestr = prestr + obj[0] + "=" + obj[1] + "&";
-          }
-        }
-        return prestr;
+    // 加密函数
+    function encryptData(data, key = 'payment_key_2023') {
+      // 简单的加密实现，实际项目中应使用更安全的加密方法
+      const encrypted = btoa(unescape(encodeURIComponent(JSON.stringify(data))));
+      return encrypted;
+    }
+
+    // 解密函数
+    function decryptData(encryptedData, key = 'payment_key_2023') {
+      try {
+        const decrypted = JSON.parse(decodeURIComponent(escape(atob(encryptedData))));
+        return decrypted;
+      } catch (e) {
+        console.error('解密失败:', e);
+        return null;
       }
+    }
 
+    // 生成加密的回调参数
+    function generateEncryptedCallbackParams(question) {
+      const callbackData = {
+        status: 'success',
+        question: question,
+        timestamp: new Date().getTime(),
+        // 添加随机数防止重放攻击
+        nonce: Math.random().toString(36).substring(2, 15)
+      };
+      
+      // 加密回调数据
+      const encryptedData = encryptData(callbackData);
+      
+      // 生成签名，防止参数被篡改
+      const signature = md5(encryptedData + '6Ecg3jrd3W4jcOADKclHaU0N5AsWftbB');
+      
+      return {
+        data: encryptedData,
+        sign: signature
+      };
+    }
+
+    // 检查支付返回结果
+    function checkPaymentResult() {
+      // 使用URLSearchParams获取URL参数
+      const params = new URLSearchParams(window.location.search);
+      console.log('当前路由参数:', window.location.search);
+      
+      // 检查是否有加密的回调参数
+      const encryptedData = params.get('data');
+      const signature = params.get('sign');
+      
+      // 如果有加密的回调参数
+      if (encryptedData && signature) {
+        // 验证签名
+        const expectedSignature = md5(encryptedData + '6Ecg3jrd3W4jcOADKclHaU0N5AsWftbB');
+        
+        if (signature !== expectedSignature) {
+          console.error('回调参数签名验证失败');
+          clearAllUrlParams(); // 即使验证失败也要清除所有参数
+          return;
+        }
+        
+        // 解密回调数据
+        const callbackData = decryptData(encryptedData);
+        
+        if (!callbackData) {
+          console.error('回调参数解密失败');
+          clearAllUrlParams(); // 即使解密失败也要清除所有参数
+          return;
+        }
+        
+        // 检查时间戳，防止重放攻击（5分钟内有效）
+        const currentTime = new Date().getTime();
+        if (currentTime - callbackData.timestamp > 5 * 60 * 1000) {
+          console.error('回调参数已过期');
+          clearAllUrlParams(); // 即使过期也要清除所有参数
+          return;
+        }
+        
+        // 如果有支付成功状态且有咨询问题
+        if (callbackData.status === 'success' && callbackData.question) {
+          // 设置问题到输入框
+          document.getElementById("questionInput").value = callbackData.question;
+          currentQuestion = callbackData.question;
+          
+          // 显示加载状态
+          document.getElementById("loadingState").classList.remove("hidden");
+          document.getElementById("aiResult").classList.add("hidden");
+          
+          // 自动触发占卜分析
+          setTimeout(() => {
+            callAIApiForAnalysis();
+          }, 500);
+        }
+        
+        // 清除所有URL参数，包括支付平台可能返回的敏感参数
+        clearAllUrlParams();
+      } else {
+        // 兼容旧的回调方式（未加密的参数）
+        const status = params.get('callbackStatus');
+        const question = params.get('question');
+        
+        // 如果有支付成功状态且有咨询问题
+        if (status === 'success' && question) {
+          // 设置问题到输入框
+          document.getElementById("questionInput").value = decodeURIComponent(question);
+          currentQuestion = decodeURIComponent(question);
+          
+          // 显示加载状态
+          document.getElementById("loadingState").classList.remove("hidden");
+          document.getElementById("aiResult").classList.add("hidden");
+          
+          // 自动触发占卜分析
+          setTimeout(() => {
+            callAIApiForAnalysis();
+          }, 500);
+        }
+        
+        // 无论是否有有效的回调参数，都要清除所有URL参数
+        // 这可以防止支付平台返回的敏感参数（如pid、key等）暴露在URL中
+        clearAllUrlParams();
+      }
+    }
+    
+    // 清除所有URL参数
+    function clearAllUrlParams() {
+      const url = new URL(window.location);
+      
+      // 获取所有参数名
+      const allParams = Array.from(url.searchParams.keys());
+      
+      // 删除所有参数
+      allParams.forEach(param => {
+        url.searchParams.delete(param);
+      });
+      
+      // 更新URL，不保留任何参数
+      window.history.replaceState({}, document.title, url.pathname);
+      console.log('已清除所有URL参数');
+    }
+
+    // 键盘优化
+    document
+      .getElementById("questionInput")
+      .addEventListener("input", function () {
+        // 自动调整文本框高度
+        this.style.height = "auto";
+        this.style.height =
+          (this.scrollHeight > 160 ? 160 : this.scrollHeight) + "px";
+      });
+  </script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/blueimp-md5/2.16.0/js/md5.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+
+    let data = {
+      pid: "2025111020404744",
+      money: "0.01",
+      name: "test",
+      notify_url: "http://www.xiaoliuren.xyz", //异步通知地址
+      out_trade_no: new Date().getTime() + Math.floor(Math.random() * 1000), //订单号,自己生成。我是当前时间YYYYMMDDHHmmss再加上随机三位数
+      return_url: window.location.href.split('?')[0] + "?callbackStatus=success", //跳转通知地址
+      sitename: "网站名称",
+      type: "alipay", //支付方式:alipay:支付宝,wxpay:微信支付,qqpay:QQ钱包,tenpay:财付通,
+    };
+
+    //参数进行排序拼接字符串(非常重要)
+    function getVerifyParams(params) {
+      var sPara = [];
+      if (!params) return null;
+      for (var key in params) {
+        if (!params[key] || key == "sign" || key == "sign_type") {
+          continue;
+        }
+        sPara.push([key, params[key]]);
+      }
+      sPara = sPara.sort();
+      var prestr = "";
+      for (var i2 = 0; i2 < sPara.length; i2++) {
+        var obj = sPara[i2];
+        if (i2 == sPara.length - 1) {
+          prestr = prestr + obj[0] + "=" + obj[1] + "";
+        } else {
+          prestr = prestr + obj[0] + "=" + obj[1] + "&";
+        }
+      }
+      return prestr;
+    }
+
+    let str = getVerifyParams(data);
+    let key = "6Ecg3jrd3W4jcOADKclHaU0N5AsWftbB"; //密钥,易支付注册会提供pid和秘钥
+    let sign = md5(str + key); //注意支付宝规定签名时:待签名字符串后要加key
+    let result = `https://z-pay.cn/submit.php?${str}&sign=${sign}&sign_type=MD5`;
+    console.log("str", str);
+
+    document.querySelector(".confirm-btn").addEventListener("click", async function () {
+      // 确认支付逻辑
+      console.log("确认支付");
+      
+      // 获取当前输入的问题
+      const question = document.getElementById("questionInput").value.trim();
+      
+      // 验证问题是否为空
+      if (!question) {
+        alert("请输入您想要占卜的问题");
+        return;
+      }
+      
+      // 更新return_url，使用加密的回调参数
+      const baseUrl = window.location.href.split('?')[0];
+      const encryptedParams = generateEncryptedCallbackParams(question);
+      data.return_url = baseUrl + "?data=" + encodeURIComponent(encryptedParams.data) + "&sign=" + encodeURIComponent(encryptedParams.sign);
+      
+      // 重新计算签名，因为return_url已更改
       let str = getVerifyParams(data);
       let key = "6Ecg3jrd3W4jcOADKclHaU0N5AsWftbB"; //密钥,易支付注册会提供pid和秘钥
       let sign = md5(str + key); //注意支付宝规定签名时:待签名字符串后要加key
-      let result = `https://z-pay.cn/submit.php?${str}&sign=${sign}&sign_type=MD5`;
-
-      document.querySelector(".confirm-btn").addEventListener("click", function () {
-          console.log(result);
-          window.open(result, "_blank");
-          // 确认支付逻辑
-          console.log("确认支付");
+      
+      // 准备支付参数
+      const paymentParams = {
+        ...data,
+        sign: sign,
+        sign_type: "MD5"
+      };
+      
+      console.log("支付参数:", paymentParams);
+      
+      try {
+        // 使用axios发送POST请求，参数格式为form-data
+        const formData = new FormData();
+        
+        // 添加所有参数到FormData
+        Object.keys(paymentParams).forEach(key => {
+          formData.append(key, paymentParams[key]);
         });
-    </script>
-  </body>
+        
+        // 使用axios发送请求
+        const response = await axios.post('https://z-pay.cn/submit.php', formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
+        });
+        
+        console.log("支付请求已发送，响应:", response.data);
+        
+        // 如果返回的是HTML表单，需要处理表单提交
+        if (response.data && typeof response.data === 'string' && response.data.includes('<form')) {
+          // 创建一个临时div来解析HTML
+          const tempDiv = document.createElement('div');
+          tempDiv.innerHTML = response.data;
+          
+          // 查找表单
+          const form = tempDiv.querySelector('form');
+          if (form) {
+            // 提交表单到新窗口
+            form.target = '_blank';
+            document.body.appendChild(form);
+            form.submit();
+            document.body.removeChild(form);
+          }
+        } else if (response.data && response.data.url) {
+          // 如果返回的是重定向URL，在新窗口打开
+          window.open(response.data.url, '_blank');
+        } else {
+          // 其他情况，显示响应信息
+          alert('支付请求已发送，请查看新窗口完成支付');
+        }
+      } catch (error) {
+        console.error('支付处理失败:', error);
+        
+        // 如果是网络错误或跨域问题，回退到表单提交方式
+        if (error.code === 'NETWORK_ERROR' || error.message.includes('Network Error') || error.message.includes('CORS')) {
+          console.log('网络错误或跨域问题，回退到表单提交方式');
+          
+          // 使用表单POST提交方式（解决跨域问题）
+          const form = document.createElement('form');
+          form.method = 'POST';
+          form.action = 'https://z-pay.cn/submit.php';
+          form.target = '_blank'; // 在新窗口打开
+          form.style.display = 'none'; // 隐藏表单
+
+          // 添加所有参数作为隐藏字段
+          Object.keys(paymentParams).forEach(key => {
+            const input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = key;
+            input.value = paymentParams[key];
+            form.appendChild(input);
+          });
+
+          // 提交表单
+          document.body.appendChild(form);
+          form.submit();
+          document.body.removeChild(form);
+          
+          console.log("支付表单已提交");
+        } else {
+          alert('支付处理失败: ' + (error.response?.data?.message || error.message));
+        }
+      }
+    });
+  </script>
+</body>
+
 </html>
