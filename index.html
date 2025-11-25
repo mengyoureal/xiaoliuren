@@ -5,8 +5,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>道门秘传小六壬九神版 - 手机版 (Bilingual)</title>
+  <!-- 1. Tailwind CSS (保持不变，目前没有更好的国内一键引入方案，通常在国内还能连上) -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  
+  <!-- 2. Font Awesome 图标库 (已替换为国内 BootCDN 加速源) -->
+  <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  
   <script>
     tailwind.config = {
       theme: {
@@ -1933,7 +1937,8 @@ Important: Please answer in bilingual, Chinese first then English, separated by 
       });
   </script>
   <script src="https://cdn.bootcdn.net/ajax/libs/blueimp-md5/2.16.0/js/md5.js"></script>
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <!-- 替换为国内镜像源的 axios -->
+  <script src="https://cdn.bootcdn.net/ajax/libs/axios/1.6.2/axios.min.js"></script>
   <script>
 
     let data = {
