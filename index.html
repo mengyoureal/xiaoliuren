@@ -143,7 +143,7 @@
         border-radius: 12px;
         font-weight: 600;
         transition: all 0.3s ease;
-        cursor: pointer; /* 修复iOS点击兼容性 */
+        cursor: pointer;
       }
 
       .mobile-button:hover {
@@ -273,8 +273,8 @@
       </div>
     </div>
 
-    <!-- AI卜卦询问框 -->
-    <div class="mb-6">
+    <!-- AI卜卦询问框 (添加 ID inputSection 以便控制显示隐藏) -->
+    <div id="inputSection" class="mb-6">
       <div class="bg-white rounded-2xl p-4 card-shadow animate-slide-up">
         <h3 class="text-lg font-bold text-gray-800 mb-3 flex items-center">
           <i class="fa fa-commenting-o mr-2 text-primary"></i>
@@ -341,11 +341,23 @@ Please describe the specific matter you want to ask about in clear and concise l
           <span class="english-text ml-2">AI Intelligent Analysis Result</span>
         </h3>
         <div id="analysisContent"></div>
-        <button onclick="clearAnalysis()" class="mt-4 bg-white text-primary px-4 py-2 rounded-lg text-sm font-semibold">
-          <i class="fa fa-times mr-1"></i>
-          <span class="chinese-text">重新卜卦</span>
-          <span class="english-text ml-1">New Fortune Telling</span>
-        </button>
+        
+        <!-- 按钮区域 -->
+        <div class="mt-4 flex flex-col space-y-3 sm:flex-row sm:space-y-0 sm:space-x-3">
+          <!-- 复制按钮 -->
+          <button onclick="copyResult()" class="flex-1 bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-lg text-sm font-semibold touch-friendly">
+            <i class="fa fa-copy mr-2"></i>
+            <span class="chinese-text">复制结果</span>
+            <span class="english-text ml-1">Copy Result</span>
+          </button>
+          
+          <!-- 重置按钮 -->
+          <button onclick="clearAnalysis()" class="flex-1 bg-white text-primary px-4 py-3 rounded-lg text-sm font-semibold touch-friendly">
+            <i class="fa fa-times mr-1"></i>
+            <span class="chinese-text">重新卜卦</span>
+            <span class="english-text ml-1">New Fortune Telling</span>
+          </button>
+        </div>
       </div>
     </div>
 
@@ -766,7 +778,7 @@ Please describe the specific matter you want to ask about in clear and concise l
       { name: "亥时", nameEn: "Hai Shi", period: "21:00-23:00" },
     ];
 
-    // 2025年农历对照表（已修复：增加2025年11月20日之后的农历数据，确保当前时间显示正确）
+    // 2025年农历对照表（已修复：增加2025年11月20日之后的农历数据）
     const LUNAR_2025_SEPTEMBER = {
       "2025-10-21": { month: 9, day: 1, monthName: "九月", dayName: "初一", monthNameEn: "September", dayNameEn: "1st" },
       "2025-10-22": { month: 9, day: 2, monthName: "九月", dayName: "初二", monthNameEn: "September", dayNameEn: "2nd" },
@@ -798,7 +810,6 @@ Please describe the specific matter you want to ask about in clear and concise l
       "2025-11-17": { month: 9, day: 28, monthName: "九月", dayName: "廿八", monthNameEn: "September", dayNameEn: "28th" },
       "2025-11-18": { month: 9, day: 29, monthName: "九月", dayName: "廿九", monthNameEn: "September", dayNameEn: "29th" },
       "2025-11-19": { month: 9, day: 30, monthName: "九月", dayName: "三十", monthNameEn: "September", dayNameEn: "30th" },
-      // 新增数据：2025年11月20日 - 2025年12月31日
       "2025-11-20": { month: 10, day: 1, monthName: "十月", dayName: "初一", monthNameEn: "October", dayNameEn: "1st" },
       "2025-11-21": { month: 10, day: 2, monthName: "十月", dayName: "初二", monthNameEn: "October", dayNameEn: "2nd" },
       "2025-11-22": { month: 10, day: 3, monthName: "十月", dayName: "初三", monthNameEn: "October", dayNameEn: "3rd" },
@@ -1363,7 +1374,7 @@ Important: Please answer in bilingual, Chinese first then English, separated by 
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            model: "deepseek-ai/DeepSeek-V3",
+            model: "deepseek-ai/DeepSeek-V3", // <--- 确保使用 DeepSeek-V3
             messages: messages,
             temperature: 0.7,
             max_tokens: 1500,
@@ -1393,10 +1404,6 @@ Important: Please answer in bilingual, Chinese first then English, separated by 
           throw new Error("API返回格式不正确，缺少分析内容");
         }
       } catch (error) {
-
-
-
-
         console.error("AI API调用失败:", error);
 
         // 显示错误信息并使用备用分析
@@ -1429,6 +1436,9 @@ Important: Please answer in bilingual, Chinese first then English, separated by 
           errorMessage + backupAnalysis;
         document.getElementById("loadingState").classList.add("hidden");
         document.getElementById("aiResult").classList.remove("hidden");
+        // 隐藏输入框
+        document.getElementById("inputSection").classList.add("hidden");
+        
         document
           .getElementById("nineGodsPrediction")
           .classList.remove("hidden");
@@ -1438,6 +1448,9 @@ Important: Please answer in bilingual, Chinese first then English, separated by 
 
     // 显示AI分析结果
     function displayAIAnalysis(aiAnalysis, stages) {
+      // 隐藏输入框区域
+      document.getElementById("inputSection").classList.add("hidden");
+
       const analysisHtml = `
                 <div class="space-y-4">
                     <div class="bg-white/20 rounded-lg p-3">
@@ -1455,7 +1468,7 @@ Important: Please answer in bilingual, Chinese first then English, separated by 
                             <span class="chinese-text">AI专业分析</span>
                             <span class="english-text ml-2">AI Professional Analysis</span>
                         </div>
-                        <div class="text-sm leading-relaxed whitespace-pre-line">${aiAnalysis}</div>
+                        <div id="aiAnalysisText" class="text-sm leading-relaxed whitespace-pre-line">${aiAnalysis}</div>
                     </div>
                     
                     <div class="bg-white/10 rounded-lg p-3">
@@ -1504,6 +1517,50 @@ Important: Please answer in bilingual, Chinese first then English, separated by 
           .scrollIntoView({ behavior: "smooth", block: "center" });
       }, 100);
     }
+    
+    // 复制结果功能
+    function copyResult() {
+      const textToCopy = document.getElementById("aiAnalysisText").innerText;
+      
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(textToCopy).then(() => {
+          alert("分析结果已复制到剪贴板\nAnalysis result copied to clipboard");
+        }).catch(err => {
+          console.error('Failed to copy: ', err);
+          fallbackCopyTextToClipboard(textToCopy);
+        });
+      } else {
+        fallbackCopyTextToClipboard(textToCopy);
+      }
+    }
+    
+    // 兼容性复制函数
+    function fallbackCopyTextToClipboard(text) {
+      var textArea = document.createElement("textarea");
+      textArea.value = text;
+      
+      // 避免滚动到底部
+      textArea.style.top = "0";
+      textArea.style.left = "0";
+      textArea.style.position = "fixed";
+      
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      
+      try {
+        var successful = document.execCommand('copy');
+        if(successful) {
+           alert("分析结果已复制到剪贴板\nAnalysis result copied to clipboard");
+        } else {
+           alert("复制失败，请手动复制\nCopy failed, please copy manually");
+        }
+      } catch (err) {
+        alert("复制失败，请手动复制\nCopy failed, please copy manually");
+      }
+      
+      document.body.removeChild(textArea);
+    }
 
     // 备用分析生成函数（当API不可用时使用）
     function generateBackupAnalysis(stages, question) {
@@ -1538,7 +1595,7 @@ Important: Please answer in bilingual, Chinese first then English, separated by 
                         <span class="chinese-text">备用分析结果</span>
                         <span class="english-text ml-2">Backup Analysis Result</span>
                     </div>
-                    <div class="text-sm leading-relaxed">${analysis}<br><br>${analysisEn}</div>
+                    <div id="aiAnalysisText" class="text-sm leading-relaxed">${analysis}<br><br>${analysisEn}</div>
                 </div>
             `;
     }
@@ -1684,6 +1741,8 @@ Important: Please answer in bilingual, Chinese first then English, separated by 
       document.getElementById("questionInput").value = "";
       document.getElementById("aiResult").classList.add("hidden");
       document.getElementById("nineGodsPrediction").classList.add("hidden");
+      // 重新显示输入框区域
+      document.getElementById("inputSection").classList.remove("hidden");
       currentQuestion = "";
     }
 
@@ -1879,7 +1938,7 @@ Important: Please answer in bilingual, Chinese first then English, separated by 
 
     let data = {
       pid: "2025111020404744",
-      money: "1",
+      money: "0.01",
       name: "test",
       notify_url: "http://www.xiaoliuren.xyz", //异步通知地址
       out_trade_no: new Date().getTime() + Math.floor(Math.random() * 1000), //订单号,自己生成。我是当前时间YYYYMMDDHHmmss再加上随机三位数
@@ -1918,8 +1977,6 @@ Important: Please answer in bilingual, Chinese first then English, separated by 
     console.log("str", str);
 
     // 修复处：将事件监听器绑定到移动后的class上
-    // 原有的类名 confirm-btn 现在在 button 元素上，所以这里不用改，
-    // 但是因为HTML结构的改变，点击事件现在会正确冒泡
     document.querySelector(".confirm-btn").addEventListener("click", async function () {
       // 确认支付逻辑
       console.log("确认支付");
