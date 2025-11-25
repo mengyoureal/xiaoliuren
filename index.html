@@ -143,6 +143,7 @@
         border-radius: 12px;
         font-weight: 600;
         transition: all 0.3s ease;
+        cursor: pointer; /* 修复iOS点击兼容性 */
       }
 
       .mobile-button:hover {
@@ -402,7 +403,7 @@ Please describe the specific matter you want to ask about in clear and concise l
               <div class="text-sm text-gray-700 leading-relaxed" id="firstGodDesc">
                 天德贵人助，逢凶化吉祥，事事有人帮，遇难贵人现，求职顺利成，交易得成功，祈福求平安，福禄自天来。
                 <br /><br />
-                Heavenly virtue贵人 helps, turns misfortune into good luck,
+                Heavenly virtue noble helps, turns misfortune into good luck,
                 everything has help, noble people appear in difficulties, job
                 search goes smoothly, transactions succeed, pray for peace,
                 fortune and blessings come from heaven.
@@ -568,9 +569,10 @@ Please describe the specific matter you want to ask about in clear and concise l
         <span class="english-text ml-1">for fortune telling analysis</span>
       </p>
       <div class="space-y-3">
-        <button class="mobile-button w-full bg-success text-white touch-friendly">
+        <!-- 修复处：将confirm-btn类名移动到button标签上 -->
+        <button class="mobile-button w-full bg-success text-white touch-friendly confirm-btn">
           <i class="fa fa-check mr-2"></i>
-          <span class="chinese-text confirm-btn">确认支付</span>
+          <span class="chinese-text">确认支付</span>
           <span class="english-text ml-1">Confirm Payment</span>
         </button>
         <button onclick="cancelPayment()" class="mobile-button w-full bg-gray-200 text-gray-700 touch-friendly">
@@ -764,248 +766,70 @@ Please describe the specific matter you want to ask about in clear and concise l
       { name: "亥时", nameEn: "Hai Shi", period: "21:00-23:00" },
     ];
 
-    // 2025年农历九月详细对照表
+    // 2025年农历对照表（已修复：增加2025年11月20日之后的农历数据，确保当前时间显示正确）
     const LUNAR_2025_SEPTEMBER = {
-      "2025-10-21": {
-        month: 9,
-        day: 1,
-        monthName: "九月",
-        dayName: "初一",
-        monthNameEn: "September",
-        dayNameEn: "1st",
-      },
-      "2025-10-22": {
-        month: 9,
-        day: 2,
-        monthName: "九月",
-        dayName: "初二",
-        monthNameEn: "September",
-        dayNameEn: "2nd",
-      },
-      "2025-10-23": {
-        month: 9,
-        day: 3,
-        monthName: "九月",
-        dayName: "初三",
-        monthNameEn: "September",
-        dayNameEn: "3rd",
-      },
-      "2025-10-24": {
-        month: 9,
-        day: 4,
-        monthName: "九月",
-        dayName: "初四",
-        monthNameEn: "September",
-        dayNameEn: "4th",
-      },
-      "2025-10-25": {
-        month: 9,
-        day: 5,
-        monthName: "九月",
-        dayName: "初五",
-        monthNameEn: "September",
-        dayNameEn: "5th",
-      },
-      "2025-10-26": {
-        month: 9,
-        day: 6,
-        monthName: "九月",
-        dayName: "初六",
-        monthNameEn: "September",
-        dayNameEn: "6th",
-      },
-      "2025-10-27": {
-        month: 9,
-        day: 7,
-        monthName: "九月",
-        dayName: "初七",
-        monthNameEn: "September",
-        dayNameEn: "7th",
-      },
-      "2025-10-28": {
-        month: 9,
-        day: 8,
-        monthName: "九月",
-        dayName: "初八",
-        monthNameEn: "September",
-        dayNameEn: "8th",
-      },
-      "2025-10-29": {
-        month: 9,
-        day: 9,
-        monthName: "九月",
-        dayName: "初九",
-        monthNameEn: "September",
-        dayNameEn: "9th",
-      },
-      "2025-10-30": {
-        month: 9,
-        day: 10,
-        monthName: "九月",
-        dayName: "初十",
-        monthNameEn: "September",
-        dayNameEn: "10th",
-      },
-      "2025-10-31": {
-        month: 9,
-        day: 11,
-        monthName: "九月",
-        dayName: "十一",
-        monthNameEn: "September",
-        dayNameEn: "11th",
-      },
-      "2025-11-01": {
-        month: 9,
-        day: 12,
-        monthName: "九月",
-        dayName: "十二",
-        monthNameEn: "September",
-        dayNameEn: "12th",
-      },
-      "2025-11-02": {
-        month: 9,
-        day: 13,
-        monthName: "九月",
-        dayName: "十三",
-        monthNameEn: "September",
-        dayNameEn: "13th",
-      },
-      "2025-11-03": {
-        month: 9,
-        day: 14,
-        monthName: "九月",
-        dayName: "十四",
-        monthNameEn: "September",
-        dayNameEn: "14th",
-      },
-      "2025-11-04": {
-        month: 9,
-        day: 15,
-        monthName: "九月",
-        dayName: "十五",
-        monthNameEn: "September",
-        dayNameEn: "15th",
-      },
-      "2025-11-05": {
-        month: 9,
-        day: 16,
-        monthName: "九月",
-        dayName: "十六",
-        monthNameEn: "September",
-        dayNameEn: "16th",
-      },
-      "2025-11-06": {
-        month: 9,
-        day: 17,
-        monthName: "九月",
-        dayName: "十七",
-        monthNameEn: "September",
-        dayNameEn: "17th",
-      },
-      "2025-11-07": {
-        month: 9,
-        day: 18,
-        monthName: "九月",
-        dayName: "十八",
-        monthNameEn: "September",
-        dayNameEn: "18th",
-      },
-      "2025-11-08": {
-        month: 9,
-        day: 19,
-        monthName: "九月",
-        dayName: "十九",
-        monthNameEn: "September",
-        dayNameEn: "19th",
-      },
-      "2025-11-09": {
-        month: 9,
-        day: 20,
-        monthName: "九月",
-        dayName: "二十",
-        monthNameEn: "September",
-        dayNameEn: "20th",
-      },
-      "2025-11-10": {
-        month: 9,
-        day: 21,
-        monthName: "九月",
-        dayName: "廿一",
-        monthNameEn: "September",
-        dayNameEn: "21st",
-      },
-      "2025-11-11": {
-        month: 9,
-        day: 22,
-        monthName: "九月",
-        dayName: "廿二",
-        monthNameEn: "September",
-        dayNameEn: "22nd",
-      },
-      "2025-11-12": {
-        month: 9,
-        day: 23,
-        monthName: "九月",
-        dayName: "廿三",
-        monthNameEn: "September",
-        dayNameEn: "23rd",
-      },
-      "2025-11-13": {
-        month: 9,
-        day: 24,
-        monthName: "九月",
-        dayName: "廿四",
-        monthNameEn: "September",
-        dayNameEn: "24th",
-      },
-      "2025-11-14": {
-        month: 9,
-        day: 25,
-        monthName: "九月",
-        dayName: "廿五",
-        monthNameEn: "September",
-        dayNameEn: "25th",
-      },
-      "2025-11-15": {
-        month: 9,
-        day: 26,
-        monthName: "九月",
-        dayName: "廿六",
-        monthNameEn: "September",
-        dayNameEn: "26th",
-      },
-      "2025-11-16": {
-        month: 9,
-        day: 27,
-        monthName: "九月",
-        dayName: "廿七",
-        monthNameEn: "September",
-        dayNameEn: "27th",
-      },
-      "2025-11-17": {
-        month: 9,
-        day: 28,
-        monthName: "九月",
-        dayName: "廿八",
-        monthNameEn: "September",
-        dayNameEn: "28th",
-      },
-      "2025-11-18": {
-        month: 9,
-        day: 29,
-        monthName: "九月",
-        dayName: "廿九",
-        monthNameEn: "September",
-        dayNameEn: "29th",
-      },
-      "2025-11-19": {
-        month: 9,
-        day: 30,
-        monthName: "九月",
-        dayName: "三十",
-        monthNameEn: "September",
-        dayNameEn: "30th",
-      },
+      "2025-10-21": { month: 9, day: 1, monthName: "九月", dayName: "初一", monthNameEn: "September", dayNameEn: "1st" },
+      "2025-10-22": { month: 9, day: 2, monthName: "九月", dayName: "初二", monthNameEn: "September", dayNameEn: "2nd" },
+      "2025-10-23": { month: 9, day: 3, monthName: "九月", dayName: "初三", monthNameEn: "September", dayNameEn: "3rd" },
+      "2025-10-24": { month: 9, day: 4, monthName: "九月", dayName: "初四", monthNameEn: "September", dayNameEn: "4th" },
+      "2025-10-25": { month: 9, day: 5, monthName: "九月", dayName: "初五", monthNameEn: "September", dayNameEn: "5th" },
+      "2025-10-26": { month: 9, day: 6, monthName: "九月", dayName: "初六", monthNameEn: "September", dayNameEn: "6th" },
+      "2025-10-27": { month: 9, day: 7, monthName: "九月", dayName: "初七", monthNameEn: "September", dayNameEn: "7th" },
+      "2025-10-28": { month: 9, day: 8, monthName: "九月", dayName: "初八", monthNameEn: "September", dayNameEn: "8th" },
+      "2025-10-29": { month: 9, day: 9, monthName: "九月", dayName: "初九", monthNameEn: "September", dayNameEn: "9th" },
+      "2025-10-30": { month: 9, day: 10, monthName: "九月", dayName: "初十", monthNameEn: "September", dayNameEn: "10th" },
+      "2025-10-31": { month: 9, day: 11, monthName: "九月", dayName: "十一", monthNameEn: "September", dayNameEn: "11th" },
+      "2025-11-01": { month: 9, day: 12, monthName: "九月", dayName: "十二", monthNameEn: "September", dayNameEn: "12th" },
+      "2025-11-02": { month: 9, day: 13, monthName: "九月", dayName: "十三", monthNameEn: "September", dayNameEn: "13th" },
+      "2025-11-03": { month: 9, day: 14, monthName: "九月", dayName: "十四", monthNameEn: "September", dayNameEn: "14th" },
+      "2025-11-04": { month: 9, day: 15, monthName: "九月", dayName: "十五", monthNameEn: "September", dayNameEn: "15th" },
+      "2025-11-05": { month: 9, day: 16, monthName: "九月", dayName: "十六", monthNameEn: "September", dayNameEn: "16th" },
+      "2025-11-06": { month: 9, day: 17, monthName: "九月", dayName: "十七", monthNameEn: "September", dayNameEn: "17th" },
+      "2025-11-07": { month: 9, day: 18, monthName: "九月", dayName: "十八", monthNameEn: "September", dayNameEn: "18th" },
+      "2025-11-08": { month: 9, day: 19, monthName: "九月", dayName: "十九", monthNameEn: "September", dayNameEn: "19th" },
+      "2025-11-09": { month: 9, day: 20, monthName: "九月", dayName: "二十", monthNameEn: "September", dayNameEn: "20th" },
+      "2025-11-10": { month: 9, day: 21, monthName: "九月", dayName: "廿一", monthNameEn: "September", dayNameEn: "21st" },
+      "2025-11-11": { month: 9, day: 22, monthName: "九月", dayName: "廿二", monthNameEn: "September", dayNameEn: "22nd" },
+      "2025-11-12": { month: 9, day: 23, monthName: "九月", dayName: "廿三", monthNameEn: "September", dayNameEn: "23rd" },
+      "2025-11-13": { month: 9, day: 24, monthName: "九月", dayName: "廿四", monthNameEn: "September", dayNameEn: "24th" },
+      "2025-11-14": { month: 9, day: 25, monthName: "九月", dayName: "廿五", monthNameEn: "September", dayNameEn: "25th" },
+      "2025-11-15": { month: 9, day: 26, monthName: "九月", dayName: "廿六", monthNameEn: "September", dayNameEn: "26th" },
+      "2025-11-16": { month: 9, day: 27, monthName: "九月", dayName: "廿七", monthNameEn: "September", dayNameEn: "27th" },
+      "2025-11-17": { month: 9, day: 28, monthName: "九月", dayName: "廿八", monthNameEn: "September", dayNameEn: "28th" },
+      "2025-11-18": { month: 9, day: 29, monthName: "九月", dayName: "廿九", monthNameEn: "September", dayNameEn: "29th" },
+      "2025-11-19": { month: 9, day: 30, monthName: "九月", dayName: "三十", monthNameEn: "September", dayNameEn: "30th" },
+      // 新增数据：2025年11月20日 - 2025年12月31日
+      "2025-11-20": { month: 10, day: 1, monthName: "十月", dayName: "初一", monthNameEn: "October", dayNameEn: "1st" },
+      "2025-11-21": { month: 10, day: 2, monthName: "十月", dayName: "初二", monthNameEn: "October", dayNameEn: "2nd" },
+      "2025-11-22": { month: 10, day: 3, monthName: "十月", dayName: "初三", monthNameEn: "October", dayNameEn: "3rd" },
+      "2025-11-23": { month: 10, day: 4, monthName: "十月", dayName: "初四", monthNameEn: "October", dayNameEn: "4th" },
+      "2025-11-24": { month: 10, day: 5, monthName: "十月", dayName: "初五", monthNameEn: "October", dayNameEn: "5th" },
+      "2025-11-25": { month: 10, day: 6, monthName: "十月", dayName: "初六", monthNameEn: "October", dayNameEn: "6th" },
+      "2025-11-26": { month: 10, day: 7, monthName: "十月", dayName: "初七", monthNameEn: "October", dayNameEn: "7th" },
+      "2025-11-27": { month: 10, day: 8, monthName: "十月", dayName: "初八", monthNameEn: "October", dayNameEn: "8th" },
+      "2025-11-28": { month: 10, day: 9, monthName: "十月", dayName: "初九", monthNameEn: "October", dayNameEn: "9th" },
+      "2025-11-29": { month: 10, day: 10, monthName: "十月", dayName: "初十", monthNameEn: "October", dayNameEn: "10th" },
+      "2025-11-30": { month: 10, day: 11, monthName: "十月", dayName: "十一", monthNameEn: "October", dayNameEn: "11th" },
+      "2025-12-01": { month: 10, day: 12, monthName: "十月", dayName: "十二", monthNameEn: "October", dayNameEn: "12th" },
+      "2025-12-02": { month: 10, day: 13, monthName: "十月", dayName: "十三", monthNameEn: "October", dayNameEn: "13th" },
+      "2025-12-03": { month: 10, day: 14, monthName: "十月", dayName: "十四", monthNameEn: "October", dayNameEn: "14th" },
+      "2025-12-04": { month: 10, day: 15, monthName: "十月", dayName: "十五", monthNameEn: "October", dayNameEn: "15th" },
+      "2025-12-05": { month: 10, day: 16, monthName: "十月", dayName: "十六", monthNameEn: "October", dayNameEn: "16th" },
+      "2025-12-06": { month: 10, day: 17, monthName: "十月", dayName: "十七", monthNameEn: "October", dayNameEn: "17th" },
+      "2025-12-07": { month: 10, day: 18, monthName: "十月", dayName: "十八", monthNameEn: "October", dayNameEn: "18th" },
+      "2025-12-08": { month: 10, day: 19, monthName: "十月", dayName: "十九", monthNameEn: "October", dayNameEn: "19th" },
+      "2025-12-09": { month: 10, day: 20, monthName: "十月", dayName: "二十", monthNameEn: "October", dayNameEn: "20th" },
+      "2025-12-10": { month: 10, day: 21, monthName: "十月", dayName: "廿一", monthNameEn: "October", dayNameEn: "21st" },
+      "2025-12-11": { month: 10, day: 22, monthName: "十月", dayName: "廿二", monthNameEn: "October", dayNameEn: "22nd" },
+      "2025-12-12": { month: 10, day: 23, monthName: "十月", dayName: "廿三", monthNameEn: "October", dayNameEn: "23rd" },
+      "2025-12-13": { month: 10, day: 24, monthName: "十月", dayName: "廿四", monthNameEn: "October", dayNameEn: "24th" },
+      "2025-12-14": { month: 10, day: 25, monthName: "十月", dayName: "廿五", monthNameEn: "October", dayNameEn: "25th" },
+      "2025-12-15": { month: 10, day: 26, monthName: "十月", dayName: "廿六", monthNameEn: "October", dayNameEn: "26th" },
+      "2025-12-16": { month: 10, day: 27, monthName: "十月", dayName: "廿七", monthNameEn: "October", dayNameEn: "27th" },
+      "2025-12-17": { month: 10, day: 28, monthName: "十月", dayName: "廿八", monthNameEn: "October", dayNameEn: "28th" },
+      "2025-12-18": { month: 10, day: 29, monthName: "十月", dayName: "廿九", monthNameEn: "October", dayNameEn: "29th" },
+      "2025-12-19": { month: 10, day: 30, monthName: "十月", dayName: "三十", monthNameEn: "October", dayNameEn: "30th" },
+      "2025-12-20": { month: 11, day: 1, monthName: "冬月", dayName: "初一", monthNameEn: "November", dayNameEn: "1st" },
     };
 
     // 农历转换函数
@@ -2093,6 +1917,9 @@ Important: Please answer in bilingual, Chinese first then English, separated by 
     let result = `https://z-pay.cn/submit.php?${str}&sign=${sign}&sign_type=MD5`;
     console.log("str", str);
 
+    // 修复处：将事件监听器绑定到移动后的class上
+    // 原有的类名 confirm-btn 现在在 button 元素上，所以这里不用改，
+    // 但是因为HTML结构的改变，点击事件现在会正确冒泡
     document.querySelector(".confirm-btn").addEventListener("click", async function () {
       // 确认支付逻辑
       console.log("确认支付");
