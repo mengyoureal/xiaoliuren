@@ -9,8 +9,6 @@
   <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" />
   <!-- 引入专业农历库 -->
   <script src="https://cdn.jsdelivr.net/npm/lunar-javascript@1.2.37/lunar.min.js"></script>
-  <!-- 引入 Axios 用于更好的支付请求 -->
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <!-- 引入 MD5 -->
   <script src="https://cdn.bootcdn.net/ajax/libs/blueimp-md5/2.16.0/js/md5.js"></script>
 
@@ -367,7 +365,9 @@
                 document.getElementById("resultSection").classList.remove("hidden");
                 document.getElementById("payWall").classList.add("hidden"); 
                 document.getElementById("aiRealResult").classList.remove("hidden"); 
+                
                 showTeaserResult(false); 
+                
                 document.getElementById("analysisContent").innerHTML = `
                     <div class="text-center py-10">
                          <div class="bagua-spinner mb-4"></div>
@@ -414,6 +414,10 @@
             }
         }
         
+        if(!currentStages || currentStages.length === 0) {
+            updateTimeDisplay();
+        }
+        
         document.getElementById("teaserGod1").innerText = currentStages[0].name;
         document.getElementById("teaserGod2").innerText = currentStages[1].name;
         document.getElementById("teaserGod3").innerText = currentStages[2].name;
@@ -430,26 +434,23 @@
         verdictEl.className = goodCount >= 2 ? "text-xl text-secondary font-bold tracking-widest" : "text-xl text-white font-bold tracking-widest";
     }
 
-    // --- 5. 支付逻辑 (修复版：LocalStorage + Axios) ---
-    async function startPayment() {
+    // --- 5. 支付逻辑 (修复版：纯表单提交，最稳定唤起支付宝) ---
+    function startPayment() {
         let finalPrice = CONFIG.defaultPrice; 
         let finalQuestion = userQuestion;
 
-        // 检查 1.88元 暗号
         if (userQuestion.toLowerCase().includes(CONFIG.magicCode.toLowerCase())) {
             finalPrice = CONFIG.discountPrice; 
-            // 剔除暗号
             finalQuestion = userQuestion.replace(new RegExp(CONFIG.magicCode, "gi"), "").trim();
             if(finalQuestion.length === 0) finalQuestion = "综合运势分析"; 
         }
 
-        // --- 关键修复：将问题存入 LocalStorage，防止支付回调数据丢失 ---
+        // 存入本地，防止跳转丢失
         localStorage.setItem('cf_question', finalQuestion);
         localStorage.setItem('cf_timestamp', new Date().getTime());
 
-        // 构造简单的 Return URL，无需加密长字符串
         const baseUrl = window.location.href.split('?')[0];
-        const returnUrl = `${baseUrl}?status=paid`; // 简化回调参数
+        const returnUrl = `${baseUrl}?status=paid`; 
 
         const payData = {
             pid: CONFIG.paymentId,
@@ -462,48 +463,18 @@
             type: "alipay" 
         };
 
+        // 计算签名
         const sortedParams = Object.keys(payData).sort().map(k => `${k}=${payData[k]}`).join('&');
         const paySign = md5(sortedParams + CONFIG.paymentKey);
         payData.sign = paySign;
         payData.sign_type = "MD5";
 
-        // --- 关键修复：使用 Axios 请求获取跳转链接，解决支付宝唤起问题 ---
-        try {
-            // 将 JSON 数据转换为 FormData 格式
-            const formData = new FormData();
-            Object.keys(payData).forEach(key => formData.append(key, payData[key]));
-
-            // 尝试直接请求
-            // 注意：如果跨域报错，代码会自动降级到 Form 提交
-            const response = await axios.post(CONFIG.submitUrl, formData, {
-                headers: { 'Content-Type': 'multipart/form-data' }
-            });
-
-            // 检查响应类型
-            if (response.data && typeof response.data === 'string' && response.data.includes('<form')) {
-                // 如果返回的是 HTML 表单，渲染并提交
-                const div = document.createElement('div');
-                div.innerHTML = response.data;
-                document.body.appendChild(div);
-                div.querySelector('form').submit();
-            } else if (response.data && response.data.code === 1 && response.data.payurl) {
-                // 如果返回的是 JSON URL (某些易支付接口)
-                window.location.href = response.data.payurl;
-            } else {
-                // 默认兜底：构建表单提交
-                fallbackFormSubmit(payData);
-            }
-        } catch (e) {
-            console.log("Axios request failed, falling back to form submit", e);
-            fallbackFormSubmit(payData);
-        }
-    }
-
-    function fallbackFormSubmit(payData) {
+        // 创建隐形表单并提交 (最稳的跳转方式)
         const form = document.createElement('form');
         form.method = 'POST';
         form.action = CONFIG.submitUrl;
-        form.target = '_self'; // 手机端自跳转
+        form.target = '_self'; 
+        
         Object.keys(payData).forEach(key => {
             const input = document.createElement('input');
             input.type = 'hidden';
@@ -511,19 +482,17 @@
             input.value = payData[key];
             form.appendChild(input);
         });
+        
         document.body.appendChild(form);
         form.submit();
     }
 
-    // --- 6. 回调与AI (修复版：从 LocalStorage 读取) ---
+    // --- 6. 回调与AI (LocalStorage + 修复 Teaser不显示问题) ---
     function checkPaymentResult() {
         const params = new URLSearchParams(window.location.search);
-        // 只要 status=paid 就认为支付成功 (简单校验，因为这是前端)
-        // 实际更安全做法是校验 sign，但为了解决“不出结果”问题，优先信赖本地存储
         const status = params.get('status');
 
         if (status === 'paid') {
-            // 从 LocalStorage 恢复问题
             const storedQuestion = localStorage.getItem('cf_question');
             
             if (storedQuestion) {
@@ -534,6 +503,9 @@
                 document.getElementById("payWall").classList.add("hidden");
                 document.getElementById("aiRealResult").classList.remove("hidden");
                 
+                updateTimeDisplay();
+                showTeaserResult(false);
+
                 document.getElementById("analysisContent").innerHTML = `
                     <div class="text-center py-10">
                         <div class="bagua-spinner mb-4"></div>
@@ -543,7 +515,6 @@
                 `;
                 
                 callAI();
-                // 清理 URL，防止刷新重复触发
                 window.history.replaceState({}, document.title, window.location.pathname);
             }
         }
