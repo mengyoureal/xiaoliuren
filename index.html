@@ -1,3 +1,4 @@
+<!-- START OF FILE 小瑕疵支付重新算版_修复版.html -->
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -17,12 +18,11 @@
       theme: {
         extend: {
           colors: {
-            // 紫气东来配色
-            primary: "#FCD34D", // 琥珀金
-            secondary: "#D8B4FE", // 薰衣草紫
-            accent: "#1677FF", // 支付宝蓝
-            bgStart: "#2E1065", // 深紫
-            bgEnd: "#020617",   // 墨蓝黑
+            primary: "#FCD34D", 
+            secondary: "#D8B4FE", 
+            accent: "#1677FF", 
+            bgStart: "#2E1065", 
+            bgEnd: "#020617",   
           },
           fontFamily: {
             serif: ["Noto Serif SC", "STSong", "SimSun", "serif"],
@@ -133,7 +133,7 @@
       </div>
     </div>
 
-    <!-- 加载中动画 (明确告知时间) -->
+    <!-- 加载中动画 -->
     <div id="loadingState" class="hidden py-16 text-center">
         <div class="bagua-spinner mb-8"></div>
         <p class="text-gold text-2xl mb-3 font-serif tracking-widest">紫微斗数 天机推演</p>
@@ -143,7 +143,7 @@
     <!-- 结果展示区 -->
     <div id="resultSection" class="hidden animate-fade-in">
         
-        <!-- 免费：卦象展示 + 现状分析 (长内容) -->
+        <!-- 免费：卦象展示 + 现状分析 -->
         <div class="card-glass rounded-xl p-5 mb-4">
             <!-- 卦象 -->
             <div class="text-center mb-6">
@@ -164,19 +164,18 @@
                 </div>
             </div>
             
-            <!-- 免费分析部分 (直白) -->
+            <!-- 免费分析部分 -->
             <div class="mb-2">
                 <div class="flex items-center mb-3 border-l-4 border-gold pl-3">
                     <h3 class="text-lg font-bold text-white tracking-wide">卦意批注</h3>
                 </div>
-                <!-- 最小高度防止塌陷 -->
                 <div id="freeAnalysisContent" class="text-purple-100 text-[15px] leading-8 text-justify font-serif opacity-90 min-h-[120px]">
                     <!-- AI生成的免费部分 -->
                 </div>
             </div>
         </div>
 
-        <!-- 付费墙区域 (建议与锦囊) -->
+        <!-- 付费墙区域 -->
         <div id="paidContentContainer" class="relative overflow-hidden rounded-2xl border border-purple-500/30 shadow-[0_0_40px_rgba(0,0,0,0.6)]">
             
             <!-- 内容层 (模糊) -->
@@ -188,11 +187,6 @@
                     <!-- 占位符 -->
                     <p class="mb-4">根据卦象显示，您接下来需要特别注意的时间点是...</p>
                     <p class="mb-4">在行动方向上，建议向...</p>
-                    <h4 class="font-bold text-lg mb-2 text-gold mt-6">避坑指南</h4>
-                    <div class="h-4 bg-white/10 rounded mb-2 w-full"></div>
-                    <div class="h-4 bg-white/10 rounded mb-2 w-5/6"></div>
-                    <h4 class="font-bold text-lg mb-2 mt-4 text-gold">贵人指引</h4>
-                    <div class="h-20 bg-white/10 rounded"></div>
                 </div>
             </div>
 
@@ -208,23 +202,19 @@
                 
                 <!-- 价格按钮网格 -->
                 <div class="grid grid-cols-2 gap-3 w-full mb-4 px-2">
-                    <!-- 档位 1 -->
                     <button id="btn-tier-1" onclick="startPayment('1.68')" class="bg-black/60 border border-purple-500/30 hover:border-gold/50 text-white py-3 rounded-lg flex flex-col items-center justify-center transition-all active:scale-95">
                         <span class="text-lg font-bold text-gold" id="price-tier-1">¥ 1.68</span>
                         <span class="text-[10px] text-gray-400" id="label-tier-1">初探天机</span>
                     </button>
-                    <!-- 档位 2 -->
                     <button onclick="startPayment('6.66')" class="bg-gradient-to-br from-purple-900 to-purple-800 border border-gold/50 text-white py-3 rounded-lg flex flex-col items-center justify-center transition-all active:scale-95 relative overflow-hidden shadow-lg">
                         <div class="absolute top-0 right-0 bg-[#FCD34D] text-purple-900 font-bold text-[9px] px-1.5 rounded-bl-lg">荐</div>
                         <span class="text-xl font-bold text-white">¥ 6.66</span>
                         <span class="text-[10px] text-gold/80">祈愿顺遂</span>
                     </button>
-                    <!-- 档位 3 -->
                     <button onclick="startPayment('8.88')" class="bg-black/60 border border-purple-500/30 hover:border-gold/50 text-white py-3 rounded-lg flex flex-col items-center justify-center transition-all active:scale-95">
                         <span class="text-lg font-bold text-gold">¥ 8.88</span>
                         <span class="text-[10px] text-gray-400">心诚则灵</span>
                     </button>
-                    <!-- 档位 4 -->
                     <button onclick="startPayment('88.00')" class="bg-black/60 border border-gold/30 hover:border-gold text-white py-3 rounded-lg flex flex-col items-center justify-center transition-all active:scale-95">
                         <span class="text-lg font-bold text-gold">¥ 88.00</span>
                         <span class="text-[10px] text-gray-400">大德圆满</span>
@@ -262,8 +252,8 @@
   <script>
     // --- 【核心配置】 ---
     const CONFIG = {
-        freeCode: "xiaoliuren.xyz", // 老板通道
-        discountCode: "可问春风",   // 粉丝通道
+        freeCode: "xiaoliuren.xyz", 
+        discountCode: "可问春风",   
         discountPrice: "1.00",      
         vipCodes: ["xiaoliuren.xyz", "可问春风"],
         
@@ -357,7 +347,7 @@
         currentStages = [NINE_GODS[s1], NINE_GODS[s2], NINE_GODS[s3]];
     }
 
-    // --- 4. 交互流程 (强化版：真实等待 + 兜底) ---
+    // --- 4. 交互流程 ---
     async function startAnalysisFlow() {
         let rawInput = document.getElementById("questionInput").value.trim();
         if (rawInput.length < 2) {
@@ -365,7 +355,7 @@
             return;
         }
 
-        // === 1. 老板通道 (Free) ===
+        // 老板通道 (Free)
         if (rawInput.toLowerCase().includes(CONFIG.freeCode.toLowerCase())) {
             userQuestion = rawInput.replace(new RegExp(CONFIG.freeCode, "gi"), "").trim();
             if(!userQuestion) userQuestion = "综合运势详解";
@@ -373,7 +363,7 @@
             return;
         }
 
-        // === 2. 正常/粉丝通道 (Need Pay) ===
+        // 正常/粉丝通道 (Need Pay)
         userQuestion = rawInput;
         await handleProcess(false);
     }
@@ -385,7 +375,7 @@
 
         const loadingTexts = [
             "正在沟通天地...", 
-            "正在排盘推演 (预计需30秒)...", // 明确提示时间
+            "正在排盘推演 (预计需30秒)...",
             "正在连接时空能量...", 
             "大师正在深度解析...",
             "正在撰写详细批注...",
@@ -397,7 +387,7 @@
                 document.getElementById("loadingText").innerText = loadingTexts[step];
                 step++;
             }
-        }, 3000); // 3秒一换，拉长等待感
+        }, 3000); 
 
         try {
             const minWait = new Promise(resolve => setTimeout(resolve, 3000));
@@ -419,10 +409,12 @@
         document.getElementById("loadingState").classList.add("hidden");
         document.getElementById("resultSection").classList.remove("hidden");
         
-        if(!currentStages || currentStages.length === 0) updateTimeDisplay();
-        document.getElementById("teaserGod1").innerText = currentStages[0].name;
-        document.getElementById("teaserGod2").innerText = currentStages[1].name;
-        document.getElementById("teaserGod3").innerText = currentStages[2].name;
+        // 确保卦象显示正确 (如果是新算的，currentStages已经更新；如果是缓存的，会由checkPaymentResult处理覆盖)
+        if(currentStages && currentStages.length > 0) {
+            document.getElementById("teaserGod1").innerText = currentStages[0].name;
+            document.getElementById("teaserGod2").innerText = currentStages[1].name;
+            document.getElementById("teaserGod3").innerText = currentStages[2].name;
+        }
         
         if(isUnlocked) {
             unlockContent();
@@ -470,7 +462,7 @@
         if(!finalQ.trim()) finalQ = "综合运势分析";
 
         localStorage.setItem('cf_question', finalQ);
-        localStorage.setItem('cf_timestamp', new Date().getTime());
+        // 注意：无需在此处存时间戳，因为我们依赖的是 callAI 中生成的缓存
 
         const baseUrl = window.location.href.split('?')[0];
         const returnUrl = `${baseUrl}?status=paid`; 
@@ -508,20 +500,51 @@
         form.submit();
     }
 
-    // --- 6. 支付回调 ---
+    // --- 6. 支付回调 (核心修改：读取缓存) ---
     function checkPaymentResult() {
         const params = new URLSearchParams(window.location.search);
+        
+        // 只有当支付成功，且我们有缓存数据时
         if (params.get('status') === 'paid') {
-            const storedQuestion = localStorage.getItem('cf_question');
-            if (storedQuestion) {
-                userQuestion = storedQuestion;
-                handleProcess(true);
+            
+            const cachedGods = localStorage.getItem('cf_cached_gods');
+            const cachedFree = localStorage.getItem('cf_cached_free');
+            const cachedPaid = localStorage.getItem('cf_cached_paid');
+
+            if (cachedGods && cachedFree && cachedPaid) {
+                // 1. 隐藏输入区，显示结果区
+                document.getElementById("inputSection").classList.add("hidden");
+                document.getElementById("loadingState").classList.add("hidden");
+                document.getElementById("resultSection").classList.remove("hidden");
+                document.getElementById("socialProof").classList.add("hidden");
+
+                // 2. 恢复卦象
+                const gods = JSON.parse(cachedGods);
+                document.getElementById("teaserGod1").innerText = gods[0].name;
+                document.getElementById("teaserGod2").innerText = gods[1].name;
+                document.getElementById("teaserGod3").innerText = gods[2].name;
+
+                // 3. 恢复文字内容
+                document.getElementById("freeAnalysisContent").innerHTML = cachedFree;
+                document.getElementById("paidAnalysisContent").innerHTML = cachedPaid;
+
+                // 4. 直接解锁
+                unlockContent();
+
+                // 5. 清理URL (可选)
                 window.history.replaceState({}, document.title, window.location.pathname);
+            } else {
+                // 极少情况缓存丢失，才不得不重新算
+                const storedQuestion = localStorage.getItem('cf_question');
+                if (storedQuestion) {
+                    userQuestion = storedQuestion;
+                    handleProcess(true);
+                }
             }
         }
     }
 
-    // --- 7. AI请求逻辑 (Prompt升级版) ---
+    // --- 7. AI请求逻辑 (核心修改：存入缓存) ---
     async function callAI(isUnlocked) {
         updateTimeDisplay(); 
         const now = new Date();
@@ -591,8 +614,17 @@
                 const content = data.choices[0].message.content;
                 const parts = content.split(SPLIT_TAG);
                 
-                document.getElementById("freeAnalysisContent").innerHTML = parts[0] || fallbackFree;
-                document.getElementById("paidAnalysisContent").innerHTML = parts[1] || fallbackPaid;
+                const freeC = parts[0] || fallbackFree;
+                const paidC = parts[1] || fallbackPaid;
+                
+                // === 关键修改：生成后立即缓存 ===
+                localStorage.setItem('cf_cached_gods', JSON.stringify(currentStages));
+                localStorage.setItem('cf_cached_free', freeC);
+                localStorage.setItem('cf_cached_paid', paidC);
+                // ============================
+
+                document.getElementById("freeAnalysisContent").innerHTML = freeC;
+                document.getElementById("paidAnalysisContent").innerHTML = paidC;
             } else {
                 throw new Error("AI Empty Response");
             }
@@ -601,6 +633,11 @@
             console.error("AI Error, using fallback", e);
             document.getElementById("freeAnalysisContent").innerHTML = fallbackFree;
             document.getElementById("paidAnalysisContent").innerHTML = fallbackPaid;
+            
+            // 兜底时也要缓存
+            localStorage.setItem('cf_cached_gods', JSON.stringify(currentStages));
+            localStorage.setItem('cf_cached_free', fallbackFree);
+            localStorage.setItem('cf_cached_paid', fallbackPaid);
         }
     }
 
@@ -618,3 +655,4 @@
   </script>
 </body>
 </html>
+<!-- END OF FILE -->
