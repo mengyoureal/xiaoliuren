@@ -5,12 +5,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>春风阁 - 道家秘传九神版</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-  <!-- 引入专业农历库 -->
-  <script src="https://cdn.jsdelivr.net/npm/lunar-javascript@1.2.37/lunar.min.js"></script>
-  <!-- 引入 MD5 -->
-  <script src="https://cdn.bootcdn.net/ajax/libs/blueimp-md5/2.16.0/js/md5.js"></script>
+  
+  <!-- 【关键修复】使用国内七牛云CDN加速 Tailwind CSS，解决加载慢/白屏问题 -->
+  <script src="https://cdn.staticfile.net/tailwindcss/3.3.5/tailwind.min.js"></script>
+  
+  <!-- 【关键修复】使用国内BootCDN加速 FontAwesome 图标 -->
+  <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+  
+  <!-- 【关键修复】使用国内360 CDN加速 农历库 -->
+  <script src="https://lib.baomitu.com/lunar-javascript/1.2.37/lunar.min.js"></script>
+  
+  <!-- 【关键修复】使用国内360 CDN加速 MD5库 -->
+  <script src="https://lib.baomitu.com/blueimp-md5/2.19.0/js/md5.min.js"></script>
 
   <script>
     tailwind.config = {
@@ -162,6 +168,12 @@
                     <div class="text-xs text-purple-400 mb-1 opacity-70">末象(时)</div>
                     <div class="text-xl font-bold text-white tracking-widest" id="teaserGod3">--</div>
                 </div>
+            </div>
+            
+            <!-- 卦意总断 -->
+            <div class="text-center pb-4 border-b border-purple-500/10 mb-4">
+                <p class="text-purple-300 text-xs mb-2 tracking-widest opacity-60">· 卦 意 总 断 ·</p>
+                <p class="text-2xl text-gold font-bold tracking-widest font-serif" id="teaserVerdict">--</p>
             </div>
             
             <!-- 免费分析部分 (直白) -->
@@ -385,10 +397,10 @@
 
         const loadingTexts = [
             "正在沟通天地...", 
-            "正在排盘推演 (预计需30秒)...", // 明确提示时间
+            "正在排盘推演 (预计需30秒)...", 
             "正在连接时空能量...", 
-            "大师正在深度解析...",
-            "正在撰写详细批注...",
+            "大师正在斟酌用词...",
+            "正在撰写批注...",
             "即将完成..."
         ];
         let step = 0;
@@ -397,7 +409,7 @@
                 document.getElementById("loadingText").innerText = loadingTexts[step];
                 step++;
             }
-        }, 3000); // 3秒一换，拉长等待感
+        }, 1500);
 
         try {
             const minWait = new Promise(resolve => setTimeout(resolve, 3000));
@@ -424,6 +436,17 @@
         document.getElementById("teaserGod2").innerText = currentStages[1].name;
         document.getElementById("teaserGod3").innerText = currentStages[2].name;
         
+        let goodCount = currentStages.filter(g => g.type === '吉').length;
+        let verdict = "平稳之象";
+        if (goodCount >= 2) verdict = "上吉之卦";
+        if (currentStages[2].name === '速喜') verdict = "心想事成";
+        if (currentStages[2].name === '大安') verdict = "安稳如意";
+        
+        // 【已修复】恢复总断显示
+        const verdictEl = document.getElementById("teaserVerdict");
+        verdictEl.innerText = verdict;
+        verdictEl.className = goodCount >= 2 ? "text-xl text-gold font-bold tracking-widest font-serif" : "text-xl text-white font-bold tracking-widest font-serif";
+
         if(isUnlocked) {
             unlockContent();
         } else {
@@ -521,7 +544,7 @@
         }
     }
 
-    // --- 7. AI请求逻辑 (Prompt升级版) ---
+    // --- 7. AI请求逻辑 (带本地兜底) ---
     async function callAI(isUnlocked) {
         updateTimeDisplay(); 
         const now = new Date();
@@ -535,7 +558,7 @@
 
         const SPLIT_TAG = "|||SPLIT|||"; 
         
-        // 兜底文案
+        // 兜底文案 (万一AI挂了用这个，保证不白屏)
         const fallbackFree = `<p><strong>【卦象直断】</strong>缘主所问之事，卦象显示目前处于“守势”。虽心有不甘，但时机未到，不可强求。建议静待花开，切勿急躁。</p><p><strong>【心境洞察】</strong>贫道观你近期思虑过重，常感力不从心。其实困局只是一时，转机正在酝酿之中。</p>`;
         const fallbackPaid = `<h4>【时机预警】</h4><p>最佳行动时机在午时（11:00-13:00），避开子时（23:00-01:00）。</p><h4>【贵人指引】</h4><p>向东南方寻找，或求助于属相为（虎/兔）的长辈。</p><h4>【大师锦囊】</h4><ul><li>遇事多听少说，特别是面对上级时。</li><li>随身佩戴红色饰物可增运。</li><li>凡事留一线，日后好相见。</li></ul>`;
 
