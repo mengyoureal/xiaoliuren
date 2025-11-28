@@ -1,4 +1,4 @@
-<!-- START OF FILE 小瑕疵支付重新算版_最终修正版.html -->
+<!-- START OF FILE 小瑕疵支付重新算版_终极逻辑修复版.html -->
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -549,7 +549,7 @@
         }
     }
 
-    // --- 7. AI请求逻辑 (修复：保留用户输入的人名，但防止指令泄露) ---
+    // --- 7. AI请求逻辑 (Prompt 终极修复版) ---
     async function callAI(isUnlocked) {
         updateTimeDisplay(); 
         const now = new Date();
@@ -568,51 +568,47 @@
         const fallbackFree = `<p><strong>【卦象直断】</strong>缘主所问之事，卦象显示目前处于“留连”之势。凡事宜慢不宜快，强求反而不美。</p>`;
         const fallbackPaid = `<h4>【深层解析】</h4><p>因为卦逢留连，说明这件事本身比较复杂，不是你一个人能决定的。</p><h4>【应对策略】</h4><ul><li><strong>此时：</strong>不要主动联系对方，让他先冷静。</li><li><strong>时机：</strong>等到下周二之后再看情况。</li></ul>`;
 
-        // 辅助函数：清洗AI输出的多余指令文本 (Part 1, Part 2等)
-        function cleanText(text) {
-            return text.replace(/^(Part \d|第一部分|第二部分).*?[:：]/gim, "")
-                       .replace(/^\(.*?\)/gm, "")
-                       .trim();
-        }
-
+        // 提示词：强制分离指令与内容，强调“对象感”
         const systemPrompt = `你是一位精通"小六壬九神"的易学专家。
         
-        **核心原则 (请严格遵守)**：
-        1. **人名处理**：如果用户在问题中提到了具体的人名（例如“刘甲东”），**必须**直接使用该名字，这样才亲切。但是，**严禁**编造用户没提到的人名。
-        2. **格式纯净**：**严禁**在回复中输出 "Part 1"、"免费部分"、"```html" 等指令性文字。直接输出 <p> 或 <h4> 开头的内容。
-
-        **你的任务**：
-        1. **判断对象**：识别用户问的是人（如具体名字）、事还是财。
-        2. **依据卦理**：
-           - 大安：静止、从容、不动。
-           - 留连：拖延、纠结、反复。
-           - 速喜：快速、喜讯。
-           - 赤口：口舌、争吵。
-           - 小吉：小利、和谐。
-           - 空亡：落空、损失。
-        3. **输出要求**：必须用 ${SPLIT_TAG} 分隔两部分。
+        **你的核心任务**：
+        1. **判断对象**：分析用户问的是“自己”、“他人”还是“事物/财运”。
+           - 若问他人（如“他爱我吗”）：重点分析**对方**的心理和状态。
+           - 若问事物（如“股票会涨吗”）：重点分析**事物**的趋势。
+        2. **依据卦理**：严格基于以下九神含义进行推演，不可胡编：
+           - 大安：静止、稳定、不动、从容。
+           - 留连：拖延、纠结、反复、不顺。
+           - 速喜：快速、喜讯、时机已到、无论好坏都很快。
+           - 赤口：口舌、争吵、凶险、需要沟通或防备。
+           - 小吉：小利、和谐、顺遂、合作。
+           - 空亡：落空、无结果、迷茫、损失。
+           - 病符：生病、弱点、bug、有瑕疵。
+           - 桃花：人缘、异性、社交、诱惑。
+           - 天德：贵人、解围、逢凶化吉。
+        3. **格式严格**：输出必须包含两个部分，中间用 ${SPLIT_TAG} 分隔。不要在输出中包含“约200字”等指令性语言。
         `;
 
+        // 修复点：修改了 userPrompt，去掉了 "Part 1..." 这样的引导词，防止AI将其作为内容输出
         const userPrompt = `
         缘主提问：${cleanQuestion}
         卦象：${godCombinations}
         时间：${fullDateString}
 
-        请按以下HTML格式直接输出内容（不要加任何前缀）：
+        请直接输出分析内容，严格按照下方HTML结构，**不要**输出"Part 1"或"Part 2"等任何标题说明文字：
 
-        <p><strong>【小六壬直断】</strong> (结合卦象直断吉凶)</p>
-        <p><strong>【局势研判】</strong> (一针见血指出核心矛盾)</p>
+        <p><strong>【小六壬直断】</strong> (结合卦象神煞的含义，直接回答吉凶，例如“卦逢赤口，此事必有争执”)</p>
+        <p><strong>【局势研判】</strong> (根据问题对象，一针见血地指出现在的核心矛盾。如果是问人，就说穿那个人的心思；如果是问事，就点破当下的阻碍)</p>
 
         ${SPLIT_TAG}
 
         <h4>【深层解密】</h4>
-        <p>(通俗白话解释，不要掉书袋)</p>
+        <p>(用大白话解释为什么是这个结果。如果是问人，分析对方为什么这么做；如果是问事，分析背后的逻辑)</p>
         
         <h4>【大师锦囊】</h4>
         <ul>
-        <li><strong>该不该动：</strong> (明确建议)</li>
-        <li><strong>具体策略：</strong> (针对卦神给出具体招数)</li>
-        <li><strong>关键变量：</strong> (指出未来3天内注意的时间或方位)</li>
+        <li><strong>该不该动：</strong> (明确建议是“主动出击”、“静观其变”还是“果断放弃”)</li>
+        <li><strong>具体策略：</strong> (针对这三个卦神，给出具体的应对招数。例如遇“赤口”则少说话多签协议；遇“留连”则打持久战)</li>
+        <li><strong>关键变量：</strong> (指出未来3天内最需要注意的一个人或一个时间点)</li>
         </ul>
         `;
 
@@ -629,7 +625,7 @@
                         {role: "system", content: systemPrompt},
                         {role: "user", content: userPrompt}
                     ],
-                    temperature: 0.6, // 降低温度以保持稳定
+                    temperature: 0.7,
                     max_tokens: 2000
                 })
             });
@@ -639,9 +635,8 @@
                 const content = data.choices[0].message.content;
                 const parts = content.split(SPLIT_TAG);
                 
-                // 清洗文本，去除"Part 1"等字样，只保留HTML
-                const freeC = cleanText(parts[0] || fallbackFree);
-                const paidC = cleanText(parts[1] || fallbackPaid);
+                const freeC = parts[0] || fallbackFree;
+                const paidC = parts[1] || fallbackPaid;
                 
                 localStorage.setItem('cf_cached_gods', JSON.stringify(currentStages));
                 localStorage.setItem('cf_cached_free', freeC);
