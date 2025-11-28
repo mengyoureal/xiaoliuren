@@ -1,4 +1,4 @@
-<!-- START OF FILE 小瑕疵支付重新算版_修复版.html -->
+<!-- START OF FILE 小瑕疵支付重新算版_终极优化版.html -->
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -62,14 +62,18 @@
 
 <body class="bg-mystic min-h-screen font-serif text-gray-200">
 
-  <!-- 顶部导航 -->
+  <!-- 顶部导航 (已更新：添加分享按钮) -->
   <div class="fixed top-0 w-full z-50 bg-[#170526]/80 backdrop-blur-md border-b border-purple-500/20">
     <div class="max-w-md mx-auto px-4 h-14 flex items-center justify-between">
       <div class="flex items-center">
         <span class="text-xl mr-2 text-gold">☯</span>
         <span class="font-bold text-gold tracking-widest text-lg">春风阁</span>
       </div>
-      <div class="text-xs text-purple-300 font-sans tracking-wide opacity-80">道家秘传 · 紫微斗数</div>
+      <!-- 右侧功能区 -->
+      <button onclick="sharePage()" class="flex items-center space-x-1 bg-gold/10 hover:bg-gold/20 active:scale-95 transition-all border border-gold/30 rounded-full px-3 py-1">
+        <i class="fa fa-share-alt text-gold text-xs"></i>
+        <span class="text-xs text-gold font-sans">保存/分享</span>
+      </button>
     </div>
   </div>
 
@@ -167,9 +171,9 @@
             <!-- 免费分析部分 -->
             <div class="mb-2">
                 <div class="flex items-center mb-3 border-l-4 border-gold pl-3">
-                    <h3 class="text-lg font-bold text-white tracking-wide">卦意批注</h3>
+                    <h3 class="text-lg font-bold text-white tracking-wide">卦意直断</h3>
                 </div>
-                <div id="freeAnalysisContent" class="text-purple-100 text-[15px] leading-8 text-justify font-serif opacity-90 min-h-[120px]">
+                <div id="freeAnalysisContent" class="text-purple-100 text-[15px] leading-8 text-justify font-serif opacity-90 min-h-[100px]">
                     <!-- AI生成的免费部分 -->
                 </div>
             </div>
@@ -196,8 +200,8 @@
                     <div class="w-14 h-14 bg-gradient-to-br from-purple-600 to-purple-900 rounded-full flex items-center justify-center mx-auto mb-3 shadow-[0_0_20px_rgba(147,51,234,0.5)] border border-gold/30">
                         <i class="fa fa-lock text-2xl text-gold"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-1 tracking-wide">解锁行动建议</h3>
-                    <p class="text-purple-300 text-xs opacity-70">随喜润金 · 开启天机</p>
+                    <h3 class="text-xl font-bold text-white mb-1 tracking-wide">解锁实操建议</h3>
+                    <p class="text-purple-300 text-xs opacity-70">深度解析 · 破局之法</p>
                 </div>
                 
                 <!-- 价格按钮网格 -->
@@ -231,7 +235,7 @@
         <!-- 结果操作按钮 -->
         <div id="resultActions" class="mt-6 flex space-x-3 hidden">
             <button onclick="copyResult()" class="flex-1 bg-white/5 hover:bg-white/10 text-purple-200 py-3 rounded-lg text-sm transition-colors border border-white/10">
-                <i class="fa fa-copy mr-1"></i> 复制批注
+                <i class="fa fa-copy mr-1"></i> 复制完整批注
             </button>
             <button onclick="location.href=location.pathname" class="flex-1 bg-gold/20 hover:bg-gold/30 text-gold py-3 rounded-lg text-sm transition-colors border border-gold/30">
                 <i class="fa fa-refresh mr-1"></i> 再测一事
@@ -281,6 +285,16 @@
       generateRealisticMarquee();
       checkPaymentResult();
     });
+
+    // --- 0. 分享功能 (新增) ---
+    function sharePage() {
+        const url = window.location.href.split('?')[0]; // 去除参数分享纯净链接
+        navigator.clipboard.writeText(url).then(() => {
+            alert("✅ 网页链接已复制\n请粘贴分享给朋友");
+        }).catch(() => {
+            prompt("请长按复制链接：", url);
+        });
+    }
 
     // --- 1. 每日动态人数 ---
     function generateDailyVisitorCount() {
@@ -378,7 +392,7 @@
             "正在排盘推演 (预计需30秒)...",
             "正在连接时空能量...", 
             "大师正在深度解析...",
-            "正在撰写详细批注...",
+            "正在撰写实操建议...",
             "即将完成..."
         ];
         let step = 0;
@@ -462,7 +476,6 @@
         if(!finalQ.trim()) finalQ = "综合运势分析";
 
         localStorage.setItem('cf_question', finalQ);
-        // 注意：无需在此处存时间戳，因为我们依赖的是 callAI 中生成的缓存
 
         const baseUrl = window.location.href.split('?')[0];
         const returnUrl = `${baseUrl}?status=paid`; 
@@ -500,11 +513,10 @@
         form.submit();
     }
 
-    // --- 6. 支付回调 (核心修改：读取缓存) ---
+    // --- 6. 支付回调 (优先读取缓存) ---
     function checkPaymentResult() {
         const params = new URLSearchParams(window.location.search);
         
-        // 只有当支付成功，且我们有缓存数据时
         if (params.get('status') === 'paid') {
             
             const cachedGods = localStorage.getItem('cf_cached_gods');
@@ -531,10 +543,9 @@
                 // 4. 直接解锁
                 unlockContent();
 
-                // 5. 清理URL (可选)
+                // 5. 清理URL
                 window.history.replaceState({}, document.title, window.location.pathname);
             } else {
-                // 极少情况缓存丢失，才不得不重新算
                 const storedQuestion = localStorage.getItem('cf_question');
                 if (storedQuestion) {
                     userQuestion = storedQuestion;
@@ -544,7 +555,7 @@
         }
     }
 
-    // --- 7. AI请求逻辑 (核心修改：存入缓存) ---
+    // --- 7. AI请求逻辑 (Prompt已深度优化) ---
     async function callAI(isUnlocked) {
         updateTimeDisplay(); 
         const now = new Date();
@@ -559,36 +570,33 @@
         const SPLIT_TAG = "|||SPLIT|||"; 
         
         // 兜底文案
-        const fallbackFree = `<p><strong>【卦象直断】</strong>缘主所问之事，卦象显示目前处于“守势”。虽心有不甘，但时机未到，不可强求。建议静待花开，切勿急躁。</p><p><strong>【心境洞察】</strong>贫道观你近期思虑过重，常感力不从心。其实困局只是一时，转机正在酝酿之中。</p>`;
-        const fallbackPaid = `<h4>【时机预警】</h4><p>最佳行动时机在午时（11:00-13:00），避开子时（23:00-01:00）。</p><h4>【贵人指引】</h4><p>向东南方寻找，或求助于属相为（虎/兔）的长辈。</p><h4>【大师锦囊】</h4><ul><li>遇事多听少说，特别是面对上级时。</li><li>随身佩戴红色饰物可增运。</li><li>凡事留一线，日后好相见。</li></ul>`;
+        const fallbackFree = `<p><strong>【卦象直断】</strong>缘主所问之事，卦象显示目前处于“守势”。虽心有不甘，但时机未到，不可强求。建议静待花开，切勿急躁。</p>`;
+        const fallbackPaid = `<h4>【大白话解盘】</h4><p>这卦的意思就是让你先别乱动。你现在越急，错得越多。</p><h4>【实操指南】</h4><ul><li><strong>具体做法：</strong> 这三天内，如果是工作上的事，只做执行，别提意见；如果是感情，别发长篇大论的消息。</li><li><strong>找谁帮忙：</strong> 往南边走，或者找属马、属蛇的朋友聊聊，他们能给你破局。</li><li><strong>开运物：</strong> 随身带个红色的打火机或中国结。</li></ul>`;
 
         const prompt = `
-        你是一位道行高深、充满智慧的道长，就像一位慈祥的长辈。请为缘主指点迷津。
+        你是一位道行高深、但说话非常接地气的道长。缘主正在为此事发愁："${cleanQuestion}"。
         
         **基本信息：**
-        - 缘主提问：${cleanQuestion}
         - 卦象：${currentStages[0].name} -> ${currentStages[1].name} -> ${currentStages[2].name}
-        - 当前时间：${fullDateString} (严禁编造其他年份！)
-        
-        **核心禁令：**
-        1. **严禁说** "我看你面相"、"你眉间有郁色" 等需要视觉的话（因为你看不到）。
-        2. **严禁** 轻浮、搞笑、使用网络烂梗。语气要温暖、坚定、有力量。
+        - 时间：${fullDateString}
         
         请严格按以下格式输出，两部分用 "${SPLIT_TAG}" 分隔：
         
-        第一部分（免费可见，约200字）：
-        1. **【直断吉凶】**：不绕弯子，直接说结果（吉/凶/平）。
-        2. **【心境共情】**：通过卦象分析缘主现在的心理状态（例如：进退两难、焦虑不安等），要说得让他觉得“你真懂我”。
-        3. **【卦理通释】**：用通俗的语言解释为什么是这个结果。
-        (使用HTML <p> 排版)
+        第一部分（免费可见，极度精简，约100-120字）：
+        1. **【直断】**：针对问题"${cleanQuestion}"，直接给结论（是/否/吉/凶）。不要模棱两可。
+        2. **【现状】**：一针见血地指出他现在最难受的点在哪里（比如“你现在是不是觉得进退两难？”）。
+        (要求：紧扣问题，不废话，不打官腔)
         
         ${SPLIT_TAG}
         
-        第二部分（付费解锁，必须包含具体参数，约150字）：
-        1. **【天时预警】**：给出明确的有利/不利时间段（如：上午9点-11点）。
-        2. **【贵人方略】**：给出明确的方位（如：西北方）、属相或人物特征。
-        3. **【开运锦囊】**：给出3条具体的行动建议（如：穿什么颜色、找什么人、做什么事）。
-        (使用HTML <h4>, <p>, <ul> 排版)
+        第二部分（付费解锁，大白话，操作性极强，约300字）：
+        1. **【大师说人话】**：抛开那些晦涩的术语，用最通俗的大白话（口语化）解释为什么是这个结果。就像老朋友聊天一样。
+        2. **【实操指南（重点）】**：
+           - **此时此刻怎么做？** (给出极其具体的动词，例如：马上给那个人打电话/立刻停止投资/明天早上9点去哪里)。
+           - **找谁帮忙？** (具体到方位、属相或特征，如“戴眼镜的胖子”)。
+           - **必做之事：** (比如“穿红内裤”、“桌上摆一杯水”)。
+        3. **【避坑细节】**：明确指出最近3天绝对不能做的一件事。
+        (使用HTML <h4>, <p>, <ul>, <li> 排版，确保手机阅读舒适)
         `;
 
         try {
@@ -601,7 +609,7 @@
                 body: JSON.stringify({
                     model: "deepseek-ai/DeepSeek-V3",
                     messages: [
-                        {role: "system", content: "你是一位精通易理的智者道长，语气温暖庄重。"},
+                        {role: "system", content: "你是一位精通易理的智者，说话通俗易懂，擅长给出具体行动建议。"},
                         {role: "user", content: prompt}
                     ],
                     temperature: 0.7,
@@ -617,11 +625,10 @@
                 const freeC = parts[0] || fallbackFree;
                 const paidC = parts[1] || fallbackPaid;
                 
-                // === 关键修改：生成后立即缓存 ===
+                // === 生成后立即缓存 ===
                 localStorage.setItem('cf_cached_gods', JSON.stringify(currentStages));
                 localStorage.setItem('cf_cached_free', freeC);
                 localStorage.setItem('cf_cached_paid', paidC);
-                // ============================
 
                 document.getElementById("freeAnalysisContent").innerHTML = freeC;
                 document.getElementById("paidAnalysisContent").innerHTML = paidC;
@@ -634,7 +641,6 @@
             document.getElementById("freeAnalysisContent").innerHTML = fallbackFree;
             document.getElementById("paidAnalysisContent").innerHTML = fallbackPaid;
             
-            // 兜底时也要缓存
             localStorage.setItem('cf_cached_gods', JSON.stringify(currentStages));
             localStorage.setItem('cf_cached_free', fallbackFree);
             localStorage.setItem('cf_cached_paid', fallbackPaid);
@@ -645,12 +651,12 @@
         const t1 = document.getElementById("freeAnalysisContent").innerText;
         const t2 = document.getElementById("paidAnalysisContent").innerText;
         const tempInput = document.createElement("textarea");
-        tempInput.value = "【春风阁批注】\n" + t1 + "\n\n【大师锦囊】\n" + t2;
+        tempInput.value = "【春风阁·问春风】\n" + t1 + "\n\n【大师锦囊】\n" + t2 + "\n\n测算链接：" + window.location.href.split('?')[0];
         document.body.appendChild(tempInput);
         tempInput.select();
         document.execCommand("copy");
         document.body.removeChild(tempInput);
-        alert("完整批注已复制");
+        alert("完整批注已复制，可粘贴分享");
     }
   </script>
 </body>
