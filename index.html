@@ -17,11 +17,12 @@
       theme: {
         extend: {
           colors: {
-            primary: "#E0C38C", // 杏仁金
-            secondary: "#10B981", // 春风绿
-            darkbg: "#0C1816", // 极深墨绿背景
-            paper: "#152623", // 卡片背景
+            // 紫气东来配色
+            primary: "#FCD34D", // 琥珀金
+            secondary: "#D8B4FE", // 薰衣草紫
             accent: "#1677FF", // 支付宝蓝
+            bgStart: "#2E1065", // 深紫
+            bgEnd: "#020617",   // 墨蓝黑
           },
           fontFamily: {
             serif: ["Noto Serif SC", "STSong", "SimSun", "serif"],
@@ -32,7 +33,7 @@
             "slide-up": "slideUp 0.8s ease-out",
             "pulse-slow": "pulse 3s ease-in-out infinite",
             "float": "float 3s ease-in-out infinite",
-            "scroll-left": "scrollLeft 50s linear infinite",
+            "scroll-left": "scrollLeft 60s linear infinite",
           },
           keyframes: {
             scrollLeft: {
@@ -46,67 +47,66 @@
   </script>
   <style type="text/tailwindcss">
     @layer utilities {
-        .text-gold { color: #E0C38C; text-shadow: 0 0 10px rgba(224, 195, 140, 0.2); }
-        .bg-gradient-chunfeng { background: radial-gradient(circle at center, #134e4a 0%, #042f2e 50%, #000000 100%); }
-        .card-glass { background: rgba(20, 50, 45, 0.4); backdrop-filter: blur(10px); border: 1px solid rgba(224, 195, 140, 0.15); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); }
-        .blur-lock { filter: blur(6px); user-select: none; pointer-events: none; }
-        .lock-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(12, 24, 22, 0.8) 40%, rgba(12, 24, 22, 1) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 10; }
+        .text-gold { color: #FCD34D; text-shadow: 0 0 8px rgba(252, 211, 77, 0.4); }
+        .bg-mystic { background: radial-gradient(circle at top center, #3B0764 0%, #170526 60%, #000000 100%); }
+        .card-glass { background: rgba(30, 20, 50, 0.4); backdrop-filter: blur(16px); border: 1px solid rgba(216, 180, 254, 0.15); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); }
+        .blur-lock { filter: blur(12px); user-select: none; pointer-events: none; transition: filter 0.8s ease; }
+        .blur-unlock { filter: blur(0); user-select: auto; pointer-events: auto; }
+        .lock-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(10,5,20,0) 0%, rgba(10,5,20,0.95) 40%, rgba(10,5,20,1) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 10; transition: opacity 0.5s ease; }
     }
-    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
     @keyframes spin { 100% { transform: rotate(360deg); } }
-    
-    body { background-color: #0C1816; color: #e5e5e5; font-family: 'STSong', 'Noto Serif SC', serif; }
-    .bagua-spinner { width: 60px; height: 60px; background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0OCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRTBDMzhDIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNNTAgMiBBNDggNDggMCAwIDEgNTAgOTggQTQ4IDQ4IDAgMCAwIDUwIDIgWiIgZmlsbD0iI0UwQzM4QyIvPjxjaXJjbGUgY3g9IjUwIiBjeT0iMjYiIHI9IjYiIGZpbGw9IiMwMDAiLz48Y2lyY2xlIGN4PSI1MCIgY3k9Ijc0IiByPSI2IiBmaWxsPSIjRTBDMzhDIi8+PC9zdmc+'); animation: spin 2s linear infinite; margin: 0 auto; }
+    body { background-color: #020617; color: #E9D5FF; font-family: 'STSong', 'Noto Serif SC', serif; }
+    .bagua-spinner { width: 70px; height: 70px; background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0OCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkREMzREIiBzdHJva2Utd2lkdGg9IjIiLz48cGF0aCBkPSJNNTAgMiBBNDggNDggMCAwIDEgNTAgOTggQTQ4IDQ4IDAgMCAwIDUwIDIgWiIgZmlsbD0iI0ZERDM0RCIvPjxjaXJjbGUgY3g9IjUwIiBjeT0iMjYiIHI9IjYiIGZpbGw9IiMzQjA3NjQiLz48Y2lyY2xlIGN4PSI1MCIgY3k9Ijc0IiByPSI2IiBmaWxsPSIjRkREMzREIi8+PC9zdmc+'); animation: spin 3s linear infinite; margin: 0 auto; }
   </style>
 </head>
 
-<body class="bg-gradient-chunfeng min-h-screen font-serif text-gray-200">
+<body class="bg-mystic min-h-screen font-serif text-gray-200">
 
   <!-- 顶部导航 -->
-  <div class="fixed top-0 w-full z-50 bg-[#0C1816]/70 backdrop-blur-md border-b border-white/5">
-    <div class="max-w-md mx-auto px-4 h-12 flex items-center justify-between">
+  <div class="fixed top-0 w-full z-50 bg-[#170526]/80 backdrop-blur-md border-b border-purple-500/20">
+    <div class="max-w-md mx-auto px-4 h-14 flex items-center justify-between">
       <div class="flex items-center">
-        <i class="fa fa-leaf text-secondary mr-2" aria-hidden="true"></i>
+        <span class="text-xl mr-2 text-gold">☯</span>
         <span class="font-bold text-gold tracking-widest text-lg">春风阁</span>
       </div>
-      <div class="text-xs text-gray-400 font-sans tracking-wide">道家秘传 · 九神推衍</div>
+      <div class="text-xs text-purple-300 font-sans tracking-wide opacity-80">道家秘传 · 紫微斗数</div>
     </div>
   </div>
 
   <!-- 主容器 -->
-  <div class="max-w-md mx-auto pt-20 pb-24 px-4 relative">
+  <div class="max-w-md mx-auto pt-24 pb-24 px-4 relative">
     
     <!-- 头部标语 -->
     <div class="text-center mb-10 animate-fade-in">
-      <h1 class="text-4xl font-bold text-gold mb-3 tracking-[0.2em]" style="text-shadow: 0 4px 10px rgba(0,0,0,0.6);">
+      <h1 class="text-5xl font-bold text-gold mb-3 tracking-[0.2em]" style="text-shadow: 0 4px 20px rgba(147, 51, 234, 0.5);">
         问春风
       </h1>
-      <p class="text-gray-400 text-sm font-sans opacity-80 tracking-widest">
-        道家秘传九神版 · 探寻命理玄机
+      <p class="text-purple-200 text-sm font-sans opacity-90 tracking-[0.2em] uppercase">
+        遇事不明 · 可问春风
       </p>
     </div>
 
     <!-- 实时日期展示 -->
-    <div class="card-glass rounded-xl p-4 mb-8 text-center border-t border-white/10">
-        <div class="flex justify-between items-center text-sm font-sans">
-            <div class="text-gray-400 text-left">
-                <div class="mb-1 text-xs opacity-60">阳历</div>
-                <div id="solarDate" class="text-gray-200 font-bold tracking-wide"></div>
+    <div class="card-glass rounded-xl p-4 mb-8 text-center border-t border-purple-500/20">
+        <div class="flex justify-between items-center text-sm font-sans text-purple-200">
+            <div class="text-left opacity-90">
+                <div class="text-xs mb-1 text-purple-400">阳历</div>
+                <div id="solarDate" class="font-bold tracking-wide text-white"></div>
             </div>
-            <div class="w-px h-8 bg-white/10"></div>
-            <div class="text-secondary text-right">
-                <div class="mb-1 text-xs opacity-80">农历 / 时辰</div>
-                <div id="lunarDate" class="font-bold tracking-wide"></div>
+            <div class="w-px h-8 bg-purple-500/30"></div>
+            <div class="text-right opacity-90">
+                <div class="text-xs mb-1 text-purple-400">农历 / 时辰</div>
+                <div id="lunarDate" class="font-bold tracking-wide text-white"></div>
             </div>
         </div>
     </div>
 
     <!-- 核心输入区 -->
     <div id="inputSection" class="relative z-20">
-      <div class="card-glass rounded-2xl p-6 shadow-2xl animate-slide-up border border-secondary/20">
+      <div class="card-glass rounded-2xl p-6 shadow-2xl animate-slide-up">
         <div class="flex items-center mb-4">
-            <div class="w-1 h-5 bg-secondary mr-3 rounded-full"></div>
-            <h3 class="text-lg font-bold text-gray-100">请写下心中困惑</h3>
+            <div class="w-1 h-5 bg-gold mr-3 rounded-full shadow-[0_0_10px_#FCD34D]"></div>
+            <h3 class="text-lg font-bold text-white tracking-wide">请诚心写下疑惑</h3>
         </div>
         <textarea id="questionInput" 
           placeholder="例如：
@@ -116,125 +116,143 @@
 • 下个月准备创业，时机对吗？
 
 (心中默念三遍，诚心发问)"
-          class="w-full h-36 bg-[#08100F]/60 border border-white/10 rounded-xl p-4 text-gray-200 focus:border-secondary/50 focus:ring-1 focus:ring-secondary/50 outline-none transition-all placeholder-gray-600 font-sans text-base resize-none"></textarea>
+          class="w-full h-36 bg-[#0F0518]/60 border border-purple-500/30 rounded-xl p-4 text-purple-100 focus:border-gold/60 focus:ring-1 focus:ring-gold/60 outline-none transition-all placeholder-purple-400/30 font-sans text-base resize-none"></textarea>
         
         <div class="mt-6">
             <button onclick="startAnalysisFlow()"
-              class="w-full bg-gradient-to-r from-emerald-800 via-teal-700 to-emerald-900 hover:from-emerald-700 hover:to-emerald-800 text-white font-bold py-4 rounded-xl shadow-lg transform active:scale-95 transition-all flex items-center justify-center group border border-white/5">
-              <span class="text-lg tracking-[0.2em] group-hover:animate-pulse">春风指路</span>
+              class="w-full bg-gradient-to-r from-purple-900 via-purple-800 to-purple-900 hover:from-purple-800 hover:to-purple-700 text-gold font-bold py-4 rounded-xl shadow-[0_4px_20px_rgba(88,28,135,0.4)] border border-purple-500/30 active:scale-95 transition-all flex items-center justify-center group relative overflow-hidden">
+              <div class="absolute inset-0 bg-gold/5 opacity-0 group-hover:opacity-20 transition-opacity"></div>
+              <span class="text-lg tracking-[0.3em] group-hover:scale-105 transition-transform">排盘推演</span>
               <i class="fa fa-angle-right ml-2 group-hover:translate-x-1 transition-transform"></i>
             </button>
-            <p class="text-center text-xs text-gray-500 mt-4 font-sans flex justify-center items-center">
-                <span class="w-1.5 h-1.5 bg-secondary rounded-full mr-2 animate-pulse"></span>
-                今日已有 <span class="text-gold font-bold mx-1" id="visitorCount">1,208</span> 人解开心中结
+            <p class="text-center text-xs text-purple-400/60 mt-4 font-sans flex justify-center items-center">
+                <span class="w-1.5 h-1.5 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+                今日已有 <span class="text-gold font-bold mx-1" id="visitorCount">1,208</span> 人获取指引
             </p>
         </div>
       </div>
     </div>
 
-    <!-- 加载中动画 -->
-    <div id="loadingState" class="hidden py-12 text-center">
-        <div class="bagua-spinner mb-6"></div>
-        <p class="text-gold text-xl mb-2 font-serif tracking-widest">春风拂面 天机渐显</p>
-        <p class="text-gray-500 text-sm font-sans animate-pulse" id="loadingText">正在沟通时空能量...</p>
+    <!-- 加载中动画 (明确告知时间) -->
+    <div id="loadingState" class="hidden py-16 text-center">
+        <div class="bagua-spinner mb-8"></div>
+        <p class="text-gold text-2xl mb-3 font-serif tracking-widest">紫微斗数 天机推演</p>
+        <p class="text-purple-300 text-sm font-sans animate-pulse tracking-wider opacity-80" id="loadingText">深度测算中，预计需要30秒...</p>
     </div>
 
     <!-- 结果展示区 -->
     <div id="resultSection" class="hidden animate-fade-in">
         
-        <!-- 免费：卦象展示 (Teaser) -->
-        <div class="card-glass rounded-xl p-5 mb-4 border border-secondary/20">
-            <div class="text-center mb-5">
-                <span class="bg-secondary/10 text-secondary px-4 py-1.5 rounded-full text-xs border border-secondary/20 tracking-wider">当前时空卦象</span>
+        <!-- 免费：卦象展示 + 现状分析 (长内容) -->
+        <div class="card-glass rounded-xl p-5 mb-4">
+            <!-- 卦象 -->
+            <div class="text-center mb-6">
+                <span class="bg-purple-900/40 text-gold px-6 py-1.5 rounded-full text-xs border border-purple-500/30 tracking-[0.2em] uppercase">当前时空卦象</span>
+            </div>
+            <div class="grid grid-cols-3 gap-3 mb-6 text-center">
+                <div class="bg-black/30 p-3 rounded-lg border border-purple-500/20">
+                    <div class="text-xs text-purple-400 mb-1 opacity-70">初象(月)</div>
+                    <div class="text-xl font-bold text-white tracking-widest" id="teaserGod1">--</div>
+                </div>
+                <div class="bg-black/30 p-3 rounded-lg border border-purple-500/20">
+                    <div class="text-xs text-purple-400 mb-1 opacity-70">中象(日)</div>
+                    <div class="text-xl font-bold text-white tracking-widest" id="teaserGod2">--</div>
+                </div>
+                <div class="bg-black/30 p-3 rounded-lg border border-purple-500/20">
+                    <div class="text-xs text-purple-400 mb-1 opacity-70">末象(时)</div>
+                    <div class="text-xl font-bold text-white tracking-widest" id="teaserGod3">--</div>
+                </div>
             </div>
             
-            <div class="grid grid-cols-3 gap-3 mb-5 text-center">
-                <div class="bg-[#08100F]/50 p-3 rounded-lg border border-white/5">
-                    <div class="text-xs text-gray-500 mb-1">初象(月)</div>
-                    <div class="text-xl font-bold text-gray-200" id="teaserGod1">--</div>
+            <!-- 免费分析部分 (直白) -->
+            <div class="mb-2">
+                <div class="flex items-center mb-3 border-l-4 border-gold pl-3">
+                    <h3 class="text-lg font-bold text-white tracking-wide">卦意批注</h3>
                 </div>
-                <div class="bg-[#08100F]/50 p-3 rounded-lg border border-white/5">
-                    <div class="text-xs text-gray-500 mb-1">中象(日)</div>
-                    <div class="text-xl font-bold text-gray-200" id="teaserGod2">--</div>
+                <!-- 最小高度防止塌陷 -->
+                <div id="freeAnalysisContent" class="text-purple-100 text-[15px] leading-8 text-justify font-serif opacity-90 min-h-[120px]">
+                    <!-- AI生成的免费部分 -->
                 </div>
-                <div class="bg-[#08100F]/50 p-3 rounded-lg border border-white/5">
-                    <div class="text-xs text-gray-500 mb-1">末象(时)</div>
-                    <div class="text-xl font-bold text-gray-200" id="teaserGod3">--</div>
-                </div>
-            </div>
-            
-            <div class="text-center pb-2">
-                <p class="text-gray-400 text-sm mb-2">卦意总断：</p>
-                <p class="text-xl text-white font-bold tracking-widest" id="teaserVerdict">--</p>
             </div>
         </div>
 
-        <!-- 付费墙区域 -->
-        <div id="payWall" class="relative overflow-hidden rounded-2xl border border-secondary/30 shadow-[0_0_30px_rgba(16,185,129,0.1)]">
-            <div class="bg-paper p-8 blur-lock opacity-60">
-                <h3 class="font-bold text-xl mb-4 text-secondary">大师详细批注</h3>
-                <p class="mb-4">根据您的卦象显示，目前正处于运势上升期。天德入命，主有贵人提携，在事业方面...</p>
-                <p class="mb-4">感情方面，桃花星动，但也伴随着一些不确定因素。需要注意的流月是...</p>
-                <h4 class="font-bold text-lg mb-2">未来三月运势预测</h4>
-                <div class="h-4 bg-gray-600 rounded mb-2 w-3/4"></div>
-                <div class="h-4 bg-gray-600 rounded mb-2 w-full"></div>
-                <div class="h-4 bg-gray-600 rounded mb-2 w-5/6"></div>
-                <h4 class="font-bold text-lg mb-2 mt-4">大师锦囊妙计</h4>
-                <div class="h-24 bg-gray-600 rounded"></div>
+        <!-- 付费墙区域 (建议与锦囊) -->
+        <div id="paidContentContainer" class="relative overflow-hidden rounded-2xl border border-purple-500/30 shadow-[0_0_40px_rgba(0,0,0,0.6)]">
+            
+            <!-- 内容层 (模糊) -->
+            <div id="paidContentBlur" class="bg-white/5 p-8 blur-lock">
+                <h3 class="font-bold text-xl mb-4 text-gold flex items-center border-l-4 border-gold pl-3">
+                    大师锦囊
+                </h3>
+                <div id="paidAnalysisContent" class="text-purple-100 text-[15px] leading-relaxed opacity-80">
+                    <!-- 占位符 -->
+                    <p class="mb-4">根据卦象显示，您接下来需要特别注意的时间点是...</p>
+                    <p class="mb-4">在行动方向上，建议向...</p>
+                    <h4 class="font-bold text-lg mb-2 text-gold mt-6">避坑指南</h4>
+                    <div class="h-4 bg-white/10 rounded mb-2 w-full"></div>
+                    <div class="h-4 bg-white/10 rounded mb-2 w-5/6"></div>
+                    <h4 class="font-bold text-lg mb-2 mt-4 text-gold">贵人指引</h4>
+                    <div class="h-20 bg-white/10 rounded"></div>
+                </div>
             </div>
 
-            <div class="lock-overlay p-6 text-center">
-                <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-700 rounded-full flex items-center justify-center mb-4 shadow-lg animate-float">
-                    <i class="fa fa-lock text-2xl text-white"></i>
-                </div>
-                <h3 class="text-2xl font-bold text-white mb-2 tracking-wide">解锁完整天机报告</h3>
-                <p class="text-gray-400 text-sm mb-8 max-w-xs leading-relaxed">包含：详细时运分析 + 未来趋势预测 + 春风避坑建议</p>
-                
-                <div class="bg-[#08100F]/80 rounded-lg p-4 mb-6 w-full max-w-xs backdrop-blur-sm border border-secondary/20">
-                    <div class="flex justify-center items-end">
-                        <span class="text-gray-500 text-sm mb-1 line-through mr-3">原价 ¥39.9</span>
-                        <span class="text-4xl font-bold text-secondary mr-1" id="uiPriceDisplay">¥9.9</span>
-                        <span class="text-gray-400 text-xs mb-1">/次</span>
+            <!-- 遮罩层 (按钮) -->
+            <div id="payOverlay" class="lock-overlay p-4 text-center">
+                <div class="mb-6 animate-float">
+                    <div class="w-14 h-14 bg-gradient-to-br from-purple-600 to-purple-900 rounded-full flex items-center justify-center mx-auto mb-3 shadow-[0_0_20px_rgba(147,51,234,0.5)] border border-gold/30">
+                        <i class="fa fa-lock text-2xl text-gold"></i>
                     </div>
+                    <h3 class="text-xl font-bold text-white mb-1 tracking-wide">解锁行动建议</h3>
+                    <p class="text-purple-300 text-xs opacity-70">随喜润金 · 开启天机</p>
                 </div>
-
-                <button onclick="startPayment()" 
-                    class="w-full max-w-xs bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white font-bold py-4 rounded-xl shadow-lg transition-all flex items-center justify-center text-lg tracking-wider">
-                    <i class="fa fa-shield mr-2"></i> 支付宝安全支付
-                </button>
-                <p class="text-xs text-gray-500 mt-4">支持支付宝 · 隐私严格保密</p>
+                
+                <!-- 价格按钮网格 -->
+                <div class="grid grid-cols-2 gap-3 w-full mb-4 px-2">
+                    <!-- 档位 1 -->
+                    <button id="btn-tier-1" onclick="startPayment('1.68')" class="bg-black/60 border border-purple-500/30 hover:border-gold/50 text-white py-3 rounded-lg flex flex-col items-center justify-center transition-all active:scale-95">
+                        <span class="text-lg font-bold text-gold" id="price-tier-1">¥ 1.68</span>
+                        <span class="text-[10px] text-gray-400" id="label-tier-1">初探天机</span>
+                    </button>
+                    <!-- 档位 2 -->
+                    <button onclick="startPayment('6.66')" class="bg-gradient-to-br from-purple-900 to-purple-800 border border-gold/50 text-white py-3 rounded-lg flex flex-col items-center justify-center transition-all active:scale-95 relative overflow-hidden shadow-lg">
+                        <div class="absolute top-0 right-0 bg-[#FCD34D] text-purple-900 font-bold text-[9px] px-1.5 rounded-bl-lg">荐</div>
+                        <span class="text-xl font-bold text-white">¥ 6.66</span>
+                        <span class="text-[10px] text-gold/80">祈愿顺遂</span>
+                    </button>
+                    <!-- 档位 3 -->
+                    <button onclick="startPayment('8.88')" class="bg-black/60 border border-purple-500/30 hover:border-gold/50 text-white py-3 rounded-lg flex flex-col items-center justify-center transition-all active:scale-95">
+                        <span class="text-lg font-bold text-gold">¥ 8.88</span>
+                        <span class="text-[10px] text-gray-400">心诚则灵</span>
+                    </button>
+                    <!-- 档位 4 -->
+                    <button onclick="startPayment('88.00')" class="bg-black/60 border border-gold/30 hover:border-gold text-white py-3 rounded-lg flex flex-col items-center justify-center transition-all active:scale-95">
+                        <span class="text-lg font-bold text-gold">¥ 88.00</span>
+                        <span class="text-[10px] text-gray-400">大德圆满</span>
+                    </button>
+                </div>
+                
+                <div class="flex items-center justify-center text-[10px] text-purple-400/50 mt-3">
+                    <i class="fa fa-shield mr-1"></i>
+                    <span>支持支付宝 · 隐私严格保密</span>
+                </div>
             </div>
         </div>
 
-        <!-- 真正的AI结果容器 -->
-        <div id="aiRealResult" class="hidden">
-            <div class="card-glass rounded-2xl p-6 animate-slide-up border border-secondary/30">
-                <div class="flex items-center justify-between mb-6 pb-4 border-b border-white/10">
-                    <h3 class="text-xl font-bold text-gold flex items-center">
-                        <i class="fa fa-leaf mr-2 text-secondary"></i> 春风批注
-                    </h3>
-                    <span class="text-xs text-secondary bg-secondary/10 px-2 py-1 rounded border border-secondary/20">大师亲批</span>
-                </div>
-                <div id="analysisContent" class="prose prose-invert prose-gold max-w-none text-gray-300 leading-loose text-justify font-serif"></div>
-                <div class="mt-8 flex space-x-3">
-                    <button onclick="copyResult()" class="flex-1 bg-white/5 hover:bg-white/10 text-gray-300 py-3 rounded-lg text-sm transition-colors border border-white/10">
-                        <i class="fa fa-copy mr-1"></i> 复制结果
-                    </button>
-                    <button onclick="location.href=location.pathname" class="flex-1 bg-secondary/20 hover:bg-secondary/30 text-secondary py-3 rounded-lg text-sm transition-colors border border-secondary/30">
-                        <i class="fa fa-refresh mr-1"></i> 再测一事
-                    </button>
-                </div>
-            </div>
-            <div class="mt-6 text-center">
-                <p class="text-xs text-gray-500 opacity-60">*命由天定，运由己生。结果仅供参考，切勿迷信。</p>
-            </div>
+        <!-- 结果操作按钮 -->
+        <div id="resultActions" class="mt-6 flex space-x-3 hidden">
+            <button onclick="copyResult()" class="flex-1 bg-white/5 hover:bg-white/10 text-purple-200 py-3 rounded-lg text-sm transition-colors border border-white/10">
+                <i class="fa fa-copy mr-1"></i> 复制批注
+            </button>
+            <button onclick="location.href=location.pathname" class="flex-1 bg-gold/20 hover:bg-gold/30 text-gold py-3 rounded-lg text-sm transition-colors border border-gold/30">
+                <i class="fa fa-refresh mr-1"></i> 再测一事
+            </button>
         </div>
     </div>
     
     <!-- 底部滚动好评 -->
-    <div class="fixed bottom-0 left-0 right-0 bg-[#0C1816]/90 backdrop-blur border-t border-white/5 py-2 z-40" id="socialProof">
+    <div class="fixed bottom-0 left-0 right-0 bg-[#0F0518]/90 backdrop-blur border-t border-purple-500/20 py-2 z-40" id="socialProof">
         <div class="relative w-full overflow-hidden h-6">
-            <div id="marqueeContent" class="absolute whitespace-nowrap animate-scroll-left text-xs text-gray-400 font-sans flex items-center space-x-12 px-4">
+            <div id="marqueeContent" class="absolute whitespace-nowrap animate-scroll-left text-xs text-purple-300/60 font-sans flex items-center space-x-12 px-4">
                 <!-- 内容将由JS动态生成 -->
             </div>
         </div>
@@ -244,10 +262,11 @@
   <script>
     // --- 【核心配置】 ---
     const CONFIG = {
-        defaultPrice: "9.9", 
-        discountPrice: "1.88",  
-        magicCode: "xiaoliuren.xyz", 
-        freeCode: "chunfeng", 
+        freeCode: "xiaoliuren.xyz", // 老板通道
+        discountCode: "可问春风",   // 粉丝通道
+        discountPrice: "1.00",      
+        vipCodes: ["xiaoliuren.xyz", "可问春风"],
+        
         apiToken: "sk-zhkdhbaohshweaxxzxlvvucvklmlwsepbzmmghkxxkrfwpli", 
         paymentId: "2025111020404744", 
         paymentKey: "6Ecg3jrd3W4jcOADKclHaU0N5AsWftbB", 
@@ -302,15 +321,13 @@
             const time = times[Math.floor(Math.random() * times.length)];
             contentHtml += `
                 <span class="flex items-center">
-                    <span class="text-gray-500 mr-2">[${time}]</span>
-                    <span class="text-gray-400">支付宝用户 ${userId}</span>
-                    <span class="text-secondary ml-1 opacity-80">${action}</span>
+                    <span class="text-purple-400/50 mr-2">[${time}]</span>
+                    <span class="text-purple-300/80">支付宝用户 ${userId}</span>
+                    <span class="text-white ml-1 opacity-90">${action}</span>
                 </span>
             `;
         }
-        
-        const marqueeEl = document.getElementById("marqueeContent");
-        marqueeEl.innerHTML = contentHtml + contentHtml;
+        document.getElementById("marqueeContent").innerHTML = contentHtml + contentHtml;
     }
 
     // --- 3. 时间与起卦 ---
@@ -319,18 +336,15 @@
         const solar = Solar.fromDate(now);
         const lunar = solar.getLunar();
         
-        const solarStr = `${solar.getYear()}年${solar.getMonth()}月${solar.getDay()}日`;
-        document.getElementById("solarDate").innerText = solarStr;
+        document.getElementById("solarDate").innerText = `${solar.getYear()}年${solar.getMonth()}月${solar.getDay()}日`;
         
         const lunarMonth = lunar.getMonth(); 
         const lunarDay = lunar.getDay();     
         const hour = now.getHours();
-        
         let shichenIdx = Math.floor((hour + 1) / 2) % 12;
         const shichenName = SHICHEN[shichenIdx] + "时";
         
-        const lunarStr = `农历${lunar.getMonthInChinese()}月${lunar.getDayInChinese()} ${shichenName}`;
-        document.getElementById("lunarDate").innerText = lunarStr;
+        document.getElementById("lunarDate").innerText = `农历${lunar.getMonthInChinese()}月${lunar.getDayInChinese()} ${shichenName}`;
         
         const m = Math.abs(lunarMonth); 
         const d = lunarDay;
@@ -343,110 +357,119 @@
         currentStages = [NINE_GODS[s1], NINE_GODS[s2], NINE_GODS[s3]];
     }
 
-    // --- 4. 交互流程 ---
-    function startAnalysisFlow() {
+    // --- 4. 交互流程 (强化版：真实等待 + 兜底) ---
+    async function startAnalysisFlow() {
         let rawInput = document.getElementById("questionInput").value.trim();
         if (rawInput.length < 2) {
             alert("请诚心输入您想测算的问题");
             return;
         }
 
-        // === 免费通道 ===
+        // === 1. 老板通道 (Free) ===
         if (rawInput.toLowerCase().includes(CONFIG.freeCode.toLowerCase())) {
             userQuestion = rawInput.replace(new RegExp(CONFIG.freeCode, "gi"), "").trim();
             if(!userQuestion) userQuestion = "综合运势详解";
-            
-            document.getElementById("inputSection").classList.add("hidden");
-            document.getElementById("loadingState").classList.remove("hidden");
-            document.getElementById("socialProof").classList.add("hidden");
-            
-            setTimeout(() => {
-                document.getElementById("loadingState").classList.add("hidden");
-                document.getElementById("resultSection").classList.remove("hidden");
-                document.getElementById("payWall").classList.add("hidden"); 
-                document.getElementById("aiRealResult").classList.remove("hidden"); 
-                
-                showTeaserResult(false); 
-                
-                document.getElementById("analysisContent").innerHTML = `
-                    <div class="text-center py-10">
-                         <div class="bagua-spinner mb-4"></div>
-                         <p class="text-gold">春风阁大师正在为您批注...</p>
-                         <p class="text-xs text-gray-500 mt-2">VIP通道已激活，正在解析${currentStages[0].name}-${currentStages[1].name}-${currentStages[2].name}</p>
-                    </div>
-                `;
-                callAI();
-            }, 2000);
+            await handleProcess(true);
             return;
         }
 
-        // === 正常/优惠通道 ===
+        // === 2. 正常/粉丝通道 (Need Pay) ===
         userQuestion = rawInput;
+        await handleProcess(false);
+    }
+
+    async function handleProcess(isUnlocked) {
         document.getElementById("inputSection").classList.add("hidden");
         document.getElementById("loadingState").classList.remove("hidden");
         document.getElementById("socialProof").classList.add("hidden"); 
 
-        const loadingTexts = ["正在沟通天地...", "正在排盘...", "正在连接时空能量...", "卦象已成..."];
+        const loadingTexts = [
+            "正在沟通天地...", 
+            "正在排盘推演 (预计需30秒)...", // 明确提示时间
+            "正在连接时空能量...", 
+            "大师正在深度解析...",
+            "正在撰写详细批注...",
+            "即将完成..."
+        ];
         let step = 0;
-        const timer = setInterval(() => {
+        const loadingInterval = setInterval(() => {
             if(step < loadingTexts.length) {
                 document.getElementById("loadingText").innerText = loadingTexts[step];
                 step++;
             }
-        }, 600);
+        }, 3000); // 3秒一换，拉长等待感
 
-        setTimeout(() => {
-            clearInterval(timer);
-            showTeaserResult(true); 
-        }, 2800);
+        try {
+            const minWait = new Promise(resolve => setTimeout(resolve, 3000));
+            const aiTask = callAI(isUnlocked);
+            
+            await Promise.all([minWait, aiTask]);
+            
+            clearInterval(loadingInterval);
+            showResultPage(isUnlocked);
+            
+        } catch (error) {
+            console.error("流程异常，启用本地兜底", error);
+            clearInterval(loadingInterval);
+            showResultPage(isUnlocked);
+        }
     }
 
-    function showTeaserResult(showPayWall) {
-        if(showPayWall) {
-            document.getElementById("loadingState").classList.add("hidden");
-            document.getElementById("resultSection").classList.remove("hidden");
-            
-            // --- 动态价格UI更新逻辑 ---
-            if (userQuestion.toLowerCase().includes(CONFIG.magicCode.toLowerCase())) {
-                 document.getElementById("uiPriceDisplay").innerText = "¥" + CONFIG.discountPrice;
-            } else {
-                 document.getElementById("uiPriceDisplay").innerText = "¥" + CONFIG.defaultPrice;
-            }
-        }
+    function showResultPage(isUnlocked) {
+        document.getElementById("loadingState").classList.add("hidden");
+        document.getElementById("resultSection").classList.remove("hidden");
         
-        if(!currentStages || currentStages.length === 0) {
-            updateTimeDisplay();
-        }
-        
+        if(!currentStages || currentStages.length === 0) updateTimeDisplay();
         document.getElementById("teaserGod1").innerText = currentStages[0].name;
         document.getElementById("teaserGod2").innerText = currentStages[1].name;
         document.getElementById("teaserGod3").innerText = currentStages[2].name;
         
-        let goodCount = currentStages.filter(g => g.type === '吉').length;
-        let badCount = currentStages.filter(g => g.type === '凶').length;
-        let verdict = "平稳之象，待机而动";
-        if (goodCount >= 2) verdict = "上吉之卦，贵人引路";
-        if (badCount >= 2) verdict = "前途多艰，需慎重行事";
-        if (currentStages[2].name === '速喜') verdict = "心念之事，立见分晓";
-        
-        const verdictEl = document.getElementById("teaserVerdict");
-        verdictEl.innerText = verdict;
-        verdictEl.className = goodCount >= 2 ? "text-xl text-secondary font-bold tracking-widest" : "text-xl text-white font-bold tracking-widest";
+        if(isUnlocked) {
+            unlockContent();
+        } else {
+            // 检查粉丝特权
+            const rawQ = document.getElementById("questionInput").value.trim();
+            if (rawQ.toLowerCase().includes(CONFIG.discountCode.toLowerCase())) {
+                const btn1 = document.getElementById("btn-tier-1");
+                const price1 = document.getElementById("price-tier-1");
+                const label1 = document.getElementById("label-tier-1");
+                
+                price1.innerText = "¥ " + CONFIG.discountPrice;
+                price1.classList.add("text-red-400");
+                label1.innerText = "粉丝特权";
+                label1.classList.add("text-red-300");
+                
+                btn1.onclick = function() { startPayment(CONFIG.discountPrice); };
+                btn1.classList.add("border-red-500/50"); 
+            }
+        }
     }
 
-    // --- 5. 支付逻辑 (修复版：纯表单提交，最稳定唤起支付宝) ---
-    function startPayment() {
-        let finalPrice = CONFIG.defaultPrice; 
-        let finalQuestion = userQuestion;
+    function unlockContent() {
+        const blurEl = document.getElementById("paidContentBlur");
+        const overlayEl = document.getElementById("payOverlay");
+        
+        blurEl.classList.remove("blur-lock");
+        blurEl.classList.add("blur-unlock");
+        blurEl.style.opacity = "1";
+        
+        overlayEl.style.opacity = "0";
+        setTimeout(() => {
+            overlayEl.style.display = "none";
+        }, 500);
+        
+        document.getElementById("resultActions").classList.remove("hidden");
+    }
 
-        if (userQuestion.toLowerCase().includes(CONFIG.magicCode.toLowerCase())) {
-            finalPrice = CONFIG.discountPrice; 
-            finalQuestion = userQuestion.replace(new RegExp(CONFIG.magicCode, "gi"), "").trim();
-            if(finalQuestion.length === 0) finalQuestion = "综合运势分析"; 
-        }
+    // --- 5. 支付逻辑 ---
+    function startPayment(amount) {
+        let finalQ = userQuestion;
+        CONFIG.vipCodes.forEach(code => {
+             finalQ = finalQ.replace(new RegExp(code, "gi"), "");
+        });
+        if(!finalQ.trim()) finalQ = "综合运势分析";
 
-        // 存入本地，防止跳转丢失
-        localStorage.setItem('cf_question', finalQuestion);
+        localStorage.setItem('cf_question', finalQ);
         localStorage.setItem('cf_timestamp', new Date().getTime());
 
         const baseUrl = window.location.href.split('?')[0];
@@ -454,7 +477,7 @@
 
         const payData = {
             pid: CONFIG.paymentId,
-            money: finalPrice, 
+            money: amount, 
             name: "春风阁VIP深度测算报告",
             notify_url: CONFIG.notifyUrl,
             out_trade_no: new Date().getTime() + Math.floor(Math.random() * 1000),
@@ -463,13 +486,11 @@
             type: "alipay" 
         };
 
-        // 计算签名
         const sortedParams = Object.keys(payData).sort().map(k => `${k}=${payData[k]}`).join('&');
         const paySign = md5(sortedParams + CONFIG.paymentKey);
         payData.sign = paySign;
         payData.sign_type = "MD5";
 
-        // 创建隐形表单并提交 (最稳的跳转方式)
         const form = document.createElement('form');
         form.method = 'POST';
         form.action = CONFIG.submitUrl;
@@ -487,72 +508,64 @@
         form.submit();
     }
 
-    // --- 6. 回调与AI (LocalStorage + 修复 Teaser不显示问题) ---
+    // --- 6. 支付回调 ---
     function checkPaymentResult() {
         const params = new URLSearchParams(window.location.search);
-        const status = params.get('status');
-
-        if (status === 'paid') {
+        if (params.get('status') === 'paid') {
             const storedQuestion = localStorage.getItem('cf_question');
-            
             if (storedQuestion) {
                 userQuestion = storedQuestion;
-                
-                document.getElementById("inputSection").classList.add("hidden");
-                document.getElementById("resultSection").classList.remove("hidden");
-                document.getElementById("payWall").classList.add("hidden");
-                document.getElementById("aiRealResult").classList.remove("hidden");
-                
-                updateTimeDisplay();
-                showTeaserResult(false);
-
-                document.getElementById("analysisContent").innerHTML = `
-                    <div class="text-center py-10">
-                        <div class="bagua-spinner mb-4"></div>
-                        <p class="text-gold">春风阁大师正在为您批注...</p>
-                        <p class="text-xs text-gray-500 mt-2">正在深度解析${currentStages[0].name}-${currentStages[1].name}-${currentStages[2].name}卦象</p>
-                    </div>
-                `;
-                
-                callAI();
+                handleProcess(true);
                 window.history.replaceState({}, document.title, window.location.pathname);
             }
         }
     }
 
-    async function callAI() {
+    // --- 7. AI请求逻辑 (Prompt升级版) ---
+    async function callAI(isUnlocked) {
         updateTimeDisplay(); 
-        const lunarDate = document.getElementById("lunarDate").innerText;
+        const now = new Date();
+        const fullDateString = `${now.getFullYear()}年${now.getMonth()+1}月${now.getDate()}日`;
         
-        const prompt = `
-        你是一位精通周易、小六壬、奇门遁甲的世外高人（号“春风道人”）。用户刚刚支付了润金，请求你为其指点迷津。
-        
-        用户信息：
-        - 提问：${userQuestion}
-        - 卦象：${currentStages[0].name} -> ${currentStages[1].name} -> ${currentStages[2].name}
-        - 时间：${lunarDate}
+        let cleanQuestion = userQuestion;
+        CONFIG.vipCodes.forEach(code => {
+             cleanQuestion = cleanQuestion.replace(new RegExp(code, "gi"), "");
+        });
+        if(!cleanQuestion.trim()) cleanQuestion = "综合运势详解";
 
-        请输出一份详尽的《春风阁天机批注》，语气要庄重、神秘、文雅但充满慈悲（多用“缘主”称呼）。
+        const SPLIT_TAG = "|||SPLIT|||"; 
         
-        报告结构必须包含HTML标签（使用 <h4>, <p>, <ul>, <li>, <strong>），结构如下：
+        // 兜底文案
+        const fallbackFree = `<p><strong>【卦象直断】</strong>缘主所问之事，卦象显示目前处于“守势”。虽心有不甘，但时机未到，不可强求。建议静待花开，切勿急躁。</p><p><strong>【心境洞察】</strong>贫道观你近期思虑过重，常感力不从心。其实困局只是一时，转机正在酝酿之中。</p>`;
+        const fallbackPaid = `<h4>【时机预警】</h4><p>最佳行动时机在午时（11:00-13:00），避开子时（23:00-01:00）。</p><h4>【贵人指引】</h4><p>向东南方寻找，或求助于属相为（虎/兔）的长辈。</p><h4>【大师锦囊】</h4><ul><li>遇事多听少说，特别是面对上级时。</li><li>随身佩戴红色饰物可增运。</li><li>凡事留一线，日后好相见。</li></ul>`;
+
+        const prompt = `
+        你是一位道行高深、充满智慧的道长，就像一位慈祥的长辈。请为缘主指点迷津。
         
-        1. <h4>【春风解卦】</h4>
-           <p>解释这三个神煞组合的深层含义，针对用户问题进行定性（吉/凶/平）。</p>
-           
-        2. <h4>【时运详解】</h4>
-           <p>详细分析用户现状和未来趋势。至少300字，内容要具体，不要说套话。</p>
-           
-        3. <h4>【前路预警】</h4>
-           <p>根据“${currentStages[2].name}”这个末宫，预测未来可能遇到的具体障碍或转折点。</p>
-           
-        4. <h4>【锦囊妙计】</h4>
-           <ul>
-             <li>给出3条具体的建议（如：有利方位、幸运颜色、行事风格、贵人生肖等）。</li>
-           </ul>
-           
-        5. <p style="text-align:center; color:#10B981; margin-top:20px;"><i>遇事不明，可问春风。愿缘主顺遂。</i></p>
+        **基本信息：**
+        - 缘主提问：${cleanQuestion}
+        - 卦象：${currentStages[0].name} -> ${currentStages[1].name} -> ${currentStages[2].name}
+        - 当前时间：${fullDateString} (严禁编造其他年份！)
         
-        请直接输出HTML内容，不要包裹Markdown代码块。
+        **核心禁令：**
+        1. **严禁说** "我看你面相"、"你眉间有郁色" 等需要视觉的话（因为你看不到）。
+        2. **严禁** 轻浮、搞笑、使用网络烂梗。语气要温暖、坚定、有力量。
+        
+        请严格按以下格式输出，两部分用 "${SPLIT_TAG}" 分隔：
+        
+        第一部分（免费可见，约200字）：
+        1. **【直断吉凶】**：不绕弯子，直接说结果（吉/凶/平）。
+        2. **【心境共情】**：通过卦象分析缘主现在的心理状态（例如：进退两难、焦虑不安等），要说得让他觉得“你真懂我”。
+        3. **【卦理通释】**：用通俗的语言解释为什么是这个结果。
+        (使用HTML <p> 排版)
+        
+        ${SPLIT_TAG}
+        
+        第二部分（付费解锁，必须包含具体参数，约150字）：
+        1. **【天时预警】**：给出明确的有利/不利时间段（如：上午9点-11点）。
+        2. **【贵人方略】**：给出明确的方位（如：西北方）、属相或人物特征。
+        3. **【开运锦囊】**：给出3条具体的行动建议（如：穿什么颜色、找什么人、做什么事）。
+        (使用HTML <h4>, <p>, <ul> 排版)
         `;
 
         try {
@@ -565,7 +578,7 @@
                 body: JSON.stringify({
                     model: "deepseek-ai/DeepSeek-V3",
                     messages: [
-                        {role: "system", content: "你是一位精通中国传统术数的老道长，擅长小六壬。"},
+                        {role: "system", content: "你是一位精通易理的智者道长，语气温暖庄重。"},
                         {role: "user", content: prompt}
                     ],
                     temperature: 0.7,
@@ -576,30 +589,31 @@
             const data = await response.json();
             if (data.choices && data.choices[0]) {
                 const content = data.choices[0].message.content;
-                document.getElementById("analysisContent").innerHTML = content;
+                const parts = content.split(SPLIT_TAG);
+                
+                document.getElementById("freeAnalysisContent").innerHTML = parts[0] || fallbackFree;
+                document.getElementById("paidAnalysisContent").innerHTML = parts[1] || fallbackPaid;
             } else {
-                throw new Error("API Error");
+                throw new Error("AI Empty Response");
             }
 
         } catch (e) {
-            document.getElementById("analysisContent").innerHTML = `
-                <h4>【春风解卦】</h4>
-                <p>缘主安好。今日云游太虚，信号稍显微弱。但观卦象，${currentStages[0].name}起首，主基业平稳。</p>
-                <p>针对您所问之事“${userQuestion}”，目前时机尚可。${currentStages[2].name}临门，建议守正待时。</p>
-                <p>建议稍后刷新页面，或者保存此结果，凡事向南而行，必有回响。</p>
-            `;
+            console.error("AI Error, using fallback", e);
+            document.getElementById("freeAnalysisContent").innerHTML = fallbackFree;
+            document.getElementById("paidAnalysisContent").innerHTML = fallbackPaid;
         }
     }
 
     function copyResult() {
-        const content = document.getElementById("analysisContent").innerText;
+        const t1 = document.getElementById("freeAnalysisContent").innerText;
+        const t2 = document.getElementById("paidAnalysisContent").innerText;
         const tempInput = document.createElement("textarea");
-        tempInput.value = content;
+        tempInput.value = "【春风阁批注】\n" + t1 + "\n\n【大师锦囊】\n" + t2;
         document.body.appendChild(tempInput);
         tempInput.select();
         document.execCommand("copy");
         document.body.removeChild(tempInput);
-        alert("批注已复制，可粘贴保存");
+        alert("完整批注已复制");
     }
   </script>
 </body>
